@@ -349,27 +349,313 @@ double은 8 바이트 실수형 데이터 타입
 -20을 2진수로 표현해보자!
 int는 너무 기니까 8 비트만 표현하도록 한다.
 
+20 = 16 + 4
+
+0001 0100(2) = 20
+1110 1100(2) = -20
+
 연습 문제 2.
 
 -29를 2진수로 표현해보자!
 
+29 = 16 + 8 + 4 + 1
+
+0001 1101(2) = 29
+1110 0011(2) = -29
 
 
 
+* XOR 과 OR 는 어떤 차이점이 있는걸까 ?
+
+1001(2) = 9
+1101(2) = 13 OR
+------------------
+1101(2) = 13
+
+1001(2) = 9
+1101(2) = 13 XOR
+------------------
+0100(2) = 4
 
 
 
+아스키코드 A = 65, a = 97    둘 사이엔 32 차이
+                B = 66, b = 98
+
+65 = 64 + 1
+
+0100 0001(2) = 65
+
+97 = 64 + 32 + 1
+
+0110 0001(2) = 97
+0010 0000(2) = 32  XOR
+---------------------------
+0100 0001(2) = 65
+
+0100 0001(2) = 65
+0010 0000(2) = 32  XOR
+---------------------------
+0110 0001(2) = 97
 
 
 
+* 논리 연산자 예제
+
+import java.util.Scanner;
+
+public class LogicalOperation {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("숫자를 입력하세요: ");
+        int num = scan.nextInt();
+
+        // (num % 2 == 0): 2로 나눈 나머지가 0 인가 ?
+        // (num % 3 == 0): 3으로 나눈 나머지가 0 인가 ?
+        // && 논리 연산자 AND
+        // 논리 연산자 AND는 두 개의 조건이 모두 참인 경우에만 참이다.
+        // 즉 위의 두 가지 질문에 대한 답이 모두 참이어야만
+        // 아래의 if 문이 동작하게 된다.
+        if((num % 2 == 0) && (num % 3 == 0)) {
+            System.out.println(num + "은 6의 배수다!");
+        } else {
+            System.out.println(num + "은 6의 배수가 아니다!");
+        }
+        
+        // || 논리 연산자 OR
+        // 둘 중 하나라도 참이라면 참
+        if((num % 2 == 0) || (num % 3 == 0)) {
+            System.out.println(num + "은 2 혹은 3의 배수다!");
+        } else {
+            System.out.println(num + "은 2 혹은 3의 배수가 아니다!");
+        }
+
+        // ! 논리 연산자 NOT
+        // 결과 자체를 부정한다.
+        if(!(num % 2 == 0)) {
+            System.out.println(num + "은 2의 배수가 아니다!");
+        } else {
+            System.out.println(num + "은 2의 배수다!");
+        }
+    }
+}
 
 
 
+* 전위, 후위 연산자 복습
+
+public class PrefixSuffixOperation {
+    public static void main(String[] args) {
+        int num = 3;
+
+        // 전위 연산자는 해당 라인에서 실행된다.
+        System.out.println("전위 연산자: " + (++num));
+        System.out.println("전위 연산자: " + (++num));
+        System.out.println("결과: " + num);
+
+        num = 3;
+
+        // 후위 연산자는 해당 라인 이후에 즉각 실행된다.
+        System.out.println("후위 연산자: " + (num++));
+        System.out.println("후위 연산자: " + (num++));
+        System.out.println("결과: " + num);
+    }
+}
 
 
 
+* switch 문 예제
+
+import java.util.Scanner;
+
+public class SwitchCaseStatement {
+    public static void main(String[] args) {
+        System.out.println("switch 문을 배워봅시다 ~");
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("점수를 입력하세요: ");
+        int num = scan.nextInt();
+
+        if((num > 100) || (num < 0)) {
+            System.out.println("잘못된 값을 입력하였습니다.");
+        }
+
+        // (int)(num / 10.0f)
+        // 위의 코드는 결과를 강제로 int 형으로 처리하는 방식이다.
+        // 10.0f 라는 것이 보이는데
+        // 실수형에 f가 오면 float 타입을 의미한다.
+        // 결국 f 를 쓰지 않으면 double 타입을 의미한다.
+        // 위의 방식을 강제 캐스팅이라고도 하며 Type Casting이라 부른다.
+        int fnum = (int)(num / 10.0f);
+        System.out.println("실수형을 정수형으로 만든 값 = " + fnum);
+
+        // 90 ~ 100: A, 80 ~ 89: B, 70 ~ 79: C, 60 ~ 69: D, 나머지 F
+        // 90 ~ 100 / 10 = 9.0 ~ 10.0
+        // 80 ~ 89 / 10 = 8.0 ~ 8.9
+        // 70 ~ 79 / 10 = 7.0 ~ 7.9
+        // 60 ~ 69 / 10 = 6.0 ~ 6.9
+        // 0 ~ 59 / 10 = 0.0 ~ 5.9
+
+        // break가 case 마다 있는 것을 볼 수 있다.
+        // break가 없는 경우
+        // 아래와 같이 10과 9인 경우엔
+        // 10 혹은 9에 대해 모두 같은 처리를 하겠음을 의미한다.
+        // break를 만나기 전까지는 동작이 유지된다.
+        switch (fnum) {
+            case 10:
+            case 9:
+                System.out.println("당신의 등급은 A");
+                break;
+            case 8:
+                System.out.println("당신의 등급은 B");
+                break;
+            case 7:
+                System.out.println("당신의 등급은 C");
+                break;
+            case 6:
+                System.out.println("당신의 등급은 D");
+                break;
+            default:
+                System.out.println("총 맞았습니다 F 빵야 빵야");
+                break;
+        }
+    }
+}
 
 
 
+* switch 문 작성 방법
+
+1. switch 를 적고 소괄호를 열고 닫고 중괄호를 열고 닫는다.
+2. 소괄호 내부에 조건(케이스가 될 숫자 등등)을 작성한다.
+3. 중괄호 내부에는 각각의 케이스를 'case 경우:' 로 작성한다.
+4. 각각의 케이스에서 동작할 코드를 작성하고 break한다.
+5. 필요하다면 break를 빼고 묶을 수도 있다.
 
 
+
+Q: switch 문은 언제 많이 사용하나요 ?
+A: 케이스가 뚜렷한 경우엔 세세한 조작을 수행할 수 있다.
+    그래서 대표적으로 컴파일러나 IDE 개발시 많이 나타난다.
+
+Q: switch 문에서 default의 용도는 무엇인가요 ?
+A: case 각각의 케이스들을 적는다고 하였는데
+    해당하는 케이스가 하나도 없을 경우 default가 동작을 하게 된다.
+
+
+
+* 위의 스위치 예제를 if 문으로 작성할 경우
+
+import java.util.Scanner;
+
+public class IfBasedRangeProblem {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("점수를 입력하세요: ");
+        int num = scan.nextInt();
+
+        System.out.println("입력한 점수는 " + num);
+        // 90 ~ 100: A, 80 ~ 89: B, 70 ~ 79: C, 60 ~ 69: D, 나머지 F
+
+        // 주의점: if-else if 사용시 히든 조건을 매우 조심해야한다.
+        //        잘못 작성할 경우 프로그램 논리가 통채로 잘못될 가능성이 있고
+        //        디버깅을 통해 오류를 잡는것이 오래 걸릴 가능성이 높아진다.
+
+        // 팁: 가장 범주가 큰 녀석을 위로 올리고
+        //     그것보다 작은 범주의 크기들을 서서히 단계단계 내리며 작성한다.
+        // num <= 90
+        if(num > 100) { // num이 100 보다 크다면
+            System.out.println("잘못된 입력입니다.");
+        } else if(num >= 90) {  // num이 90 이상이라면 && 100 보다 작거나 같다면
+            System.out.println("당신의 등급은 A입니다.");
+        } else if(num >= 80) {  // num이 80 이상이라면 && 90 보다 작다면
+            System.out.println("당신의 등급은 B입니다.");
+        } else if(num >= 70) {  // num이 70 이상이라면 && 80 보다 작다면
+            System.out.println("당신의 등급은 C입니다.");
+        } else if(num >= 60) {  // num이 60 이상이라면 && 70 보다 작다면
+            System.out.println("당신의 등급은 D입니다.");
+        } else if(num >= 0) {   // num이 0 이상이라면 && 60 보다 작다면
+            System.out.println("빵야 빵야 F");
+        } else {    // 0 보다 작다면
+            System.out.println("잘못된 입력입니다.");
+        }
+    }
+}
+
+
+
+* 쉬프트 연산자 예제
+
+public class ShiftOperation {
+    public static void main(String[] args) {
+        System.out.println("쉬프트 연산자 예제!");
+
+        // final 이란 무엇인가 ? 값을 고정시키는 역할을 수행한다.
+        // 그런데 왜 사용하는 것일까 ?
+        // 매직 넘버
+        // 공장에는 생산라인이 5개 있다.
+        // 사업을 따내서 생산라인이 8개가 되었음
+        // 결국 유지 보수를 편하게 하기 위해 사용한다.
+        // 이것은 결국 내가 야근을 하느냐 안하느냐로 귀결되고
+        // 내가 집에 얼마나 빨리 갈 수 있는지로 귀결되기도 한다.
+        final int SCALE_FACTOR1 = 2;
+        final int SCALE_FACTOR2 = 3;
+        final int SCALE_FACTOR3 = 1;
+        int num = 10, num2 = 5;
+
+        //SCALE_FACTOR1 += num2;
+        System.out.println("SCALE_FACTOR1 = " + SCALE_FACTOR1);
+
+        // 쉬프트 연산도 2진수와 연결이 된다.
+        // 숫자 10 - 0000 1010 을 왼쪽 쉬프트로 2칸 이동한다.
+        // 결과 40 - 0010 1000 이 된다.
+        // 2칸 올라올때 빈 공간은 0으로 채워지고
+        // 넘치는 공간은 버린다.
+        // 3칸 이동
+        // 결과 80 - 0101 0000 이 된다.
+        // 쉬프트 한 칸당 2의 n승이 곱해지는 것을 볼 수 있다.
+        System.out.println("10 << 2 = " + (num << SCALE_FACTOR1));
+        System.out.println("10 << 3 = " + (num << SCALE_FACTOR2));
+        System.out.println("5 >> 1 = " + (num2 >> SCALE_FACTOR3));
+        // 숫자 5 - 0000 0101 이며 오른쪽으로 1칸 이동한다.
+        // 결과 2 - 0000 0010 이 된다.
+        // 우리가 예상한 것은 2.5지만 실제로 2가 나왔다.
+        // 이유는 쉬프트 연산이 정수에서만 가능하기 때문이다.
+        // 주의점: 곱셈은 2의 n을 곱하면 되지만
+        //        나눗셈의 경우엔 나머지를 버리고 몫만 취한다.
+
+        // 쉬프트에 의해 데이터가 사라지는 것을 확인할 수 있는 예
+        // 원래는 5 << 1 과 같기 때문에 10이 나와야 하지만
+        // 데이터가 사라져서 8이 나오는 것을 목격할 수 있다.
+        System.out.println("(5 >> 1) << 2 = " +
+                ((num2 >> SCALE_FACTOR3) << SCALE_FACTOR1));
+    }
+}
+
+
+
+연습 문제 3.
+
+Scanner를 활용하여 사용자 입력을 받도록 만든다.
+입력 받은 값을 출력해보자!
+
+연습 문제 4.
+
+3번에서 받은 입력값이 5로 나눠서
+나머지가 1이 되는 숫자인지 판별해보자!
+
+연습 문제 5.
+
+2의 n승을 판별하는 프로그램을 만들어보자!
+
+연습 문제 6.
+
+1500이 입력되면 정지하는 시스템이 있다.
+입력값은 1000 ~ 2000 사이의 숫자다.
+(아직 랜덤을 배우지 않았으므로 키보드 입력으로 처리한다)
+1470 이하의 값을 넣으면 후진
+1530 이상의 값을 넣으면 전진한다.
+이를 if 문과 Scanner를 통해 구현해보자!
