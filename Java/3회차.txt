@@ -670,6 +670,88 @@ public class ForTest {
 
 
 
+연습 문제 7.
+
+for 를 사용해서 2의 배수만 출력하도록 프로그래밍 해보자!
+방식이 두 가지가 정도 있을 수 있는데
+앞서 소개했던 꼼수와 정석이 있다.
+원하는 형식으로 만들어보자!
+
+public class Exercise7 {
+    public static void main(String[] args) {
+        // for 를 사용해서 2의 배수만 출력하도록 프로그래밍 해보자!
+        // 방식이 두 가지가 정도 있을 수 있는데
+        // 앞서 소개했던 꼼수와 정석이 있다.
+        // 원하는 형식으로 만들어보자!
+        System.out.println("실제 조건 검사 없이 짝수 판정하기");
+
+        for(int i = 2; i < 11; i += 2) {
+            System.out.println("i = " + i);
+        }
+
+        System.out.println("if 문을 활용한 짝수 판정");
+
+        for(int i = 1; i < 11; i++) {
+            if(i % 2 == 0) {
+                System.out.println("i = " + i);
+            }
+        }
+    }
+}
+
+
+
+연습 문제 8.
+
+1 ~ 30 까지의 숫자중 2 혹은 3의 배수는 더하고 5의 배수는 뺀다.
+혼동의 여지를 방지하기 위해
+10 처럼 2의 배수이면서 5의 배수가 되는 경우엔
+빼기도 하고 더하기도 하므로 결론적으로 0
+
+
+
+* 무한 루프(멈추지 않아 ~) 예제
+
+public class InfinityLoopTest {
+    public static void main(String[] args) {
+        // 조건이 없다 ? 무 조 건
+        for(;;) {
+            System.out.println("가즈아 ~");
+        }
+    }
+}
+
+
+
+* 증감부만 있는 무한 루프 예제
+
+public class InfinityLoopTest2 {
+    public static void main(String[] args) {
+        int i = 1;
+
+        for(;; i++) {
+            System.out.println("i = " + i);
+        }
+    }
+}
+
+
+
+
+연습 문제 9.
+
+주사위 게임을 해보자!
+이 주사위 게임의 규칙은 다음과 같다.
+홀수가 나오면 주사위를 계속해서 굴릴 수 있고
+마지막에 짝수가 나오면 주사위를 멈춘다.
+이때 마지막 주사위 눈금을 구하도록 프로그래밍 해보자!
+
+9-1) 먼저 주사위 눈금을 출력하도록 프로그래밍 해본다.
+9-2) 주사위 눈금이 홀수인지 판정해본다.
+9-3) 홀수가 판정되면 계속해서 주사위를 굴리도록 만들어본다.
+
+
+
 
 
 * 월요일, 화요일 리눅스 설치
