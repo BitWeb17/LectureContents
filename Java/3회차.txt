@@ -1,0 +1,199 @@
+* 문제 풀이
+
+3번.
+
+import java.util.Scanner;
+
+public class Exercise3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("아무런 숫자나 입력해보세요: ");
+
+        int num = scan.nextInt();
+        System.out.println("입력값은 = " + num);
+    }
+}
+
+
+
+4 번.
+
+import java.util.Scanner;
+
+public class Exercise4 {
+    public static void main(String[] args) {
+        System.out.println("5로 나눠서 1이 남는 숫자 찾기");
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("아무런 숫자나 입력해보세요: ");
+
+        int num = scan.nextInt();
+        System.out.println("입력값은 = " + num);
+
+        // num을 5로 나눠서 나머지가 1인가 ?
+        if(num % 5 == 1) {
+            System.out.println(num + "은(는) 5로 나눠서 1이 남는다.");
+        } else {
+            System.out.println(num + "은(는) 5로 나눠서 1이 남지 않는다.");
+        }
+    }
+}
+
+
+
+5 번.
+
+import java.util.Scanner;
+
+public class Exercise5 {
+    public static void main(String[] args) {
+        System.out.println("2의 n승을 판정해보자!");
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("아무런 숫자나 입력해보세요: ");
+
+        int num = scan.nextInt();
+        System.out.println("입력값은 = " + num);
+
+        // 2의 n승이란 ?
+        // 0000 0001    1
+        // 0000 0010    2
+        // >>>>>>>>>>>>>>
+        // 0000 0011    3
+        // <<<<<<<<<<<<<<
+        // 0000 0100    4
+        // >>>>>>>>>>>>>>
+        // 0000 0101    5
+        // <<<<<<<<<<<<<<
+        // >>>>>>>>>>>>>>
+        // 0000 0110    6
+        // <<<<<<<<<<<<<<
+        // 0000 1000    8
+        // 0001 0000    16
+        // 0010 0000    32
+        // 0100 0000    64
+        if(num == 0) {
+            System.out.println("0 입니다.");
+        }
+
+        // Q: 조건식에 괄호가 없으면 왜 오류인가 ?
+        // A: 아래 case A 코드를 보면 빨간줄이 나오는데
+        //    빨간줄에 커서를 갖다 대면 required type: boolean
+        //    provided type: int 라는 차이 보일 것이다.
+        //    컴퓨터가 요구하는 타입은 boolean(논리형)인데
+        //    사용자가 작성하여 제공한 타입이 int 형이기 때문에 오류!
+
+        //    case B의 경우엔 '==' 같은가요 ? 라는 질문이다.
+        //    이 질문에 대한 답은 yes(true) 혹은 no(false) 뿐이다.
+
+        //    boolean은 참 혹은 거짓을 표현하는 데이터 타입이다.
+
+        //    case C의 경우엔 에러 메시지가 아래와 같다.
+        //    Operator '&' cannot be applied to 'int', 'boolean'
+        //    비트 연산자 AND는 int와 boolean간에 적용이 불가능하다.
+        //    산술 비트 연산은 정수형 변수 혹은 상수(3, 5 등등)끼리 가능하다.
+        //    연산자 우선순위가 & 보다 == 이 높아서 이런 현상이 발생함
+        
+        // Q: case A의 괄호는 조건이 아닌가요 ?
+        // A: 단순히 산술 연산식입니다.
+        //    조건이 되려면 case B나 C처럼 질문을 해야함.
+        //    그러면 질문의 대한 답이 false(거짓) 혹은 true(참)으로 나옴
+
+        // case A: if(num & (num - 1))
+        // case B: if( (num & (num - 1)) == 0)
+        // caes C: if(num & (num - 1) == 0)
+        
+        // Q: 2이 n승을 판정하는 알고리즘이 이해가 안갑니다.
+        // A: 일단은 2의 n승이 가지는 특성을 살펴봐야 한다.
+        //    대표적인 특성이 2의 n승과 2의 n승 - 1 의 특성임
+
+        // 15 = 01111(2): 2^4 - 1
+        // 16 = 10000(2): 2^4
+        //
+        // 7 = 00111(2): 2^3 - 1
+        // 8 = 01000(2): 2^3
+        //
+        // 3 = 00011(2): 2^2 - 1
+        // 4 = 00100(2): 2^2
+
+        // 2진수 특성상 2의 n승에서 1을 빼면
+        // 해당 자리수가 0 이되고 나머지 아래의 자리값은 모두 최대값이 된다.
+        
+        // 10000 - 1
+        //  9999
+
+        // 16 8 4 2 1
+        //  1 0 0 0 0 (2) - 00001(2)
+        //  0 1 1 1 1 (2)   AND: 같은 자리수에 서로 값이 참(1)인 경우에만 참(1)
+        // ------------------
+        //  0 0 0 0 0 (2)
+
+        //  0 1 1 1 1 (2)
+        //  0 1 0 0 0 (2)
+
+        //  2의 n승과 2의 n승 - 1의 AND는 어떤 상황에서든지 0을 만들게 된다.
+
+        // Q: 2^n + 1을 XOR로 하면 안될까요 ?
+        // A: 아래와 같이 기준(결과값 31, 15 등등)이 모호하게 됩니다.
+
+        //  0 1 1 1 1 (2):  15
+        //  1 0 0 0 0 (2):  16   XOR
+        // -------------------------
+        //  1 1 1 1 1    :  31
+
+        //  0 1 1 1 (2):  7
+        //  1 0 0 0 (2):  8   XOR
+        // -------------------------
+        //  1 1 1 1    :  15
+
+        // Q: (num ^ (num + 1)) == (num + (num+1))는 안될까요 ?
+        // A: (num & (num - 1)) == 0 위의 케이스와 현재 케이스의 비교시
+        //    연산량이 위의 케이스가 더 많습니다.
+        //    프로그램 최적화 차원에서
+        //    위의 케이스보다 아래의 케이스가 조금 더 효율적입니다.
+        //    문제를 풀 수는 있습니다 - 속도가 조금 떨어질뿐
+
+        // int res = num & (num - 1);
+        if( (num & (num - 1)) == 0 ) {
+            System.out.println("입력 숫자 " + num + "은 2의 n승입니다.");
+        } else {
+            System.out.println("입력 숫자 " + num + "은 2의 n승이 아닙니다.");
+        }
+    }
+}
+
+
+
+6 번.
+
+import java.util.Scanner;
+
+public class Exercise6 {
+    public static void main(String[] args) {
+        // 1500이 입력되면 정지하는 시스템이 있다.
+        // 입력값은 1000 ~ 2000 사이의 숫자다.
+        // (아직 랜덤을 배우지 않았으므로 키보드 입력으로 처리한다)
+        // 1470 이하의 값을 넣으면 후진
+        // 1530 이상의 값을 넣으면 전진한다.
+        // 1471 ~ 1529 전체가 정지 구간
+        // 999 이하 정지, 2001 이상도 정지
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("제어 pwm을 입력하세요: ");
+        int pwm = scan.nextInt();
+
+        System.out.println("당신이 입력한 pwm 값: " + pwm);
+        
+        if(pwm > 2000) {        // pwm이 2000 보다 크다면
+            System.out.println("잘못된 값 입력!");
+        } else if(pwm >= 1530) {// pwm이 1530 보다 크다면 && 2000 보다 작거나 같다면
+            System.out.println("전진");
+        } else if(pwm > 1470) { // pwm이 1470 보다 크다면 && 1530 보다 작다면
+            System.out.println("정지");
+        } else if(pwm > 999) {  // pwm이 999 보다 크다면 && 1470 보다 작거나 같다면
+            System.out.println("후진");
+        } else {                // pwm이 999 보다 작거나 같다면
+            System.out.println("잘못된 값 입력!");
+        }
+    }
+}
