@@ -842,15 +842,123 @@ public class InfinityLoopTest2 {
 홀수가 나오면 주사위를 계속해서 굴릴 수 있고
 마지막에 짝수가 나오면 주사위를 멈춘다.
 이때 마지막 주사위 눈금을 구하도록 프로그래밍 해보자!
+(마지막 눈금은 모든 주사위 눈금의 합산값이다)
 
 9-1) 먼저 주사위 눈금을 출력하도록 프로그래밍 해본다.
+
+public class Exercise9_1 {
+    public static void main(String[] args) {
+        // 먼저 주사위 눈금을 출력하도록 프로그래밍 해본다.
+        int dice = (int)(Math.random() * 6) + 1;
+
+        System.out.println("주사위 눈금 = " + dice);
+    }
+}
+
+
+
 9-2) 주사위 눈금이 홀수인지 판정해본다.
+
+public class Exercise9_2 {
+    public static void main(String[] args) {
+        // 주사위 눈금이 홀수인지 판정해본다.
+        int dice = (int)(Math.random() * 6) + 1;
+
+        System.out.println("주사위 눈금 = " + dice);
+
+        if(dice % 2 == 0) {
+            System.out.println("짝수 입니다.");
+        } else {
+            System.out.println("홀수 입니다.");
+        }
+    }
+}
+
+
+
 9-3) 먼저 무한루프에서 주사위가 굴러가도록 만든다.
+
+public class Exercise9_3 {
+    public static void main(String[] args) {
+        // 먼저 무한루프에서 주사위가 굴러가도록 만든다.
+        for(;;) {
+            int dice = (int)(Math.random() * 6) + 1;
+
+            System.out.println("주사위 눈금 = " + dice);
+
+            if(dice % 2 == 0) {
+                System.out.println("짝수 입니다.");
+            } else {
+                System.out.println("홀수 입니다.");
+            }
+        }
+    }
+}
+
+
+
 9-4) 특정 조건에서 반복이 멈추도록 만들어보자!
+
+public class Exercise9_4 {
+    public static void main(String[] args) {
+        // 특정 조건에서 반복이 멈추도록 만들어보자!
+        for(;;) {
+            int dice = (int)(Math.random() * 6) + 1;
+
+            System.out.println("주사위 눈금 = " + dice);
+
+            if(dice % 2 == 0) {
+                System.out.println("짝수 입니다.");
+                break;
+            } else {
+                System.out.println("홀수 입니다.");
+            }
+        }
+    }
+}
+
+
+
 9-5) 내용을 결합하여 9번 문제를 마무리해보자!
        
+public class Exercise9_5 {
+    public static void main(String[] args) {
+        // 내용을 결합하여 9번 문제를 마무리해보자!
+        int diceSum = 0;
+
+        for(;;) {
+            int dice = (int)(Math.random() * 6) + 1;
+
+            System.out.println("주사위 눈금 = " + dice);
+
+            diceSum += dice;
+
+            if(dice % 2 == 0) {
+                // diceSum += dice;
+                System.out.println("짝수 입니다.");
+                break;
+            } else {
+                // diceSum += dice;
+                // Q: 위의 주석 달린 부분 처럼 하면 안되는 이유 ?
+                // A: 안될 이유는 딱히 없긴합니다.
+                //    효율성 측면에서 두 번 적어야 한다는 차이가 있습니다.
+                //    어차피 양쪼에서 다 진행할 작업이라면
+                //    한 번만 적어서 보다 효율적으로 처리하는 부분입니다.
+                System.out.println("홀수 입니다.");
+            }
+        }
+
+        System.out.println("최종 결과 = " + diceSum);
+    }
+}
 
 
+
+* 주사위 문제.
+
+주사위를 10 번 굴려서 홀수는 더하고 짝수는 뺀다.
+10번 굴린 이후의 주사위 눈금을 구하도록 프로그래밍 해보자!
+(주사위 눈금의 총합을 구하면 된다)
 
 
 
