@@ -260,3 +260,252 @@ public class RandomInst {
     }
 }
 
+
+
+* while 예제
+
+public class WhileTest {
+    public static void main(String[] args) {
+        // 1 ~ 10 까지 출력해보기 ~
+        int num = 1;
+
+        // while 문을 작성하는 방법
+        // 1. while을 적고 괄호를 열고 닫고 중괄호를 열고 닫는다.
+        // 2. 괄호 안에 조건을 작성한다.
+        //    (조건이 만족하는 동안 반복)
+        // 3. 반복시킬 내용을 중괄호 내부에 작성한다.
+
+        // num < 11이 조건이 되었으며
+        // Phase 1) 현재 num값이 1 이므로 조건은 참이 된다.
+        // Phase 2) 다시 위의 조건을 검사하고 num은 2이므로 참이다.
+        // .......
+        // Phase 10) 현재 num은 10일 것임
+        // Phase 11) 현재 num이 11이므로 조건이 거짓이 된다.
+        while(num < 11) {
+            // Phase 1) 현재 num 값을 뿌리고 num 값을 1 증가시킨다.
+            // Phase 2) 현재 num 값을 뿌리고 num 값을 1 증가
+            // ........
+            // Phase 10) 현재 num 값을 뿌리고 num 값을 1 증가
+            System.out.println("num = " + num++);
+        }
+
+        System.out.println("마지막 num = " + num);
+    }
+}
+
+
+
+* 응용 문제 1.
+
+2 ~ 19 사이의 숫자를 출력해보자!
+
+public class Quiz1 {
+    public static void main(String[] args) {
+        // 2 ~ 19 사이의 숫자를 출력해보자!
+        int num = 2;
+
+        while(num < 20) {
+            System.out.println("num = " + num++);
+        }
+    }
+}
+
+
+
+* 응용 문제 2.
+
+2 ~ 19 사이의 숫자중 짝수만 찾아보자!
+
+public class Quiz2 {
+    public static void main(String[] args) {
+        // 2 ~ 19 사이의 숫자중 짝수만 찾아보자!
+        int num = 2;
+
+        while(num < 20) {
+            // if문 내부에 num++이 들어있을 경우
+            // 조건을 만족하는 경우에만 +1이 되므로
+            // 무한 반복을 하며 같은 숫자만 출력하게 된다.
+            if(num % 2 == 0) {
+                System.out.println("num = " + num);
+            }
+
+            // 조건에 관계없이 지속적으로 값을 상승시키기 위함
+            num++;
+        }
+    }
+}
+
+
+
+* 응용 문제 3.
+
+2 ~ 19 사이의 숫자중 짝수의 합을 구해보자!
+
+public class Quiz3 {
+    public static void main(String[] args) {
+        // 2 ~ 19 사이의 숫자중 짝수의 합을 구해보자!
+        int num = 2;
+        int sum = 0;
+
+        while(num < 20) {
+            if(num % 2 == 0) {
+                System.out.println("num = " + num);
+                // sum = sum + num 과 동의어
+                sum += num;
+                // sum = sum - num
+                // sum -= num
+
+                // sum = sum * num
+                // sum *= num
+
+                // sum = sum / num
+                // sum /= num
+
+                // sum = sum % num
+                // sum %= num
+            }
+
+            num++;
+        }
+
+        // 2 ~ 18
+        // 2 4 6 8 10 12 14 16 18
+        System.out.println("2 ~ 19 까지 짝수들의 합 = " + sum);
+    }
+}
+
+
+
+* 응용 문제 4.
+
+A의 주사위와 B의 주사위를 만들고
+주사위를 각자 굴려서
+더 높은 숫자가 나온 사람이 이기게 만들어보자!
+
+import java.util.Random;
+
+public class Quiz4 {
+    public static void main(String[] args) {
+        // A의 주사위와 B의 주사위를 만들고
+        // 주사위를 각자 굴려서
+        // 더 높은 숫자가 나온 사람이 이기게 만들어보자!
+        Random rand = new Random();
+
+        int i = 0;
+
+        while(i < 100) {
+            int diceA = (int) (Math.random() * 6) + 1;
+            int diceB = rand.nextInt(6) + 1;
+
+            // System.out.printf
+            // System.out.println
+            // System.out.print
+            // 각각의 차이점은 무엇인가 ?
+            // print는 단순히 출력을 수행하며 앤터 입력이 제외된다.
+            // println은 출력과 함께 앤터가 입력된다.
+            // printf는 특정한 포맷(서식)을 가지고 출력된다.
+            // 여기서 %d 와 \n 은 서식에 해당한다.
+            // \n의 경우가 앤터 입력에 해당한다.
+            // %d %d %d 형식으로 오게 될 경우
+            // 구분자 ',' 를 통해 각각에 값이 대입되는 형식으로 사용됨
+            // 주의할점은 %d의 경우 정수형(int)만 가능하며
+            // %f의 경우 실수형(float, double)만 가능하다.
+
+            // printf의 장점:
+            // System.out.printf("A 승리! %d vs %d\n", diceA, diceB);
+            // System.out.println("A 승리! " + diceA + " vs " + diceB);
+
+            if (diceA > diceB) {
+                System.out.printf("A 승리! %d vs %d\n", diceA, diceB);
+            } else if (diceA < diceB) {
+                System.out.printf("B 승리! %d vs %d\n", diceA, diceB);
+            } else {
+                System.out.printf("무승부! %d vs %d\n", diceA, diceB);
+            }
+
+            i++;
+        }
+    }
+}
+
+
+
+* 응용 문제 5.
+
+피보나치 수열을 프로그래밍으로 구현해보자!
+구체적으로 13번째 항의 숫자를 구하도록 만들어보자!
+
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, .......
+
+힌트
+
+1) 숫자가 올라가는 규칙을 찾아야 한다.
+2) 구현을 한다 했을 경우 while() 을 사용해야함
+3) 첫번째 더할값, 두번째 더할값, 계산한 값의 변수가 3개 필요함
+
+public class Quiz5 {
+    public static void main(String[] args) {
+        // 피보나치 수열을 프로그래밍으로 구현해보자!
+        // 구체적으로 13번째 항의 숫자를 구하도록 만들어보자!
+        //
+        // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, .......
+        //
+        // 힌트
+        //
+        // 1) 숫자가 올라가는 규칙을 찾아야 한다.
+        // 2) 구현을 한다 했을 경우 while() 을 사용해야함
+        // 3) 첫번째 더할값, 두번째 더할값, 계산한 값의 변수가 3개 필요함
+
+        // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, .......
+        final int TARGET = 13;
+        final int ALREADY = 2;
+
+        int loop = 0;
+        int first = 1, second = 1, res = 0;
+
+        // first   second   res
+        //   1       1       2
+        //   1       2       3
+        //   2       3       5
+        //   3       5       8
+
+        // 2는 왜 빼나요 ?
+        // 첫번째 항 + 두 번째 항 = 결과
+        while(loop < TARGET - ALREADY) {
+            res = first + second;
+            first = second;
+            second = res;
+
+            loop++;
+        }
+
+        System.out.println("res = " + res);
+    }
+}
+
+
+
+* 응용 문제 6.
+
+1, 1, 3, 4, 5, 8, 12, 17, 25, 37, 54, 79, ...
+위 수열에서 20번째 숫자를 찾도록 프로그래밍 해보자!
+
+
+
+
+* 월요일, 화요일 리눅스 설치
+
+- 자기 소개서 작성: 해당 내용을 기준으로 1:1 면담 진행
+
+1) 전공(세부 사항을 작성해주세요)
+    기계공학 - 캐드, 물리 같은것들 ...
+    전자공학 - 회로 설계, 펌웨어, C ...
+    컴퓨터공학 - 컴퓨터 구조, 운영체제, 자바 ...
+    업무로 했던 일 - 솔루션 개발, 차량 펌웨어 개발 등등
+2) 어떤 공부를 해왔는지
+3) 어떠한 목적을 가지고 이 과정을 듣게 되었는지
+4) 현재 제일 관심있는 분야가 무엇인지
+5) 앞으로의 포부
+
+
+
