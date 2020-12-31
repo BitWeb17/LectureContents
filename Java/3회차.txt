@@ -577,13 +577,97 @@ public class ContinueTest {
 
 
 
-퀴즈 1.
+퀴즈 7.
 
 1 ~ 10 까지의 숫자중 7을 만나면 종료하도록 출력해보자!
 
-퀴즈 2.
+public class Quiz7 {
+    public static void main(String[] args) {
+        // 1 ~ 10 까지의 숫자중 7을 만나면 종료하도록 출력해보자!
+        final int TARGET = 11;
+        int i = 1;
+
+        while(i < TARGET) {
+            if(i == 7) {
+                break;
+            }
+
+            System.out.println("i = " + i);
+
+            i++;
+        }
+    }
+}
+
+
+
+퀴즈 8.
 
 1 ~ 10 까지의 숫자중 8만 제외하고 출력해보자!
+
+public class Quiz8 {
+    public static void main(String[] args) {
+        // 1 ~ 10 까지의 숫자중 8만 제외하고 출력해보자!
+        final int MAX = 10;
+        int i = 0;
+
+        while(i < MAX) {
+            i++;
+
+            if(i == 8) {
+                continue;
+            }
+
+            System.out.println("i = " + i);
+        }
+    }
+}
+
+
+
+* for 문 예제
+
+public class ForTest {
+    public static void main(String[] args) {
+        int i;
+
+        // for 문을 작성하는 방법
+        // 1. for를 적고 소괄호를 열고 닫고 중괄호를 열고 닫는다.
+        // 2. for의 소괄호 구성은 아래와 같다.
+        //    (초기화; 조건; 증감부) 형식으로 구성된다.
+        //    초기화 부분이 없을 수도 있으며
+        //    조건이 없을 수도 있고
+        //    증감부가 없을 수도 있다.
+        //    모든것이 없다면 무한 루프가 될 수 있다.
+        // 3. 중괄호 내부에는 while 과 마찬가지로 반복시킬 내용을 작성한다.
+        
+        // for 문을 보는 방법
+        // for(i = 0; i < 3; i++) 의 의미는 무엇인가 ?
+        // i = 0: 초기화 부분
+        // 초기화 부분은 for 문 진입시 최초로 한 번만 수행된다.
+        // 반복하는 도중에는 초기화 부분을 실행하지 않는다.
+        // i < 3: 조건이 만족되는 동안 반복을 한다.
+        // i++: 증감은 i += 2 와 같은 형식으로도 작성이 가능하다.
+        
+        // 동작 과정
+        // 초기화: 최초로 한 번만
+        // 조건: 조건이 만조되는 동안만 반복 -> 조건이 만족되면 중괄호로 이동
+        // 증감부: 값을 증가하거나 감소시킴 -> 증감 이후에 조건을 확인함
+        for(i = 0; i < 3; i++) {
+            System.out.println("i = " + i);
+            // 중괄호 내용이 완료되면 증감부로 이동한다.
+        }
+
+        for(int j = 0; j < 4; j++) {
+            System.out.println("j = " + j);
+        }
+
+        System.out.println("나는 여기서도 나와 = " + i);
+        // System.out.println("나는 왜 안돼 ? " + j);
+        // 더 이상 main 내에서 j가 살아있는 변수가 아니기 때문이다.
+    }
+}
+
 
 
 
