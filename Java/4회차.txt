@@ -1,3 +1,41 @@
+ * 숙제 코드
+
+import java.util.Random;
+
+public class DiceHomework {
+    public static void main(String[] args) {
+        // 주사위를 10 번 굴려서 홀수는 더하고 짝수는 뺀다.
+        // 10번 굴린 이후의 주사위 눈금을 구하도록 프로그래밍 해보자!
+        // (주사위 눈금의 총합을 구하면 된다)
+        Random rand = new Random();
+
+        System.out.println(
+                "주사위를 10 번 굴려서 홀수는 더하고 짝수는 뺀다.");
+
+        int diceSum = 0;
+        int evenSum = 0, oddSum = 0;
+
+        for(int i = 0; i < 10; i++) {
+            int dice = rand.nextInt(6) + 1;
+            System.out.println("주사위 눈금 = " + dice);
+
+            if(dice % 2 == 0) {
+                evenSum += dice;
+                diceSum -= dice;
+            } else {
+                diceSum += dice;
+                oddSum += dice;
+            }
+        }
+
+        System.out.println("결과는 = " + diceSum);
+        System.out.println("짝수 합 = " + evenSum);
+        System.out.println("홀수 합 = " + oddSum);
+    }
+}
+
+
+
 * 16GB 정도의 USB가 하나 필요합니다.
   (포맷되니 데이터가 있다면 백업해두세요)
 
@@ -21,6 +59,11 @@
     64-bit PC (AMD64) desktop image 를 누른다.
     그러면 우분투 이미지를 다운로드 받게 된다.
     (시동 디스크 만들기 위한 준비 과정)
+
+5. USB를 준비하도록 한다.
+
+6. 구글에서 Universal USB Installer 를 검색하도록 한다.
+    https://www.techspot.com/downloads/6153-universal-usb-installer.html
 
 
 
