@@ -1,0 +1,27 @@
+* 16GB 정도의 USB가 하나 필요합니다.
+  (포맷되니 데이터가 있다면 백업해두세요)
+
+1. 구글에서 Ubuntu Download라고 입력해보자!
+    그러면 Download Ubuntu Desktop 이라는 것이 보일 것이다.
+    클릭해서 들어간다.
+
+2. 사이트에 들어가면 20.04 가 보일텐데
+   하위 호환성을 고려한다면 18.04 가 좀 더 좋다.
+   단순한 애플리케이션 개발이라면 20.04 도 나쁘지 않지만
+   우리는 18.04 를 활용하도록 한다.
+   그러므로 Alternative downloads and torrents 를 클릭한다.
+
+3. 이동한 창에서 내려보면
+    Past releases and other flavours 에 있는
+    Ubuntu 18.04 를 활용하도록 한다.
+
+4. 클릭해서 들어가보면
+    Desktop image 와 Server image 가 있는데
+    데스크탑 이미지를 활용하도록 한다.
+    64-bit PC (AMD64) desktop image 를 누른다.
+    그러면 우분투 이미지를 다운로드 받게 된다.
+    (시동 디스크 만들기 위한 준비 과정)
+
+
+
+
