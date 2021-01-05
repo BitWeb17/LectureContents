@@ -368,4 +368,15 @@ sudo apt-get install git
 4) ls 를 통해 다운이 잘 되었는지 확인한다.
 5) tar zxvf openjdk-11.0.2_linux-x64_bin.tar.gz
 6) sudo mv jdk-11.0.2 /usr/local/
-7) 
+7) vi ~/.bashrc
+
+편집기를 열고 맨 아래로 이동해서 아래를 작성한다.
+
+export JAVA_HOME=/usr/local/jdk-11.0.2
+export PATH=$PATH:$JAVA_HOME/bin/
+
+* 주의 사항
+
+위의 파일은 윈도우의 시스템 설정과 동일하므로
+입력 모드 설정, 커맨드 모드 설정시 매우 주의해야 한다.
+잘못될 경우 재설치를 해야할 수도 있으므로 신중하자!
