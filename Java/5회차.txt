@@ -387,6 +387,19 @@ export PATH=$PATH:$JAVA_HOME/bin/
 
 
 
+* 깃 명령어
+
+- git clone 주소
+  해당 주소의 내용을 복사해옴
+- git status
+  현재 변경 상태나 파일 추적 상태를 보여줌
+- git commit -am "메시지"
+  작업한 내용 및 변경 사항을 업데이트함
+- git push origin main
+  커밋이 완료되었으므로 실제 깃헙 웹사이트에 내용을 저장함
+
+
+
 * 내일 진행할 내용
 
 1) 숙제 리뷰
