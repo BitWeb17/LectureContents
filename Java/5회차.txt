@@ -299,19 +299,31 @@ sudo apt-get install git
 8) sudo dpkg -i google-chrome-stable_current_amd64.deb
 실제 설치하는 과정
 
-cd ~
-vi .chrome-remote-desktop-session
+9) cd ~
 
-편집기로 파일을 연 상태에서 startxfce4 를 적고 저장하고 나간다.
-   
+10) vi .chrome-remote-desktop-session
+    편집기로 파일을 연 상태에서 startxfce4 를 적고 저장하고 나간다.
 
+11) https://remotedesktop.google.com/access/ 에 접속
 
-mv ~/Downloads/chrome-remote-desktop_current_amd64.deb ./
-sudo dpkg -i ~/sw/chrome-remote-desktop_current_amd64.deb
-sudo apt-get install -f
-sudo usermod -a -G chrome-remote-desktop bitweb
+12) 원격 액세스 설정에 있는 다운로드를 누르고 설치한다.
 
-systemctl status chrome-remote-desktop
-systemctl stop chrome-remote-desktop
-systemctl start chrome-remote-desktop
-sudo init 0
+13) cd sw
+14) mv ~/Downloads/chrome-remote-desktop_current_amd64.deb ./
+15) sudo dpkg -i ~/sw/chrome-remote-desktop_current_amd64.deb
+16) sudo apt-get install -f
+17) sudo usermod -a -G chrome-remote-desktop bitweb
+크롬 리모트 구동을 위한 프로그램 설치 및 권한 설정
+
+* 주희 사항 - 17번의 bitweb은 학원 컴퓨터 계정이므로
+            계정 이름이 학원 컴퓨터와 다르다면 본인이 만든 계정명을 입력해야 한다.
+
+18) systemctl status chrome-remote-desktop
+19) systemctl stop chrome-remote-desktop
+20) systemctl start chrome-remote-desktop
+21) sudo init 0
+서비스 구동 여부를 확인하고 재부팅함
+
+22) 재부팅 완료 이후 다시 아래 사이트에 접속한다.
+    https://remotedesktop.google.com/access/ 에 접속
+23) 원격 액세스 설정
