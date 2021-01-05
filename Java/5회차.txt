@@ -357,3 +357,11 @@ sudo apt-get install git
    sudo snap remove intellij-idea-community
    
 6) 정상적으로 지운 이후 IntelliJ Community 버전 구동을 확인한다.
+
+
+
+* OpenJDK(리눅스 진영에서 해킹한 자바) 설치
+
+1) cd sw
+2) sudo apt install curl
+3) curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
