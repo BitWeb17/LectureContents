@@ -269,3 +269,41 @@ sudo apt-get install git
 3) tar zxvf jetbrains-toolbox-1.19.7784.tar.gz
 4) cd jetbrains-toolbox-1.19.7784/
 5) ./jetbrains-toolbox
+
+
+
+* 구글 리모트 설정하기(구글이 리눅스 진영이지만 아쉽게도 ? 리눅스는 꽤 빡셉니다)
+
+1) 터미널 열기
+2) sudo apt-get install xfce4
+
+- xfce4는 원격 제어를 도와주는 소프트웨어 라이브러리
+
+3) sudo apt-get install ca-certificates
+
+- ca-certificates 는 인증 소프트웨어 라이브러리
+
+4) sudo apt-get install libappindicator1
+
+- libappindicator1 은 크롬 리모트를 제어하기 위한 서포트 라이브러리
+
+5) wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+cd ~
+vi .chrome-remote-desktop-session
+
+편집기로 파일을 연 상태에서 startxfce4 를 적고 저장하고 나간다.
+   
+
+mkdir sw
+cd sw
+mv ~/Downloads/chrome-remote-desktop_current_amd64.deb ./
+sudo dpkg -i ~/sw/chrome-remote-desktop_current_amd64.deb
+sudo apt-get install -f
+sudo usermod -a -G chrome-remote-desktop bitweb
+
+systemctl status chrome-remote-desktop
+systemctl stop chrome-remote-desktop
+systemctl start chrome-remote-desktop
+sudo init 0
