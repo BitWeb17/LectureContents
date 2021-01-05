@@ -332,4 +332,28 @@ sudo apt-get install git
 
 22) 재부팅 완료 이후 다시 아래 사이트에 접속한다.
     https://remotedesktop.google.com/access/ 에 접속
-23) 원격 액세스 설정
+23) 원격 액세스 설정 -> 사용 -> 컴퓨터 이름 지정 -> 핀 번호 할당
+24) 접속 테스트
+
+
+
+* JetBrains Toolbox 가 잘못 설치되었을 때 지우는 방법
+
+1) vi ~/.config/autostart/jetbrains-toolbox.desktop
+   내용 확인후 essential 키워드가 없다면
+   rm ~/.config/autostart/jetbrains-toolbox.desktop
+
+2) vi ~/.local/share/JetBrains/Toolbox
+   내용 확인후 essential 키워드가 없다면
+   rm -rf ~/.local/share/JetBrains/Toolbox
+
+3) vi ~/.local/share/applications/jetbrains-toolbox.desktop
+   내용 확인후 essential 키워드가 없다면
+   rm ~/.local/share/applications/jetbrains-toolbox.desktop
+
+4) sudo reboot
+
+5) 재부팅 이후에 아래 명령을 입력한다.
+   sudo snap remove intellij-idea-community
+   
+6) 정상적으로 지운 이후 IntelliJ Community 버전 구동을 확인한다.
