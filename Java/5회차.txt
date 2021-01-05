@@ -365,3 +365,7 @@ sudo apt-get install git
 1) cd sw
 2) sudo apt install curl
 3) curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
+4) ls 를 통해 다운이 잘 되었는지 확인한다.
+5) tar zxvf openjdk-11.0.2_linux-x64_bin.tar.gz
+6) sudo mv jdk-11.0.2 /usr/local/
+7) 
