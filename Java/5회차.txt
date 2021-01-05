@@ -287,8 +287,17 @@ sudo apt-get install git
 
 - libappindicator1 은 크롬 리모트를 제어하기 위한 서포트 라이브러리
 
-5) wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+5) mkdir sw
+소프트웨어 관리용 디렉토리 생성
+
+6) cd sw
+관리용 디렉토리로 이동
+
+7) wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+크롬 안정 버전을 설치하기 위한 작업
+
+8) sudo dpkg -i google-chrome-stable_current_amd64.deb
+실제 설치하는 과정
 
 cd ~
 vi .chrome-remote-desktop-session
@@ -296,8 +305,7 @@ vi .chrome-remote-desktop-session
 편집기로 파일을 연 상태에서 startxfce4 를 적고 저장하고 나간다.
    
 
-mkdir sw
-cd sw
+
 mv ~/Downloads/chrome-remote-desktop_current_amd64.deb ./
 sudo dpkg -i ~/sw/chrome-remote-desktop_current_amd64.deb
 sudo apt-get install -f
