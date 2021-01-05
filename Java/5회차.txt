@@ -303,6 +303,12 @@ sudo apt-get install git
 
 10) vi .chrome-remote-desktop-session
     편집기로 파일을 연 상태에서 startxfce4 를 적고 저장하고 나간다.
+    
+* 주의 사항
+  vi 명령어는 커맨드 모드, 입력 모드가 있는데
+  입력 모드는 i 키, 혹은 a 키를 통해 사용할 수 있다.
+  esc 키를 누르면 커맨드 모드가 된다.
+  저장하고 나가기는 커맨드 모드에서 :wq 
 
 11) https://remotedesktop.google.com/access/ 에 접속
 
