@@ -1,0 +1,83 @@
+숙제 2. 프로그래밍 문제
+
+1 ~ 100까지의 숫자를 모두 더해서 출력해보자!
+
+class FifthHomework2 {
+  public static void main(String[] args) {
+    int i, sum = 0;
+    
+    for(i = 1; i <= 100; i++) {
+      sum += i;
+    }
+    
+    System.out.println("1 ~ 100까지의 합 = " + sum);
+  }
+}
+
+숙제 3. 프로그래밍 문제
+
+시작 값을 입력 받도록 하고
+끝나는 값을 입력 받도록 만들어서 시작 ~ 끝까지의 합을 출력해보자!
+
+import java.util.*;
+
+class FifthHomework3 {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    
+    System.out.print("시작값을 입력하세요: ");
+    int start = scan.nextInt();
+    
+    System.out.print("끝값을 입력하세요: ");
+    int end = scan.nextInt();
+    
+    int i, sum = 0;
+    
+    for(i = start; i <= end; i++) {
+      sum += i;
+    }
+    
+    System.out.printf("%d ~ %d까지의 합 = %d\n",
+                        start, end, sum);
+  }
+}
+
+숙제 4. 프로그래밍 문제
+
+주사위 3 개를 굴려서 가장 큰 숫자가 나온 사람이 이기게 만들자!
+사람은 총 3명(A, B, C)가 있다고 가정한다.
+
+class FifthHomework3 {
+  public static void main(String[] args) {
+    int diceA = (int)(Math.random() * 6) + 1;
+    int diceB = (int)(Math.random() * 6) + 1;
+    int diceC = (int)(Math.random() * 6) + 1;
+    
+    System.out.printf("A = %d, B = %d, C = %d\n",
+                        diceA, diceB, diceC);
+    
+    if(diceA > diceB) {
+      if(diceA > diceC) {
+        System.out.println("A 승리!");
+      } else if(diceC > diceA) {
+        System.out.println("C 승리!");
+      } else {
+        System.out.println("무승부");
+      }
+    } else if(diceB > diceA) {
+      if(diceB > diceC) {
+        System.out.println("B 승리!");
+      } else if(diceC > diceB) {
+        System.out.println("C 승리!");
+      } else {
+        System.out.println("무승부");
+      }
+    } else {  // A 와 B 가 같다
+      if(diceA > diceC) {
+        System.out.println("A - B 무승부");
+      } else {
+        System.out.println("C 승리!");
+      }
+    }
+  }
+}
