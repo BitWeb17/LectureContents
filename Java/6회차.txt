@@ -54,3 +54,29 @@ readonly 가 나오는 것은 ls -a, ls -al 명령을 입력해서
 
 rm: 파일 삭제 명령어
 rm -rf: 디렉토리 삭제
+
+
+
+* 연습 문제
+
+1) 홈 디렉토리로 이동한다.
+   이동 이후에 practice 라는 디렉토리를 만든다.
+   practice 디렉토리 내부에 java 폴더를 만든다.
+   그리고 practice 디렉토리 내부에 javascript 폴더를 만든다.
+   
+2) 1 번에서 만들었던 practice 디렉토리에 wrong 디렉토리를 만든다.
+   여기에 아무런 내용이나 vi 를 사용하여 기록해본다.
+
+3) 2 번에서 만든 wrong 디렉토리를 지워보자!
+
+4) practice 디렉토리에 test 폴더를 만든다.
+   이후 test 폴더에서 vi 로 파일을 편집하도록 한다.
+   아래 내용을 편집하도록 한다.
+   
+Hello Java Programming on Linux ~~!!~!
+위의 내용을 15줄 동일하게 생성한다.
+
+5) 위에서 만든 파일의 내용을 3줄 지워보자
+
+6) Java 를 JavaScript 로 변경해보자
+
