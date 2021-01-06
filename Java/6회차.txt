@@ -80,3 +80,23 @@ Hello Java Programming on Linux ~~!!~!
 
 6) Java 를 JavaScript 로 변경해보자
 
+
+
+* Git(깃) 활용하기
+
+- 사본과 원본 연결하기
+
+1) cd proj
+2) git clone (GroupStudy의 사본 주소)
+   위 명령을 통해서 사본의 내용을 내 컴퓨터에 저장한다.
+3) cd GroupStudy
+4) git remote -v 를 통해서 origin 과 upstream 을 확인한다.
+   만약 upstream 이 없다면 명령을 통해 추가해야 한다.
+5) git remote add upstream (GroupStudy의 원본 주소)
+6) git fetch upstream 을 통해 다운 받을 정보를 받아온다.
+7) git merge upstram/main 을 통해 실제 컴퓨터에 원본 내용을 저장한다.
+8) git push origin main
+   최종적으로 우리의 사본에 업데이트가 된다.
+9) 내용을 추가했다면 git add -> git commit -> git push 순으로 진행한다.
+10) 내 사본에 업데이트 된 것을 확인하고 PR(Pull Request)를 넣는다.
+11) 관리자가 승인하면 원본에 내용이 업데이트 된 것을 확인할 수 있다.
