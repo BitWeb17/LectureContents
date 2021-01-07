@@ -15,6 +15,9 @@ class TriangleBonus {
     public float calcArea() {
         // v11 v12 v13
         // v21 v22 v23
+        // 두 벡터의 외적을 계산하고
+        // 계산되어 나온 벡터의 크기가 결국 평행사변형의 넓이이므로
+        // 절반으로 나누면 삼각형의 넓이가 된다.
         return 0.5f * (float)Math.sqrt(
                 Math.pow(v1[0] * v2[1] - v1[1] * v2[0], 2) +
                 Math.pow(v1[2] * v2[1] - v1[1] * v2[2], 2) +
