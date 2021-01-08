@@ -6,6 +6,33 @@ public class RandomAlloc {
 
     int[] employee;
 
+    public void prepareArray() {
+        int randNum = (int)(Math.random() * 11) + 5;
+
+        // 배열의 크기를 랜덤
+        employee = new int[randNum];
+    }
+
+    public void setRandomArray() {
+        for(int i = 0; i < employee.length; i++) {
+            // 배열에 대입하는 값을 랜덤으로
+            employee[i] = ((int)(Math.random() * 10) + 3) * 333;
+        }
+    }
+
+    public int getArrayEvenNumberCount() {
+        int cnt = 0;
+
+        for(int i = 0; i < employee.length; i++) {
+            if(employee[i] % 2 == 0) {
+                cnt++;
+            }
+        }
+
+        return cnt;
+    }
+
+    // prepareEmployee ---> prepareArray
     public void prepareEmployee(int num) {
         employee = new int[num];
     }
@@ -73,13 +100,30 @@ public class RandomAlloc {
         int cnt = 1;
 
         for(int i = 0; i < employee.length; i++) {
-            System.out.printf("%3d", employee[i]);
+            System.out.printf("%5d", employee[i]);
             //System.out.printf("%3d", i);
 
             if(cnt % 5 == 0) {
                 System.out.println("");
             }
             cnt++;
+        }
+    }
+
+    public void printPrice() {
+        // 규칙: 꽝 - 짝수
+        //      7의 배수 - 1000만원
+        //      3의 배수 - 100만원
+        for(int i = 0; i < employee.length; i++) {
+            if(employee[i] % 2 == 0) {
+                System.out.println("내년을 기약하세요 ㅠㅠ 꽝입니다.");
+            } else if(employee[i] % 7 == 0) {
+                System.out.println(
+                        "당첨입니다 - 통장으로 1000만원이 입금되었습니다.");
+            } else if(employee[i] % 3 == 0) {
+                System.out.println(
+                        "당첨입니다 - 통장으로 100만원이 입금되었습니다.");
+            }
         }
     }
 }
