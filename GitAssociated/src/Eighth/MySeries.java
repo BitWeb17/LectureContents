@@ -1,8 +1,8 @@
 package Eighth;
 
 public class MySeries {
-    public final int AND = 1;
-    public final int OR = 2;
+    public final int AND = 3;
+    public final int OR = 4;
 
     // 이름이 같은 매서드의 입력 인자가 달라지면
     // 매서드 오버로딩이 일어나면서 양쪽을 모두 사용할 수 있게 된다.
@@ -39,8 +39,6 @@ public class MySeries {
                                 int orderNum1, int orderNum2,
                                 final int ORDER) {
         int cnt = 1;
-
-
 
         for(int i = start; i <= end; i++) {
             // OR 인지 AND 인지에 따라 다른 동작을 취해야함
@@ -82,5 +80,28 @@ public class MySeries {
         }
 
         return sum;
+    }
+
+    public void fibnacciSeries(int n) {
+        int first = 1;
+        int second = 1;
+        int res = 0;
+        int cnt = 1;
+
+        n -= 2;
+
+        System.out.printf("%4d%4d", first, second);
+
+        while(n-- > 0) {
+            res = first + second;
+            first = second;
+            second = res;
+            System.out.printf("%4d", res);
+
+            if(cnt % 5 == 3) {
+                System.out.println("");
+            }
+            cnt++;
+        }
     }
 }
