@@ -17,6 +17,13 @@ class ContainerManager {
 
         System.out.println("물류 창고로 넘어온 화물의 개수 = " + container);
 
+        // AND NOT: 부정후 AND
+        // 결국 base 값인 64 의 배수로 container 를 강제 정렬함을 의미한다.
+        // 이 결과는 무조건적으로 base 값인 64 의 배수로만 나오게 됨
+        // 연산 순위는 ~(NOT)이 먼저 계산되고
+        // 이후에 AND 연산이 진행된다.
+
+        // 공식: 어떤수 & ~(2^n - 1) = 2^n 의 배수
         return container & ~(base - 1);
     }
 
