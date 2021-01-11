@@ -1,11 +1,16 @@
 package Ninth;
 
+import java.util.Scanner;
+
 public class MyDice {
     int ruleNum;
     int playerNum;
     int numOfDice;
     int[] sumOfDice;
     int[] playerArr;
+
+    boolean octahedronGame;
+    Scanner scan;
 
     public MyDice(int playerNum, int numOfDice, int ruleNum) {
         this.playerNum = playerNum;
@@ -28,6 +33,77 @@ public class MyDice {
         }
     }
 
+    public MyDice(int playerNum) {
+        this.playerNum = playerNum;
+
+        sumOfDice = new int[playerNum];
+        scan = new Scanner(System.in);
+
+        System.out.println("생성자 호출");
+    }
+
+    // 무한루프 돌리는 조건 Game을 참, 두번째 반복에서 옵션 여부를 줄 Option을 거짓
+    public void playOctahedron() {
+        int octahedronDice;
+        int cnt = 0;
+
+        for(int i = 0; i < playerNum; i++) {
+            System.out.printf("%d번 사용자 게임 시작!\n", i);
+            octahedronGame = true;
+
+            while (octahedronGame) {
+                octahedronDice = (int) (Math.random() * 8) + 1;
+                cnt++;
+
+                if(cnt == 3) {
+                    cnt = 0;
+                    break;
+                }
+
+                System.out.printf("%d번 사용자, %d번째 시도, 주사위 눈금 = %d\n",
+                        i, cnt, octahedronDice);
+
+                sumOfDice[i] += octahedronDice;
+
+                if (cnt == 1 && octahedronDice % 2 == 0) {
+                    octahedronGame = false;
+                    cnt = 0;
+                } else if(cnt == 2 && octahedronDice % 2 == 0) {
+                    switch (octahedronDice) {
+                        // 2: 이미 주사위를 얻은 사람의 주사위 값을 3 파괴한다.
+                        case 2:
+                            for(int j = i - 1; j >= 0; j--) {
+                                sumOfDice[j] -= 3;
+                            }
+                            break;
+                        // 4: 지정한 사용자의 주사위 값을 0 으로 만든다.
+                        case 4:
+                            System.out.print("누굴 작살낼까요 ? ");
+                            int tmp = scan.nextInt();
+                            sumOfDice[tmp] = 0;
+                            break;
+                        // 6: 모든 플레이어의 주사위 값을 2 파괴한다.
+                        case 6:
+                            for(int j = i; j >= 0; j--) {
+                                sumOfDice[j] -= 2;
+                            }
+                            break;
+                        // 8: 자신을 제외한 모든 플레이어의 주사위 값을 3 상승시킨다.
+                        case 8:
+                            for(int j = 0; j <= 2; j++) {
+                                if(j == i) {
+                                    continue;
+                                }
+
+                                sumOfDice[j] += 3;
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
     public void playGame() {
         // 사용자 숫자만큼 반복
         for(int i = 0; i < playerNum; i++) {
@@ -46,6 +122,15 @@ public class MyDice {
         }
     }
 
+    public void printSumOfOctahedronDice() {
+        for(int i = 0; i < playerNum; i++) {
+            System.out.printf(
+                    "%d 번째 사용자의 주사위 눈금합 = %d\n",
+                    i, sumOfDice[i]);
+        }
+    }
+
+    // 통합을 위해 수정이 필요한 매서드
     public void printSumOfDice() {
         for(int i = 0; i < playerNum; i++) {
             // sumOfDice[playerArr[i] - 1]
