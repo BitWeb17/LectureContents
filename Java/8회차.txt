@@ -26,3 +26,86 @@
 2. AND NOT 개념(물류 창고 시스템)
 3. 생성자(Constructor) 개념
 4. Math.pow(제곱), Math.sqrt(루트)
+
+
+
+* 생성자를 사용하는 이유
+
+1) 편리해서
+2) 생성자를 대체할 수 있는 녀석은 Setter 이다.
+
+- 그러면 왜 Setter 도 있고 생성자도 따로 있을까 ?
+
+Setter 는 값을 바꿔야 하는 경우에 보통 사용하고
+데이터 오염도를 낮추기 위해서는 최대한 Setter 사용을 자제해야 한다.
+
+초기에 값을 할당하는 목적으로 생성자를 보통 사용한다.
+
+ex)
+String name;
+int age;
+String major;
+
+public void setName(String name) {
+   this.name = name;
+}
+
+public void setAge(int age) {
+   this.age = age;
+}
+
+public void setMajor(String major) {
+   this.major = major;
+}
+
+ClassName cn = new ClassName();
+cn.setName("아무개");
+cn.setAge(15);
+cn.setMajor("프로게이머");
+
+*******************    vs    *******************
+
+public ClassName(String name, int age, String major) {
+   this.name = name;
+   this.age = age;
+   this.major = major;
+}
+
+ClassName cn = new ClassName("아무개", 15, "프로게이머");
+
+위 쪽의 코드를 사용할 것인지 vs 아래쪽의 코드를 사용할 것인지를 보면 된다.
+결국 생성자를 사용하는 이유는 누가 더 편리한가이다.
+
+
+
+* Q: 생성자가 있는데 구지 Setter 를 써야 하나 ?
+  A: 넵
+  
+생성자는 초기화(초기값을 할당하는 작업)에만 사용이 가능하다.
+반면 Setter 는 초기화가 된 이후에도
+언제든지 값을 변경할 수 있다.
+(그러나 남발하면 위에서 언급한 데이터 오염도가 높아
+
+
+
+* Q: 추가 질문 사항
+
+Test t1 = new Test(1, 2, 3);
+Test t2 = new Test(4, 5, 6);
+
+t1 과 t2 가 서로에게 영향을 줄 수 있을까 ?
+t1 은 별도의 메모리 공간을 제어
+t2 도 별개의 메모리 공간을 제어하는 것임
+그러므로 현재 상황에서 t1 과 t2 가 서로 영향을 주는 일은 없다.
+
+t1.add(1);
+t1.print();
+
+t2.print();
+
+-------------------          -------------------
+|  Test 클래스 정보  |         |  Test 클래스 정보  |
+-------------------          -------------------
+        t1                           t2
+        
+        위의 두 개는 서로 독립적이다.
