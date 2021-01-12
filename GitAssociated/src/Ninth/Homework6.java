@@ -23,5 +23,12 @@ public class Homework6 {
 
         md.playOctahedron();
         md.printSumOfOctahedronDice();
+
+        System.out.printf("\n\n새로운 방식으로 작업해보기!\n");
+
+        MyDice md2 = new MyDice(3);
+
+        md2.playOctahedronQnA();
+        md2.printSumOfOctahedronDice();
     }
 }

@@ -10,6 +10,7 @@ public class MyDice {
     int[] playerArr;
 
     boolean octahedronGame;
+    boolean octahedronOption;
     Scanner scan;
 
     public MyDice(int playerNum, int numOfDice, int ruleNum) {
@@ -104,6 +105,66 @@ public class MyDice {
         }
     }
 
+    public void playOctahedronQnA() {
+        int octahedronDice;
+
+        for(int i = 0; i < playerNum; i++) {
+            System.out.printf("%d번 사용자 게임 시작!\n", i);
+            octahedronGame = true;
+            octahedronOption = false;
+
+            while (octahedronGame) {
+                octahedronDice = (int) (Math.random() * 8) + 1;
+
+                System.out.printf("%d번 사용자, 주사위 눈금 = %d\n",
+                        i, octahedronDice);
+
+                sumOfDice[i] += octahedronDice;
+
+                if (!octahedronOption && octahedronDice % 2 == 0) {
+                    octahedronGame = false;
+                } else if(octahedronOption) {
+                    if(octahedronDice % 2 == 0) {
+                        switch (octahedronDice) {
+                            // 2: 이미 주사위를 얻은 사람의 주사위 값을 3 파괴한다.
+                            case 2:
+                                for (int j = i - 1; j >= 0; j--) {
+                                    sumOfDice[j] -= 3;
+                                }
+                                break;
+                            // 4: 지정한 사용자의 주사위 값을 0 으로 만든다.
+                            case 4:
+                                System.out.print("누굴 작살낼까요 ? ");
+                                int tmp = scan.nextInt();
+                                sumOfDice[tmp] = 0;
+                                break;
+                            // 6: 모든 플레이어의 주사위 값을 2 파괴한다.
+                            case 6:
+                                for (int j = i; j >= 0; j--) {
+                                    sumOfDice[j] -= 2;
+                                }
+                                break;
+                            // 8: 자신을 제외한 모든 플레이어의 주사위 값을 3 상승시킨다.
+                            case 8:
+                                for (int j = 0; j <= 2; j++) {
+                                    if (j == i) {
+                                        continue;
+                                    }
+
+                                    sumOfDice[j] += 3;
+                                }
+                                break;
+                        }
+                    }
+
+                    octahedronGame = false;
+                }
+
+                octahedronOption = true;
+            }
+        }
+    }
+
     public void playGame() {
         // 사용자 숫자만큼 반복
         for(int i = 0; i < playerNum; i++) {
@@ -161,6 +222,11 @@ public class MyDice {
         //  8      4      6     - 주사위 눈금
         // [0]    [1]    [2]    - 배열의 인덱스
 
+        // 요약:
+        // i 가 기준점
+        // j 는 i 보다 앞에 있는 모든 대상들
+        // 기준점 앞에 있는 값들이 기준점보다 큰가 ?
+        // 크다면 위치를 조정한다.
         for(i = 1; i < len; i++) {
             numKey = sumOfDice[i];
             playerNoKey = playerArr[i];
