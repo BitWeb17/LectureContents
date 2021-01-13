@@ -153,6 +153,136 @@ public class Matrix {
         return checkDivideElement(len, row);
     }
 
+    public boolean checkDimension(Matrix mat) {
+        int row = mat.getRow();
+        int col = mat.getCol();
+
+        return (this.row == row) && (this.col == col);
+    }
+
+    public boolean checkDimension(Matrix A, Matrix B) {
+        int Arow = A.getRow();
+        int Brow = B.getRow();
+        int Acol = A.getCol();
+        int Bcol = B.getCol();
+
+        return (Arow == Brow) && (Acol == Bcol);
+    }
+
+    public void addMatrix(Matrix mat) {
+        if(checkDimension(mat)) {
+            int[][] srcMat = mat.getMat();
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    this.mat[i][j] = this.mat[i][j] + srcMat[i][j];
+                }
+            }
+        }
+    }
+
+    public void addMatrix(Matrix A, Matrix B) {
+        if(checkDimension(A, B)) {
+            int[][] matA = A.getMat();
+            int[][] matB = B.getMat();
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    mat[i][j] = matA[i][j] + matB[i][j];
+                }
+            }
+        }
+    }
+
+    public void subMatrix(Matrix mat) {
+        if(checkDimension(mat)) {
+            int[][] srcMat = mat.getMat();
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    this.mat[i][j] = this.mat[i][j] - srcMat[i][j];
+                }
+            }
+        }
+    }
+
+    public void subMatrix(Matrix A, Matrix B) {
+        if(checkDimension(A, B)) {
+            int[][] matA = A.getMat();
+            int[][] matB = B.getMat();
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    mat[i][j] = matA[i][j] - matB[i][j];
+                }
+            }
+        }
+    }
+
+    // n by m * n by m - 성립 불가
+    // n by m * m by n: n by n
+    public boolean checkMulDimension(Matrix A, Matrix B) {
+        int Brow = B.getRow();
+        int Acol = A.getCol();
+
+        return (Brow == Acol);
+    }
+
+    public void mulMatrix(Matrix A, Matrix B) {
+        if(checkMulDimension(A, B)) {
+            int[][] matA = A.getMat();
+            int[][] matB = B.getMat();
+
+            // 00   01   02      00   01   02
+            // 10   11   12      10   11   12
+            // 20   21   22      20   21   22
+            // 00 * 00 + 01 * 10 + 02 * 20: [0][0]
+            // 00 * 01 + 01 * 11 + 02 * 21: [0][1]
+            // 00 * 02 + 01 * 12 + 02 * 22: [0][2]
+
+            // 10 * 00 + 11 * 10 + 12 * 20: [1][0]
+            // 10 * 01 + 11 * 11 + 12 * 21: [1][1]
+            // 10 * 02 + 11 * 12 + 12 * 22: [1][2]
+
+            // 20 * 00 + 21 * 10 + 22 * 20: [2][0]
+            // 20 * 01 + 21 * 11 + 22 * 21: [2][1]
+            // 20 * 02 + 21 * 12 + 22 * 22: [2][2]
+            mat[0][0] = matA[0][0] * matB[0][0] +
+                    matA[0][1] * matB[1][0] +
+                    matA[0][2] * matB[2][0];
+            mat[0][1] = matA[0][0] * matB[0][1] +
+                    matA[0][1] * matB[1][1] +
+                    matA[0][2] * matB[2][1];
+            mat[0][2] = matA[0][0] * matB[0][2] +
+                    matA[0][1] * matB[1][1] +
+                    matA[0][2] * matB[2][2];
+            // 10 * 00 + 11 * 10 + 12 * 20: [1][0]
+            // 10 * 01 + 11 * 11 + 12 * 21: [1][1]
+            // 10 * 02 + 11 * 12 + 12 * 22: [1][2]
+            mat[1][0] = matA[1][0] * matB[0][0] +
+                    matA[1][1] * matB[1][0] +
+                    matA[1][2] * matB[2][0];
+            mat[1][1] = matA[1][0] * matB[0][1] +
+                    matA[1][1] * matB[1][1] +
+                    matA[1][2] * matB[2][1];
+            mat[1][2] = matA[1][0] * matB[0][2] +
+                    matA[1][1] * matB[1][2] +
+                    matA[1][2] * matB[2][2];
+            // 20 * 00 + 21 * 10 + 22 * 20: [2][0]
+            // 20 * 01 + 21 * 11 + 22 * 21: [2][1]
+            // 20 * 02 + 21 * 12 + 22 * 22: [2][2]
+            mat[2][0] = matA[2][0] * matB[0][0] +
+                    matA[2][1] * matB[1][0] +
+                    matA[2][2] * matB[2][0];
+            mat[2][1] = matA[2][0] * matB[0][1] +
+                    matA[2][1] * matB[1][1] +
+                    matA[2][2] * matB[2][1];
+            mat[2][2] = matA[2][0] * matB[0][2] +
+                    matA[2][1] * matB[1][2] +
+                    matA[2][2] * matB[2][2];
+        }
+    }
+
     public void allocRandomMatrix() {
         for(int i = 0; i < row; i++) {
             for(int j = 0; j < col; j++) {
@@ -161,10 +291,33 @@ public class Matrix {
         }
     }
 
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public int[][] getMat() {
+        return mat;
+    }
+
+    // n by n 행렬의 판별식
+    // ex) 3 by 3
+    // 1    2    3
+    // 4    5    6  =====>
+    // 7    8    9
+    //
+    // 1 * {(5 * 9) - (6 * 8)} +
+    // 2 * {(6 * 7) - (4 * 9)} +
+    // 3 * {(4 * 8) - (5 * 7)}
+    // 이 결과가 0 이 아니면 역행렬이 존재한다.
+
     public void printMatrix() {
         for(int i = 0; i < row; i++) {
             for(int j = 0; j < col; j++) {
-                System.out.printf("%3d", mat[i][j]);
+                System.out.printf("%4d", mat[i][j]);
             }
             System.out.println("");
         }
