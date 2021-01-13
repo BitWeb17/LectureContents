@@ -153,14 +153,14 @@ public class Matrix {
         return checkDivideElement(len, row);
     }
 
-    public boolean checkDimension(Matrix mat) {
+    private boolean checkDimension(Matrix mat) {
         int row = mat.getRow();
         int col = mat.getCol();
 
         return (this.row == row) && (this.col == col);
     }
 
-    public boolean checkDimension(Matrix A, Matrix B) {
+    private boolean checkDimension(Matrix A, Matrix B) {
         int Arow = A.getRow();
         int Brow = B.getRow();
         int Acol = A.getCol();
