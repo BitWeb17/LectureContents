@@ -20,10 +20,16 @@ public class Homework1 {
         wrong.allocRandomMatrix();
         wrong.printMatrix();
 
-        //Matrix A = new Matrix(arr1, 3, 3);
-        //Matrix B = new Matrix(arr2, 3);
+        System.out.println("Matrix A:");
+        Matrix A = new Matrix(arr1, 3, 3);
+        A.printMatrix();
+
+        System.out.println("Matrix B:");
+        Matrix B = new Matrix(arr2, 3);
+        B.printMatrix();
+
+        System.out.println("Matrix C:");
         Matrix C = new Matrix(arr3, 4);
-        C.allocRandomMatrix();
         C.printMatrix();
     }
 }

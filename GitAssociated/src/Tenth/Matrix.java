@@ -29,9 +29,14 @@ public class Matrix {
             int totalLen = row * col;
             int[] tmp = new int[totalLen];
 
+            //System.out.println("arr.length = " + arr.length);
+            //System.out.println("arr[0].length = " + arr[0].length);
             for(int i = 0; i < arr.length; i++) {
                 for(int j = 0; j < arr[0].length; j++) {
-                    tmp[i * arr.length + j] = arr[i][j];
+                    tmp[i * arr[0].length + j] = arr[i][j];
+                    //System.out.printf("tmp[%d] = %d\n",
+                    //        i * arr[0].length + j,
+                    //        tmp[i * arr[0].length + j]);
                 }
             }
 
@@ -65,6 +70,23 @@ public class Matrix {
         }
     }
 
+    public Matrix(int[] arr, int row, int col) {
+        if(checkAvailable(arr, row, col)) {
+            System.out.println("A 처리 테스트");
+            // 실제로 이 매서드 내의 모든 코드는
+            // 단일 배열에서 넘어온 값들을 행렬로 변환한다는 취지를 가짐
+            // 그러므로 동일하게 중복되는 코드들이 발생할 것이고
+            // 별도의 매서드로 분리하여 관리할 수 있음
+            mat = new int[row][col];
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    mat[i][j] = arr[i * col + j];
+                }
+            }
+        }
+    }
+
     private boolean checkDivideElement(int len, int row) {
         if(len % row == 0) {
             this.row = row;
@@ -77,6 +99,19 @@ public class Matrix {
         }
 
         return true;
+    }
+
+    private boolean checkAvailable(int[] arr, int row, int col) {
+        int len = arr.length;
+
+        boolean res = (len == row * col ? true : false);
+
+        if(res) {
+            this.row = row;
+            this.col = col;
+        }
+
+        return res;
     }
 
     private boolean checkAvailable(int[][] arr, int num) {
