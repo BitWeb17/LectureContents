@@ -12,26 +12,7 @@ public class MyStrcmp implements Comparable {
         area = a;
     }
 
-    // Object ??? 이건 뭐야 ?
-    // Object 는 모든 정보를 아우르고 있는 가장 거대한 집합이다.
-    // 여기서 모든 정보란 ? 우리가 사용하는 모든 클래스 등등을 의미한다.
-    // 그러므로 타입 캐스팅(형 변환)을 통해
-    // 어떤 데이터든 Object 형태로 받을 수 있다.
-    // 만약 내용을 들은 사람이 C 개발자라면 void * 생각하면 됩니다.
-    public int compareTo(Object otherObj, int ORDER) {
-        MyStrcmp other;
-
-        switch (ORDER) {
-            case MYSTRCMP:
-                other = (MyStrcmp) otherObj;
-                break;
-            case STRCMPTEST:
-                other = (StrcmpTest) otherObj;
-                break;
-            default:
-                break;
-        }
-
+    public int processCompare(MyStrcmp other) {
         if(this.area < other.area) {
             return -1;
         } else if(this.area > other.area) {
@@ -39,5 +20,50 @@ public class MyStrcmp implements Comparable {
         } else {
             return 0;
         }
+    }
+
+    public int processCompare(StrcmpTest other) {
+        if(this.area < other.getArea()) {
+            return -1;
+        } else if(this.area > other.getArea()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int processMyStrcmp(Object otherObj) {
+        MyStrcmp other = (MyStrcmp) otherObj;
+
+        return processCompare(other);
+    }
+
+    public int processStrcmpTest(Object otherObj) {
+        StrcmpTest other = (StrcmpTest) otherObj;
+
+        return processCompare(other);
+    }
+
+    // Object ??? 이건 뭐야 ?
+    // Object 는 모든 정보를 아우르고 있는 가장 거대한 집합이다.
+    // 여기서 모든 정보란 ? 우리가 사용하는 모든 클래스 등등을 의미한다.
+    // 그러므로 타입 캐스팅(형 변환)을 통해
+    // 어떤 데이터든 Object 형태로 받을 수 있다.
+    // 만약 내용을 들은 사람이 C 개발자라면 void * 생각하면 됩니다.
+    public int compareTo(Object otherObj, int ORDER) {
+        int res = 0;
+
+        switch (ORDER) {
+            case MYSTRCMP:
+                res = processMyStrcmp(otherObj);
+                break;
+            case STRCMPTEST:
+                res = processStrcmpTest(otherObj);
+                break;
+            default:
+                break;
+        }
+
+        return res;
     }
 }

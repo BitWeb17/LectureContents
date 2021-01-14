@@ -6,4 +6,8 @@ public class StrcmpTest {
     public StrcmpTest(double a) {
         area = a;
     }
+
+    public double getArea() {
+        return area;
+    }
 }
