@@ -23,4 +23,12 @@ public class WarLoad extends Warrior implements SkillTree {
         System.out.println("고속으로 이동하며 지나간 자리에 있는 " +
                 "모든 타겟을 0.3초 스턴시킵니다.");
     }
+
+    public void subSkill() {
+        super.skill1();
+    }
+
+    public void subSubSkill() {
+        super.subSkill();
+    }
 }

@@ -20,4 +20,8 @@ public class Warrior extends Adventurer implements SkillTree {
         System.out.println("방패 치기: " + (atk + def) * 3);
         System.out.println("대상을 1초간 스턴 상태로 만듭니다.");
     }
+
+    public void subSkill() {
+        super.skill1();
+    }
 }

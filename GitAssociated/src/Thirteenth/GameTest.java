@@ -66,8 +66,15 @@ public class GameTest {
 
         for(;;) {
             adv.skill1();
+            System.out.println("********************");
             war.skill1();
+            war.subSkill();
+            System.out.println("********************");
+            System.out.println("--------------------");
             wl.skill1();
+            wl.subSkill();
+            wl.subSubSkill();
+            System.out.println("--------------------");
             t.skill1();
             a.skill1();
             mag.skill1();
