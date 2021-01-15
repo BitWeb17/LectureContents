@@ -24,8 +24,8 @@ public class Ticketing {
         personNumberArr = new int[50];
         ticketNumberArr = new int[20];
 
-        personArrayList = new ArrayList<Integer>(50);
-        ticketArrayList = new ArrayList<Integer>(20);
+        personArrayList = new ArrayList<Integer>();
+        ticketArrayList = new ArrayList<Integer>();
     }
 
     public int allocRandomPersonNumber() {
