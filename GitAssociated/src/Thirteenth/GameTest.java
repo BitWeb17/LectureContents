@@ -63,5 +63,23 @@ public class GameTest {
                 20, 30, 30, 200,
                 30, 100, 2000, 3
         );
+
+        for(;;) {
+            adv.skill1();
+            war.skill1();
+            wl.skill1();
+            t.skill1();
+            a.skill1();
+            mag.skill1();
+            wiz.skill1();
+
+            adv.skill2();
+            war.skill2();
+            wl.skill2();
+            t.skill2();
+            a.skill2();
+            mag.skill2();
+            wiz.skill2();
+        }
     }
 }
