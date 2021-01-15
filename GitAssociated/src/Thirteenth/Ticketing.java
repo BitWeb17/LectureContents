@@ -51,6 +51,7 @@ public class Ticketing {
         int randNum;
 
         do {
+            // 1 ~ 20
             randNum = (int) (Math.random() * 20) + 1;
 
             if (ticketNumberArr[randNum - 1] != 0) {
@@ -130,9 +131,14 @@ public class Ticketing {
     public void printTicketArrayList() {
         int cnt = 1;
         Integer ticketNum;
+        // ticketArrayList를 순회할 수 있는 정보를 얻음
         Iterator e = ticketArrayList.iterator();
 
+        // 순회할 수 있는가 ?
+        // 데이터가 없으면 루프 진행 x
+        // 데이터가 하나라도 있으면 루프 진행 o
         while(e.hasNext()) {
+            // 존재하는 값을 가져와서 Integer 형식으로 저장합니다.
             ticketNum = (Integer) e.next();
             System.out.printf("%3d", ticketNum);
 
