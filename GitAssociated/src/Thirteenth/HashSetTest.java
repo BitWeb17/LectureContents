@@ -37,7 +37,9 @@ public class HashSetTest {
                 "안녕", "하하", "호호", "크크", "키키", "켈켈"
         };
 
+        // sample에 있는 값을 순서대로 하나 하나 가져와서 s에 배치함
         for(String s : sample) {
+            // Set은 값이 중복되면 add가 되지 않고 false를 리턴한다.
             if(!hs.add(s)) {
                 System.out.println("중복!");
             }
