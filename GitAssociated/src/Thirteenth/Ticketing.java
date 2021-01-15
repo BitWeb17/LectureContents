@@ -1,5 +1,8 @@
 package Thirteenth;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Ticketing {
     private int numOfHuman;
     private int numOfTicket;
@@ -7,12 +10,22 @@ public class Ticketing {
     private int[] personNumberArr;
     private int[] ticketNumberArr;
 
+    private ArrayList<Integer> personArrayList;
+    private ArrayList<Integer> ticketArrayList;
+
     public Ticketing(int numOfHuman, int numOfTicket) {
         this.numOfHuman = numOfHuman;
         this.numOfTicket = numOfTicket;
 
+        // 사실 현재 케이스에서는 배열만 쓰거나
+        // ArrayList만 쓰는것이 좋지만
+        // 약간 손 볼 곳이 많으므로
+        // 그냥 둘 다 할당하도록 한다.
         personNumberArr = new int[50];
         ticketNumberArr = new int[20];
+
+        personArrayList = new ArrayList<Integer>(50);
+        ticketArrayList = new ArrayList<Integer>(20);
     }
 
     public int allocRandomPersonNumber() {
@@ -69,6 +82,35 @@ public class Ticketing {
         }
     }
 
+    public int allocArrayListRandomPersonNumber() {
+        boolean isDup = false;
+        int randNum;
+
+        do {
+            randNum = (int) (Math.random() * 50);
+
+            // 현재 ArrayList에 randNum이 있나요 ?
+            if (personArrayList.contains(randNum)) {
+                isDup = true;
+            } else {
+                isDup = false;
+                personArrayList.add(randNum);
+            }
+        } while(isDup);
+
+        return randNum;
+    }
+
+    public void ticketingArrayListTicket() {
+        int personNum;
+
+        for(int i = 0; i < numOfTicket; i++) {
+            personNum = allocArrayListRandomPersonNumber();
+
+            ticketArrayList.add(personNum);
+        }
+    }
+
     /*
     public void printPersonNumber() {
         int cnt = 1;
@@ -84,6 +126,23 @@ public class Ticketing {
         }
     }
      */
+
+    public void printTicketArrayList() {
+        int cnt = 1;
+        Integer ticketNum;
+        Iterator e = ticketArrayList.iterator();
+
+        while(e.hasNext()) {
+            ticketNum = (Integer) e.next();
+            System.out.printf("%3d", ticketNum);
+
+            if(cnt % 5 == 0) {
+                System.out.println("");
+            }
+
+            cnt++;
+        }
+    }
 
     public void printArr(int[] arr) {
         int cnt = 1;

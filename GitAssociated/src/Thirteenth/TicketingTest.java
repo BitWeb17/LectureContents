@@ -16,5 +16,11 @@ public class TicketingTest {
         t.ticketingTicket();
         System.out.println("*********************");
         t.printArr(t.getTicketNumberArr());
+
+        System.out.println("++++++++++++++++++++++++");
+        Ticketing t2 = new Ticketing(50, 20);
+        t2.ticketingArrayListTicket();
+        System.out.println("++++++++++++++++++++++++");
+        t2.printTicketArrayList();
     }
 }
