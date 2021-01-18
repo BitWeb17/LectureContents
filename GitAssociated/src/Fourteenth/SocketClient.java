@@ -26,4 +26,14 @@ public class SocketClient {
             System.out.println(e.getMessage());
         }
     }
+
+    public void closeSocket() {
+        try {
+            mSocket.close();
+        } catch(IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("연결 해제 성공!");
+    }
 }
