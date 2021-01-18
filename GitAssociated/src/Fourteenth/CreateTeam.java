@@ -122,6 +122,8 @@ public class CreateTeam {
                 (remain > 0) ? true : false;
 
         int randValue = 0;
+        // 현재 발생하는 문제
+        // 1) 매 반복마다 randValue가 0, 1, 0, 1 스위칭되고 있음
 
         // 순회할 수 있는가 ?
         // 데이터가 없으면 루프 진행 x
@@ -138,19 +140,21 @@ public class CreateTeam {
                 needException = false;
             }
 
-            System.out.println("cnt = " + cnt);
-            System.out.println("quot + randValue = " +
-                    (quot + randValue));
+            /*
+            System.out.printf("cnt = %d, quot + randValue = %d\n",
+                    cnt, quot + randValue);
+             */
 
             if((cnt % (quot + randValue)) == 0) {
                 System.out.println("");
-                cnt = 1;
-            }
 
-            if(randValue == 1) {
-                randValue = 0;
-            } else {
-                randValue = 1;
+                if(cnt == 4) {
+                    randValue = 1;
+                } else {
+                    randValue = 0;
+                }
+
+                cnt = 0;
             }
 
             cnt++;
