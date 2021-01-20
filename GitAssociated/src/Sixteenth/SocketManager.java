@@ -51,9 +51,7 @@ public class SocketManager {
     public void send(Socket[] sock, int num) throws IOException {
         for(int i = ZERO; i < num; i++) {
             out[i] = sock[i].getOutputStream();
-
             writer = new PrintWriter(out[i], true);
-
             writer.println(new Date().toString());
         }
     }

@@ -6,7 +6,8 @@ import java.io.IOException;
 public class MainServer {
     private static final int MAX = 3;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)
+            throws IOException, InterruptedException {
         ServerSocketManager ssm =
                 new ServerSocketManager(7777, MAX);
 
