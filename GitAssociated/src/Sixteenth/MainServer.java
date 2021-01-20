@@ -2,6 +2,15 @@ package Sixteenth;
 
 import java.io.IOException;
 
+// 혼자서 서버 클라이언트를 테스트하는 방법
+// 프로젝트 최상위를 보면 전체 경로가 보이는데
+// 터미널을 열어서 이 경로로 이동한다.
+// 이동후에 cd out/production/GitAssociated 를 입력한다.
+// java Sixteenth.MainClient 를 입력하면
+// 우리가 IntelliJ에서 실행하듯이 명령어로 Client를 동작시킬 수 있다.
+// 터미널을 3개 띄우면 클라이언트를 3개 실행할 수 있으므로
+// New Tab을 하던 New Window를 하던해서 3개 우고 작업하면 된다.
+
 // 서버의 역할: 클라이언트들에게 데이터를 중개
 public class MainServer {
     private static final int MAX = 3;
