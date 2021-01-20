@@ -1,0 +1,18 @@
+OutputStream의 out과 PrintWriter의 writer.println()은 어떤 관계인가요 ?
+
+FD(File Descriptor)
+
+Unix 철학: 모든것은 파일이다.
+
+(운영체제 및 시스템 개발자)         (일반 사용자 및 애플리케이션 개발자)
+       Kernel              |               User
+                           |
+     fd_array[]            |           sock = Socket()
+  |    표준입력    |         |     ----- sock.getOutputStream()
+  |    표준출력    |         |     |     
+  |    표준에러    |         |     |     write()를 얻어온
+  | 사용자 데이터들 | <<<------------|    getOutputStream()에 하겠다.
+         ...               |           PrintWriter의 역할
+                           |           왜냐하면 println()은
+                           |           내부적으로 write()를 사용하기 때문
+                           |
