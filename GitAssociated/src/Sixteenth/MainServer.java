@@ -27,5 +27,9 @@ public class MainServer {
         } else {
             System.out.println("무승부: 게임을 다시 시작합니다.");
         }
+
+        ssm.send(ssm.getClntSockArr(), ssm.getMaxClnt());
+
+        System.out.println("모든 사용자에게 입력 결과 전달 완료!");
     }
 }

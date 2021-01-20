@@ -43,8 +43,6 @@ public class ServerSocketManager extends SocketManager {
         }
     }
 
-
-
     public Socket[] getClntSockArr() {
         return clntSockArr;
     }
