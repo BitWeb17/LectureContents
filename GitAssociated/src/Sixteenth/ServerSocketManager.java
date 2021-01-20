@@ -16,7 +16,7 @@ public class ServerSocketManager extends SocketManager {
 
         super(max);
 
-        System.out.printf("%d 명이 접속해야 게임을 시작할 수 있습니다.", max);
+        System.out.printf("%d 명이 접속해야 게임을 시작할 수 있습니다.\n", max);
 
         servSock = new ServerSocket(portNum);
 
@@ -42,6 +42,8 @@ public class ServerSocketManager extends SocketManager {
             );
         }
     }
+
+
 
     public Socket[] getClntSockArr() {
         return clntSockArr;
