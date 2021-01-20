@@ -4,7 +4,7 @@ import java.io.IOException;
 
 // 게임에 접속해서 플레이하는 고객
 public class MainClient {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         // 집에서 하는 경우 자신의 집 컴퓨터 아이피 주소
         // 학원인 경우는 자신의 자리 ip 주소 혹은 동일하게 해도 무방
         String ip = "192.168.0.9";
@@ -18,6 +18,8 @@ public class MainClient {
         csm.send(csm.getClntSock());
 
         System.out.println("전송 완료!");
+
+        Thread.sleep(10000);
 
         csm.recv(csm.getClntSock());
     }

@@ -6,7 +6,8 @@ import java.io.IOException;
 public class MainServer {
     private static final int MAX = 3;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)
+            throws IOException, InterruptedException {
         ServerSocketManager ssm =
                 new ServerSocketManager(7777, MAX);
 
@@ -26,6 +27,8 @@ public class MainServer {
         } else {
             System.out.println("무승부: 게임을 다시 시작합니다.");
         }
+
+        Thread.sleep(10000);
 
         ssm.send(ssm.getClntSockArr(), ssm.getMaxClnt());
 

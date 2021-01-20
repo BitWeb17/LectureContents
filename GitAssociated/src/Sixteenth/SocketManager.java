@@ -122,6 +122,8 @@ public class SocketManager {
         // 모든 값을 OR 했을때 7이 나올 것이다.
         // 만약 1, 2, 3이라면 OR 결과는 3이므로
         // 이것이 보인지 무승부인지 판정이 불가!
+        System.out.println("결과를 판정하러 진입하였습니다!");
+
         int bitOROfAllInputString = ZERO;
 
         for(int i = ZERO; i < num; i++) {
