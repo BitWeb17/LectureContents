@@ -25,7 +25,7 @@ public class SocketManager {
     public SocketManager() {
         scan = new Scanner(System.in);
 
-        //in = new InputStream[ONE];
+        in = new InputStream[ONE];
         out = new OutputStream[ONE];
     }
 
@@ -47,17 +47,51 @@ public class SocketManager {
         out[ZERO].write(str.getBytes());
     }
 
-    /*
+    public String convertNumber2RSP() {
+        String res = "";
+        int len = arrRockScissorPaper.length;
+
+        for(int i = ZERO; i < len; i++) {
+            res += (i + 1) + "번 사용자: ";
+
+            if (arrRockScissorPaper[i].equals("1")) {
+                res += "가위";
+            } else if (arrRockScissorPaper[i].equals("2")) {
+                res += "바위";
+            } else {
+                res += "보";
+            }
+
+            if(i == len - ONE) {
+                res += "";
+            } else {
+                res += ", ";
+            }
+        }
+
+        return res;
+    }
+
     public void send(Socket[] sock, int num) throws IOException {
         for(int i = ZERO; i < num; i++) {
             out[i] = sock[i].getOutputStream();
 
             writer = new PrintWriter(out[i], true);
 
-            writer.println(new Date().toString());
+            String str = convertNumber2RSP();
+
+            writer.println(str);
         }
     }
-     */
+
+    public void recv(Socket sock) throws IOException {
+        in[0] = sock.getInputStream();
+        reader = new BufferedReader(new InputStreamReader(in[0]));
+
+        String res = reader.readLine();
+        System.out.println("결과를 출력합니다.");
+        System.out.println(res);
+    }
 
     public void recv(Socket[] sock, int num) throws IOException {
         int tmp;

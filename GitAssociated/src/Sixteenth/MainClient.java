@@ -18,5 +18,7 @@ public class MainClient {
         csm.send(csm.getClntSock());
 
         System.out.println("전송 완료!");
+
+        csm.recv(csm.getClntSock());
     }
 }
