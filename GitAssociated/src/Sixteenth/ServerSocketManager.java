@@ -13,6 +13,9 @@ public class ServerSocketManager extends SocketManager {
 
     public ServerSocketManager(int portNum, int max)
             throws IOException {
+
+        super(max);
+
         System.out.printf("%d 명이 접속해야 게임을 시작할 수 있습니다.", max);
 
         servSock = new ServerSocket(portNum);
@@ -29,5 +32,22 @@ public class ServerSocketManager extends SocketManager {
         for(int i = 0; i < maxClnt; i++) {
             clntSockArr[clntCnt++] = servSock.accept();
         }
+    }
+
+    public void checkEachIpAddressInfo() {
+        for(int i = 0; i < maxClnt; i++) {
+            System.out.println(
+                    "[" + clntSockArr[i].getInetAddress() +
+                            "] client connected"
+            );
+        }
+    }
+
+    public Socket[] getClntSockArr() {
+        return clntSockArr;
+    }
+
+    public int getMaxClnt() {
+        return maxClnt;
     }
 }

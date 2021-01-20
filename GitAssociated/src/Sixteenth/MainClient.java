@@ -13,5 +13,10 @@ public class MainClient {
         ClientSocketManager csm = new ClientSocketManager(ip, port);
 
         System.out.println("접속 요청 완료!");
+        System.out.println("가위는 1, 바위는 2, 보는 3");
+
+        csm.send(csm.getClntSock());
+
+        System.out.println("전송 완료!");
     }
 }

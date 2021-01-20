@@ -8,6 +8,12 @@ public class ClientSocketManager extends SocketManager {
 
     public ClientSocketManager(String hostIp, int portNum)
             throws IOException {
+
+        super();
         clntSock = new Socket(hostIp, portNum);
+    }
+
+    public Socket getClntSock() {
+        return clntSock;
     }
 }
