@@ -1,6 +1,7 @@
-package Sixteenth;
+package Seventeenth;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 // 게임에 접속해서 플레이하는 고객
 public class MainClient {
@@ -9,6 +10,8 @@ public class MainClient {
         // 학원인 경우는 자신의 자리 ip 주소 혹은 동일하게 해도 무방
         String ip = "192.168.0.7";
         int port = 7777;
+
+        Scanner scan = new Scanner(System.in);
 
         ClientSocketManager csm = new ClientSocketManager(ip, port);
 
@@ -21,7 +24,11 @@ public class MainClient {
 
         csm.close(csm.getClntSock());
 
-        //csm.recv(csm.getClntSock());
+        scan.nextLine();
+
+        csm = new ClientSocketManager(ip, port);
+
+        csm.recv(csm.getClntSock());
 
         /*
         Thread.sleep(1000);

@@ -1,8 +1,7 @@
-package Sixteenth;
+package Seventeenth;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Date;
 import java.util.Scanner;
 
 public class SocketManager {
@@ -18,6 +17,9 @@ public class SocketManager {
     private BufferedReader reader;
 
     private Scanner scan;
+
+    static int sendCnt = 0;
+    static int recvCnt = 0;
 
     String[] arrRockScissorPaper;
 
@@ -73,38 +75,37 @@ public class SocketManager {
     }
 
     public void send(Socket[] sock, int num) throws IOException {
-        for(int i = ZERO; i < num; i++) {
-            out[i] = sock[i].getOutputStream();
+        out[sendCnt] = sock[sendCnt].getOutputStream();
 
-            writer = new PrintWriter(out[i], true);
+        writer = new PrintWriter(out[sendCnt++], true);
 
-            String str = convertNumber2RSP();
+        String str = convertNumber2RSP();
 
-            writer.println(str);
-        }
+        writer.println(str);
     }
 
     public void recv(Socket[] sock, int num) throws IOException {
+
         int tmp;
 
-        for(int i = ZERO; i < num; i++) {
-            in[i] = sock[i].getInputStream();
+        System.out.println("recvCnt = " + recvCnt);
 
-            reader = new BufferedReader(new InputStreamReader(in[i]));
+        in[recvCnt] = sock[recvCnt].getInputStream();
 
-            // 미리 변환하지 않고 문자열인 상태에서 "3"과 같은지 비교하고
-            // 같으면 바꾸고 같지 않으면 그대로 두는 형식이 더 효율적이다.
-            // 숙제로 한 번 만들어보세요 ~
-            tmp = Integer.parseInt(reader.readLine());
+        reader = new BufferedReader(new InputStreamReader(in[recvCnt]));
 
-            if(tmp == MAGICNUM) {
-                arrRockScissorPaper[i] = Integer.toString(tmp + ONE);
-            } else {
-                arrRockScissorPaper[i] = Integer.toString(tmp);
-            }
+        // 미리 변환하지 않고 문자열인 상태에서 "3"과 같은지 비교하고
+        // 같으면 바꾸고 같지 않으면 그대로 두는 형식이 더 효율적이다.
+        // 숙제로 한 번 만들어보세요 ~
+        tmp = Integer.parseInt(reader.readLine());
 
-            System.out.println("msg: " + arrRockScissorPaper[i]);
+        if(tmp == MAGICNUM) {
+            arrRockScissorPaper[recvCnt] = Integer.toString(tmp + ONE);
+        } else {
+            arrRockScissorPaper[recvCnt] = Integer.toString(tmp);
         }
+
+        System.out.println("msg: " + arrRockScissorPaper[recvCnt++]);
     }
 
     public void recv(Socket sock) throws IOException {
