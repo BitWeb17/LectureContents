@@ -128,6 +128,12 @@ public class SocketManager {
         // 이것이 보인지 무승부인지 판정이 불가!
         int bitOROfAllInputString = ZERO;
 
+        // 1 - 0001      1 - 0001
+        // 2 - 0010      2 - 0010
+        // 4 - 0100  OR  3 - 0011 OR
+        // ------------  ------------
+        // 7 - 0111      3 - 0011
+
         for(int i = ZERO; i < num; i++) {
             bitOROfAllInputString |=
                     Integer.parseInt(arrRockScissorPaper[i]);
