@@ -45,9 +45,12 @@ public class ClientHandler implements Runnable {
                     break;
                 }
 
+                // StringTokenizer는 특수한 기준자를 바탕으로 문자열을 분리한다.
                 StringTokenizer st = new StringTokenizer(received, "#");
-                String msg2Send = st.nextToken();
                 String recipient = st.nextToken();
+                String msg2Send = st.nextToken();
+                System.out.println("msg2Send = " + msg2Send);
+                System.out.println("recipient = " + recipient);
 
                 for(ClientHandler ch : ThreadChatServer.chv) {
                     if(ch.name.equals(recipient) && ch.isOK == true) {

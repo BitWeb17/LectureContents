@@ -18,11 +18,13 @@ public class ThreadChatClient {
 
         InetAddress ip = InetAddress.getByName("localhost");
 
+        // 특정 ip를 가지고 서비스(포트 번호)에 접속 요청
         Socket sock = new Socket(ip, SERVPORT);
 
         DataInputStream in = new DataInputStream(sock.getInputStream());
         DataOutputStream out = new DataOutputStream(sock.getOutputStream());
 
+        // transfer(송신)
         Thread tx = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -37,6 +39,8 @@ public class ThreadChatClient {
                 }
             }
         });
+
+        // receive(수신)
         Thread rx = new Thread(new Runnable() {
             @Override
             public void run() {
