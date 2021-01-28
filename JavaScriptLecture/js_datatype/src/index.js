@@ -4,11 +4,23 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import DataTypeBasic from "./data_type/DataTypeBasic";
 import DataType from "./data_type/DataType";
+import StringDataType from "./data_type/StringDataType";
+import RealDataType from "./data_type/RealDataType";
+import ExpDataType from "./data_type/ExpDataType";
+import BoolDataType from "./data_type/BoolDataType";
+import ArrayDataType from "./data_type/ArrayDataType";
+import JsonDataType from "./data_type/JsonDataType";
 
 ReactDOM.render(
   <React.StrictMode>
       <DataTypeBasic/>
       <DataType/>
+      <StringDataType/>
+      <RealDataType/>
+      <ExpDataType/>
+      <BoolDataType/>
+      <ArrayDataType/>
+      <JsonDataType/>
   </React.StrictMode>,
   document.getElementById('root')
 );
