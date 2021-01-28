@@ -10,6 +10,12 @@ import ExpDataType from "./data_type/ExpDataType";
 import BoolDataType from "./data_type/BoolDataType";
 import ArrayDataType from "./data_type/ArrayDataType";
 import JsonDataType from "./data_type/JsonDataType";
+import IfTest from "./data_type/IfTest";
+import ForTest from "./data_type/ForTest";
+import TypeOf from "./data_type/TypeOf";
+import LetVar from "./data_type/LetVar";
+import LetVar2 from "./data_type/LetVar2";
+import LetVar3 from "./data_type/LetVar3";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +27,12 @@ ReactDOM.render(
       <BoolDataType/>
       <ArrayDataType/>
       <JsonDataType/>
+      <IfTest/>
+      <ForTest/>
+      <TypeOf/>
+      <LetVar/>
+      <LetVar2/>
+      <LetVar3/>
   </React.StrictMode>,
   document.getElementById('root')
 );
