@@ -25,6 +25,8 @@ public class ThreadChatClient {
         DataOutputStream out = new DataOutputStream(sock.getOutputStream());
 
         // transfer(송신)
+        // 익명 객체 것생성 형식으로
+        // 일회성의 목적을 가지고 만드는
         Thread tx = new Thread(new Runnable() {
             @Override
             public void run() {
