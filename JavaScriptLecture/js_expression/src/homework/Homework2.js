@@ -1,6 +1,6 @@
 const Homework2 = () => {
-    const START = 1;
-    const END = 20;
+    const START = 1
+    const END = 20
 
     for(var i = START; i <= END; i++) {
         if(!(i % 2)) {

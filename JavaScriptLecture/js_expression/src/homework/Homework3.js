@@ -1,15 +1,15 @@
 const Homework3 = () => {
-    const INIT = 1;
+    const INIT = 1
 
-    const START = 0;
-    const END = 15;
+    const START = 0
+    const END = 15
 
-    const CRITERIA = 10;
+    const CRITERIA = 10
 
-    var emp = [];
+    var emp = []
 
     for(var i = START; i < END; i++) {
-        emp[i] = (Math.random() * CRITERIA) + INIT;
+        emp[i] = (Math.random() * CRITERIA) + INIT
         console.log("Homework3: %d - %d", i, emp[i])
     }
 
