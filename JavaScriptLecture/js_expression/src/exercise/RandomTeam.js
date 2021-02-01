@@ -38,7 +38,7 @@ const RandomTeam = () => {
 
         if(res2.indexOf(teamB[randArrIdx]) == ERROR) {
             res2.push(teamB[randArrIdx])
-            console.log("res2: %d - %s", i, res1[i++])
+            console.log("res2: %d - %s", i, res2[i++])
         }
     }
 
