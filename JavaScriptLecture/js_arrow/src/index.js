@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ArrowFunctionTest from "./arrow-test/ArrowFunctionTest";
+import ArrowFunctionTest2 from "./arrow-test/ArrowFunctionTest2";
+import ArrowFunctionTest3 from "./arrow-test/ArrowFunctionTest3";
+import ArrowFunctionTest4 from "./arrow-test/ArrowFunctionTest4";
+import FuncTest from "./func-test/FuncTest";
+import DefaultParam from "./func-test/DefaultParam";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ArrowFunctionTest/>
+    <ArrowFunctionTest2/>
+    <ArrowFunctionTest3/>
+    <ArrowFunctionTest4/>
+    <FuncTest/>
+    <DefaultParam/>
   </React.StrictMode>,
   document.getElementById('root')
 );
