@@ -8,6 +8,7 @@ import ArrowFunctionTest3 from "./arrow-test/ArrowFunctionTest3";
 import ArrowFunctionTest4 from "./arrow-test/ArrowFunctionTest4";
 import FuncTest from "./func-test/FuncTest";
 import DefaultParam from "./func-test/DefaultParam";
+import Prob from './exercise/Prob';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
     <ArrowFunctionTest4/>
     <FuncTest/>
     <DefaultParam/>
+    <Prob/>
   </React.StrictMode>,
   document.getElementById('root')
 );
