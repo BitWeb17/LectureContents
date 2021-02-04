@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import TestPromiseVersion from './promise-parallel/TestPromiseVersion';
 import reportWebVitals from './reportWebVitals';
-import PromiseParallelTest7 from "./promise-parallel/PromiseParallelTest7";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PromiseParallelTest7/>
+    <TestPromiseVersion/>
   </React.StrictMode>,
   document.getElementById('root')
 );
