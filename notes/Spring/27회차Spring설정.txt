@@ -1,0 +1,102 @@
+Spring 환경 설정
+
+* IntelliJ Ultimate 사용자
+
+1) File -> New Project -> Spring Initializr
+2) 기본 설정 상태에서 Next
+3) Type: Gradle로 지정해서 Next
+4) Developer Tools  - Lombok
+   Web              - Spring Web
+   Template Engines - Thymeleaf
+   SQL              - JDBC API, H2 Database, MySQL Driver
+5) 우측에 6개의 종속성들이 선택되었는지 확인후 Next
+6) 경로 설정을 해줘야 하는데
+   Project location을 git 경로에 배치해야 git 명령어로 제어가 가능해짐
+   (각자 자신의 git 경로에 배치하도록 한다.)
+7) Finish 누르고 Create(없으면 만들란 소리)
+
+
+
+* IntelliJ Community 사용자
+
+오히려 커뮤니티 버전은 절차가 좀 더 간단하다고 생각할 수도 있다.
+Ultimate에서 설정한 설정값을 그대로 땡겨와서 붙이면 되기 때문이다.
+
+단점이 Ultimate는 나만의 커스텀 설정이 용이한 반면
+커뮤니티 버전은 설정들을 수동으로 맞추거나 Copy & Paste 방식을 사용해야한다.
+
+오히려 커뮤니티 버전은 절차가 좀 더 간단하다고 생각할 수도 있다.
+Ultimate에서 설정한 설정값을 그대로 땡겨와서 붙이면 되기 때문이다.
+
+단점이 Ultimate는 나만의 커스텀 설정이 용이한 반면
+커뮤니티 버전은 설정들을 수동으로 맞추거나 Copy & Paste 방식을 사용해야한다.
+
+한 번도 커뮤니티 버전을 사용하지 않았다면 당연히 jdk 설정을 해줘야함
+
+1) 설정 이후에 Gradle 선택하고 Java 선택후 Next
+2) Ultimate 버전과 동일하게 경로 설정하고 Finish
+3) Ultimate에 있는 build.gradle을 그냥 복사 붙여넣기 한다.
+
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+그리고 com.example.demo 와 같은 패키지를 생성하고
+DemoApplication.java 파일을 만든다.
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Hello Spring~~!!~!");
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+
+만들고 실행한다.
+
+
+
+* VSCode
+
+https://leeborn.tistory.com/entry/VS-Code-Spring-Boot-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0
+
+
+
+
