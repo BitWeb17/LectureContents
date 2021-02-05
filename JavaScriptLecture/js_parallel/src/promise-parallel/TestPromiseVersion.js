@@ -46,6 +46,9 @@ function fourth() {
     })
 }
 
+// 특성이 몇 개 있다.
+// 1) 자바스크립트 엔진이 파악하기에 분리가 가능한 수학 연산
+// 2) 행렬 연산, 벡터 연산(웹 게임 분야)
 async function asyncProcess() {
     const res = await Promise.all(
         [

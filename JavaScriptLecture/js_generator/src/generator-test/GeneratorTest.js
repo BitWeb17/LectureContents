@@ -25,15 +25,13 @@ const GeneratorTest = () => {
     let nameIter = getName()
 
     console.log(nameIter.next())
+    console.log(nameIter.next())
+    console.log(nameIter.next())
+    console.log(nameIter.next())
 
     let majorIter = getMajor()
 
     console.log(majorIter.next())
-
-    console.log(nameIter.next())
-    console.log(nameIter.next())
-    console.log(nameIter.next())
-
     console.log(majorIter.next("Radar Signal Processing"))
     console.log(majorIter.next("John"))
 
