@@ -72,6 +72,25 @@ test {
     useJUnitPlatform()
 }
 
+그리고 com.example.demo 와 같은 패키지를 생성하고
+DemoApplication.java 파일을 만든다.
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Hello Spring~~!!~!");
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+
+만들고 실행한다.
+
 
 
 * VSCode
