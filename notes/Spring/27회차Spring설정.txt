@@ -25,6 +25,53 @@ Ultimate에서 설정한 설정값을 그대로 땡겨와서 붙이면 되기 �
 단점이 Ultimate는 나만의 커스텀 설정이 용이한 반면
 커뮤니티 버전은 설정들을 수동으로 맞추거나 Copy & Paste 방식을 사용해야한다.
 
+오히려 커뮤니티 버전은 절차가 좀 더 간단하다고 생각할 수도 있다.
+Ultimate에서 설정한 설정값을 그대로 땡겨와서 붙이면 되기 때문이다.
+
+단점이 Ultimate는 나만의 커스텀 설정이 용이한 반면
+커뮤니티 버전은 설정들을 수동으로 맞추거나 Copy & Paste 방식을 사용해야한다.
+
+한 번도 커뮤니티 버전을 사용하지 않았다면 당연히 jdk 설정을 해줘야함
+
+1) 설정 이후에 Gradle 선택하고 Java 선택후 Next
+2) Ultimate 버전과 동일하게 경로 설정하고 Finish
+3) Ultimate에 있는 build.gradle을 그냥 복사 붙여넣기 한다.
+
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
 
 
 * VSCode
