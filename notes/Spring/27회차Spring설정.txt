@@ -1,0 +1,36 @@
+Spring 환경 설정
+
+* IntelliJ Ultimate 사용자
+
+1) File -> New Project -> Spring Initializr
+2) 기본 설정 상태에서 Next
+3) Type: Gradle로 지정해서 Next
+4) Developer Tools  - Lombok
+   Web              - Spring Web
+   Template Engines - Thymeleaf
+   SQL              - JDBC API, H2 Database, MySQL Driver
+5) 우측에 6개의 종속성들이 선택되었는지 확인후 Next
+6) 경로 설정을 해줘야 하는데
+   Project location을 git 경로에 배치해야 git 명령어로 제어가 가능해짐
+   (각자 자신의 git 경로에 배치하도록 한다.)
+7) Finish 누르고 Create(없으면 만들란 소리)
+
+
+
+* IntelliJ Community 사용자
+
+오히려 커뮤니티 버전은 절차가 좀 더 간단하다고 생각할 수도 있다.
+Ultimate에서 설정한 설정값을 그대로 땡겨와서 붙이면 되기 때문이다.
+
+단점이 Ultimate는 나만의 커스텀 설정이 용이한 반면
+커뮤니티 버전은 설정들을 수동으로 맞추거나 Copy & Paste 방식을 사용해야한다.
+
+
+
+* VSCode
+
+https://leeborn.tistory.com/entry/VS-Code-Spring-Boot-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0
+
+
+
+
