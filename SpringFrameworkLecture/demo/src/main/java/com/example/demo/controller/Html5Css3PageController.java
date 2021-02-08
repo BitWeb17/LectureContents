@@ -127,4 +127,53 @@ public class Html5Css3PageController {
 
         return "html_css/success.html";
     }
+
+    @GetMapping("/tableTest")
+    public String getTableTest() {
+        log.info("Enter getTableTest()");
+
+        return "html_css/tableTest.html";
+    }
+
+    @GetMapping("/mat3by3Test")
+    public String getMat3by3Test() {
+        log.info("Enter getMat3by3Test()");
+
+        return "html_css/mat3by3Test.html";
+    }
+
+    @GetMapping("/tableTest2")
+    public String getTableTest2() {
+        log.info("Enter getTableTest2()");
+
+        return "html_css/tableTest2.html";
+    }
+
+    @GetMapping("/captionTest")
+    public String getCaptionTest() {
+        log.info("Enter getCaptionTest()");
+
+        return "html_css/captionTest.html";
+    }
+
+    @GetMapping("/tableTest3")
+    public String getTableTest3() {
+        log.info("Enter getTableTest3()");
+
+        return "html_css/tableTest3.html";
+    }
+
+    @GetMapping("/tableTest4")
+    public String getTableTest4() {
+        log.info("Enter getTableTest4()");
+
+        return "html_css/tableTest4.html";
+    }
+
+    @GetMapping("/tableTest5")
+    public String getTableTest5() {
+        log.info("Enter getTableTest5()");
+
+        return "html_css/tableTest5.html";
+    }
 }

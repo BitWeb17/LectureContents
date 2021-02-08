@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Creation Test</title>
+    <style>
+        table, th, td {
+            border: 1px solid #00fd22;
+        }
+        th {
+            padding: 15px;
+        }
+        tr > td:nth-child(odd) {
+            /* 홀수번째 열의 너비: 170으로 고정 */
+            width: 170px;
+        }
+        tr > td:nth-child(even) {
+            /* 짝수번째 열의 너비: 200으 고정 */
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <td></td>
+        <th>Contact</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <!-- colspan은 합칠 열의 개수를 의미한다.
+             rowspan은 합칠 행의 개수를 의미한다. -->
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <th>Self Introduction</th>
+        <td colspan="3"></td>
+    </tr>
+</table>
+</body>
+</html>
