@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 70%;
+            border: 2px solid #fb0089;
+            border-collapse: collapse;
+        }
+        thead {
+            background: #cb13aa
+        }
+        th, td {
+            border: 1px solid #00fd22;
+            padding: 6px;
+            font-siez: 0.8em;
+        }
+        a {
+            color: #23ca92;
+        }
+        a:visited {
+            color: #df8912;
+        }
+        /* 밑줄 없앰 */
+        /*
+        a, a:visited {
+            color: #202020;
+
+            text-decoration: none;
+        }
+        */
+        #sns > ul {
+            /* 목록 들여쓰기 하지 않기 */
+            padding-left: 0
+        }
+        #sns > ul > li {
+            /* 항목을 가로로 배치 */
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<!-- div는 Layout 설정 -->
+<div id="container">
+    <!-- aside의 경우 기존 페이지에 나타나는 정보와
+         별도의 공간에 표시할 때 사용 -->
+    <aside>
+        <div id="card">
+            <img src="img/cat.jpg" width="125" height="125">
+            <h1>Go Go Go</h1>
+            <p>Let`s go!</p>
+        </div>
+        <div id="detail">
+            <p>Gogogo, Korea</p>
+            <p>gogogo@gmail.com</p>
+        </div>
+        <div id="sns">
+            <h2>SNS</h2>
+            <ul>
+                <li>
+                    <a href="https://golang.org/doc">Go Doc</a>
+                </li>
+                <li>
+                    <a href="https://golang.org">Golang Homepage</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div id="main">
+        <section>
+            <p><mark>Resume</mark></p>
+            <h2 class="subtitle">Who are you ?</h2>
+        </section>
+        <section>
+            <h2 class="subtitle">Experience</h2>
+            <ul>
+                <li>Autonomous Vehicles
+                    <ul>
+                        <li>Power Electronics</li>
+                        <li>LTE with H.264</li>
+                        <li>DPU Design with FPGA</li>
+                        <li>WebRTC with Monitoring</li>
+                    </ul>
+                </li>
+                <li>Architect
+                    <ul>
+                        <li>Device Driver</li>
+                        <li>Software Architecture</li>
+                        <li>Hardware Architecture</li>
+                        <li>FPGA Design</li>
+                        <li>OOP with C</li>
+                        <li>High Performance with Distributed Environment</li>
+                        <li>OpenMPI with Super Computing</li>
+                        <li>Clean Architecture with JAVA</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="subtitle">Skills</h2>
+        </section>
+        <section>
+            <h2 class="subtitle">Education</h2>
+            <table>
+                <caption>Educational History</caption>
+                <thead>
+                <tr>
+                    <th>School of Origin</th>
+                    <th>Major</th>
+                    <th>Term</th>
+                    <th>Distinction</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+</body>
+</html>

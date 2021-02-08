@@ -234,4 +234,11 @@ public class Html5Css3PageController {
 
         return "html_css/idCheckTest.html";
     }
+
+    @GetMapping("/visitedTest")
+    public String getVisitedTest() {
+        log.info("Enter getVisitedTest()");
+
+        return "html_css/visitedTest.html";
+    }
 }
