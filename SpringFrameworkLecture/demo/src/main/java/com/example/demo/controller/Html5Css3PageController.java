@@ -241,4 +241,11 @@ public class Html5Css3PageController {
 
         return "html_css/visitedTest.html";
     }
+
+    @GetMapping("/roiATagTest")
+    public String getRoiATagTest() {
+        log.info("Enter getRoiATagTest()");
+
+        return "html_css/roiATagTest.html";
+    }
 }
