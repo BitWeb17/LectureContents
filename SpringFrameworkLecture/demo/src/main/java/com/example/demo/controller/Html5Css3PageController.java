@@ -248,4 +248,18 @@ public class Html5Css3PageController {
 
         return "html_css/roiATagTest.html";
     }
+
+    @GetMapping("/formTest")
+    public String getFormTest() {
+        log.info("Enter getFormTest()");
+
+        return "html_css/form/formTest.html";
+    }
+
+    @GetMapping("/loginFormTest")
+    public String getLoginFormTest() {
+        log.info("Enter getLoginFormTest()");
+
+        return "html_css/form/loginFormTest.html";
+    }
 }
