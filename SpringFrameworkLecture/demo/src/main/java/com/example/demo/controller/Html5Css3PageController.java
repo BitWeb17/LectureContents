@@ -176,4 +176,62 @@ public class Html5Css3PageController {
 
         return "html_css/tableTest5.html";
     }
+
+    @GetMapping("/imgAltTest")
+    public String getImgAltTest() {
+        log.info("Enter getImgAltTest()");
+
+        return "html_css/imgAltTest.html";
+    }
+
+    @GetMapping("/imgSizeTest")
+    public String getImgTest() {
+        log.info("Enter getImgSizeTest()");
+
+        return "html_css/imgSizeTest.html";
+    }
+
+    @GetMapping("/imgFigcaptionTest")
+    public String getFigcaptionTest() {
+        log.info("Enter getFigcaptionTest()");
+
+        return "html_css/imgFigcaptionTest.html";
+    }
+
+    @GetMapping("/imgCompanyProfileTest")
+    public String getImgCompanyProfileTest() {
+        log.info("Enter getImgCompanyProfileTest()");
+
+        return "html_css/imgCompanyProfileTest.html";
+    }
+
+    @GetMapping("/aTagTest")
+    public String getATagTest() {
+        log.info("Enter getATagTest()");
+
+        return "html_css/aTagTest.html";
+    }
+
+    @GetMapping("/aTagStyleTest")
+    public String getATagStyleTest() {
+        log.info("Enter getATagStyleTest()");
+
+        return "html_css/aTagStyleTest.html";
+    }
+
+    /* iframe 부분에 예상치 못한 오류가 발생중
+       스펙 사항이 바뀌었는지 체크할 필요가 있음 */
+    @GetMapping("/iFrameTest")
+    public String getIFrameTest() {
+        log.info("Enter getIFrameTest()");
+
+        return "html_css/iFrameTest.html";
+    }
+
+    @GetMapping("/idCheckTest")
+    public String getIdCheckTest() {
+        log.info("Enter getIdCheckTest()");
+
+        return "html_css/idCheckTest.html";
+    }
 }

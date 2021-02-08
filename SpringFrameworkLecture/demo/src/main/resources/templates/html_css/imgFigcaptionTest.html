@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            border: 3px solid #fb0089;
+        }
+        figure {
+            /* 요소들이 전후 줄바꿈 없이 나란히 배치되며
+               다른 속성들과의 차이점으로는
+               높이, 너비, 패딩등의 설정이 가능하다. */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product</h1>
+    <!-- figure는 비디오, 오디오, 사진 등등을 걸어둘 수 있는 태그
+         위의 요소들을 담을 수 있는 컨테이너 역할을 한다 봐도 무방함 -->
+    <figure>
+        <img src="img/cat.jpg" width="250" height="250">
+        <figcaption>It's a cat!</figcaption>
+    </figure>
+</body>
+</html>
