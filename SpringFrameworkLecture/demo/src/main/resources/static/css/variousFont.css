@@ -54,3 +54,20 @@ p {
                 -2px -15px 11px #1afacf,
                 2px -19px 18px #7777ff;
 }
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+.align-justify {
+    text-align: justify;
+}
+#container {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin: 10px;
+}
