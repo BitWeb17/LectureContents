@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 10px;
+        }
+        li label {
+            width: 120px;
+            float: left;
+            text-align: right;
+            padding-right: 10px;
+        }
+        /* input의 type중에 submit은 아래 속성을 가지게 스타일링한다. */
+        input[type="submit"] {
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>Sign Up</h1>
+<form>
+    <fieldset>
+        <legend>Registration Information</legend>
+        <ul>
+            <li>
+                <label for="user-id">Id</label>
+                <input type="text" id="user-id">
+            </li>
+            <li>
+                <label for="pwd1">Password</label>
+                <input type="password" id="pwd1">
+            </li>
+            <li>
+                <label for="pwd2">Confirm Password</label>
+                <input type="password" id="pwd2">
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <ul>
+            <li>
+                <label for="user-name">Name</label>
+                <input type="text" id="user-name">
+            </li>
+            <li>
+                <label for="e-mail">E-mail Address</label>
+                <input type="email" id="e-mail">
+            </li>
+            <li>
+                <label for="phone">Contact</label>
+                <input type="tel" id="phone">
+            </li>
+            <li>
+                <label for="blog-home">Blog / Homepage</label>
+                <input type="url" id="blog-home">
+            </li>
+        </ul>
+    </fieldset>
+    <input type="submit" value="Register">
+</form>
+</body>
+</html>

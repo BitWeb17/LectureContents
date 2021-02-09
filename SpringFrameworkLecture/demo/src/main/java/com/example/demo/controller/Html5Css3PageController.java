@@ -262,4 +262,67 @@ public class Html5Css3PageController {
 
         return "html_css/form/loginFormTest.html";
     }
+
+    @GetMapping("/webFormTest")
+    public String getWebFormTest() {
+        log.info("Enter getLoginFormTest()");
+
+        return "html_css/form/webFormTest.html";
+    }
+
+    @GetMapping("/webFormTest2")
+    public String getWebFormTest2() {
+        log.info("Enter getLoginFormTest2()");
+
+        return "html_css/form/webFormTest2.html";
+    }
+
+    @GetMapping("/webFormTest3")
+    public String getWebFormTest3() {
+        log.info("Enter getLoginFormTest3()");
+
+        return "html_css/form/webFormTest3.html";
+    }
+
+    @GetMapping("/webFormTest4")
+    public String getWebFormTest4() {
+        log.info("Enter getLoginFormTest4()");
+
+        return "html_css/form/webFormTest4.html";
+    }
+
+    @GetMapping("/webFormTest5")
+    public String getWebFormTest5() {
+        log.info("Enter getLoginFormTest5()");
+
+        return "html_css/form/webFormTest5.html";
+    }
+
+    @GetMapping("/webFormTest6")
+    public String getWebFormTest6() {
+        log.info("Enter getLoginFormTest6()");
+
+        return "html_css/form/webFormTest6.html";
+    }
+
+    @GetMapping("/webFormTest7")
+    public String getWebFormTest7() {
+        log.info("Enter getLoginFormTest7()");
+
+        return "html_css/form/webFormTest7.html";
+    }
+
+    @GetMapping("/webFormWithSelect")
+    public String getWebFormWithSelect() {
+        log.info("Enter getLoginFormWithSelect()");
+
+        return "html_css/form/webFormWithSelect.html";
+    }
+
+    @GetMapping("/webFormOptGroup")
+    public String getWebFormOptGroup() {
+        log.info("Enter getWebFormOptGroup()");
+
+        return "html_css/form/webFormOptGroup.html";
+    }
 }

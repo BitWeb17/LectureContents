@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h3>페라리 렌탈 서비스!(오늘 한정)</h3>
+    <!-- time: 시간 지정 -->
+    <label>Start Time
+        <input type="time" value="09:00" id="start1">
+    </label>
+    <label>End Time
+        <input type="time" value="08:59" id="end1">
+    </label>
+
+    <h3>마감일 경고 서비스!</h3>
+    <!-- datetime-local: 날자, 시간 지정 -->
+    <label>오늘부터 시작이다!
+        <input type="datetime-local"
+               value="2021-02-09T12:00" id="start2">
+    </label>
+    </br>
+    <label>못 끝내면 위약금 10억
+        <input type="datetime-local"
+               value="2023-04-01T11:00" id="end2">
+    </label>
+</form>
+</body>
+</html>

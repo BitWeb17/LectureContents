@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #0fdce8;
+        }
+        form legend {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        form label.reg {
+            font-size: 12px;
+            width: 100px;
+            float: left;
+        }
+        form ul li {
+            list-style: none;
+            margin: 15px 0;
+        }
+        #member, #stuffs {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Register Information</legend>
+        <ul>
+            <li>
+                <label class="reg" for="member">
+                    Num of Mem<small>(Max 10)</small>
+                </label>
+                <input type="number" id="member" value="1"
+                       min="0" max="10" step="1">
+            </li>
+            <li>
+                <label class="reg" for="stuffs">
+                    Goods<small>(5 per Person)</small>
+                </label>
+                <input type="number" id="stuffs" value="1"
+                       min="0" max="50" step="5">
+            </li>
+            <li>
+                <label class="reg" for="statisfy">
+                    Num of Mem<small>(Max 10)</small>
+                </label>
+                <input type="range" id="statisfy"
+                       value="1" min="1" max="3">
+            </li>
+        </ul>
+    </fieldset>
+</form>
+</body>
+</html>

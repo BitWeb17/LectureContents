@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form label.reg {
+            font-size: 14px;
+            width: 120px;
+            color: #339900;
+            font-weight: bold;
+            float: left;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Course Selection</h1>
+<form>
+    <fieldset id="course">
+        <legend>Course</legend>
+        <ul>
+            <li>
+                <label class="reg" for="subject">
+                    Abstraction Programming
+                </label>
+                <input type="text" id="subject"
+                       value="오전 8:00 ~ 오후 11:00" readonly>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset id="register">
+        <legend>Appliant</legend>
+        <ul>
+            <li>
+                <label class="reg" for="uname">Name</label>
+                <input type="text" id="uname" autofocus required>
+            </li>
+            <li>
+                <label class="reg" for="uclass">Department</label>
+                <select id="uclass">
+                    <optgroup label="Hardware">
+                        <option value="class1">
+                            Software Architecturing with C
+                        </option>
+                        <option value="class4">
+                            Distributed Super Computing with MPI
+                        </option>
+                        <option value="class5">
+                            C++ Boost
+                        </option>
+                        <option value="class6">
+                            Verilog HDL with H.264 Codec
+                        </option>
+                        <option value="class7">
+                            Digital Signal Processing with C
+                        </option>
+                        <option value="class8">
+                            DPU Design with Xilinx Vitis-AI
+                        </option>
+                        <option value="class9">
+                            CPU Design with Verilog
+                        </option>
+                        <option value="class10">
+                            GPU Design with VHDL
+                        </option>
+                        <option value="class15">
+                            High Level Synthesis with C++
+                        </option>
+                        <option value="class17">
+                            Power Electronics
+                        </option>
+                        <option value="class18">
+                            PCB Design with KiCAD
+                        </option>
+                        <option value="class19">
+                            DC-DC Converter Design with KiCAD
+                        </option>
+                        <option value="class20">
+                            PMSM Motor Control with NXP Semiconductors
+                        </option>
+                    </optgroup>
+                    <optgroup label="Software">
+                        <option value="class2">
+                            Software Architecturing with Java
+                        </option>
+                        <option value="class3">
+                            Custom Web Framework Development
+                        </option>
+                        <option value="class11">
+                            JavaScript Programming Basics
+                        </option>
+                        <option value="class12">
+                            Vue.js
+                        </option>
+                        <option value="class13">
+                            React.js
+                        </option>
+                        <option value="class14">
+                            Svelte.js
+                        </option>
+                        <option value="class16">
+                            HTTP Live Streaming with MPEG-DASH
+                        </option>
+                        <option value="class21">
+                            Golang
+                        </option>
+                        <option value="class21">
+                            Python
+                        </option>
+                        <option value="class22">
+                            TensorFlow with C++ & Python
+                        </option>
+                        <option value="class23">
+                            Linux System Programming
+                        </option>
+                        <option value="class24">
+                            Windows API Programming
+                        </option>
+                        <option value="class25">
+                            Apache Kafka with Distributed Environment
+                        </option>
+                    </optgroup>
+                </select>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <button type="submit" value="submit">
+            Apply
+        </button>
+        <button type="reset" value="reset">
+            Rewrite
+        </button>
+    </fieldset>
+</form>
+</body>
+</html>
