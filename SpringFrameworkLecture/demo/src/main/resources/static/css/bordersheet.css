@@ -1,0 +1,28 @@
+* {
+    /* css에서 '*'은 전체를 의미하므로 결국 모든 요소에 적용 */
+    margin: 20px auto;
+}
+#container {
+    width: 600px;
+    padding: 10px;
+    /* 테두리 스타일이 solid -> dotted 로 변경된 부분에 집중 */
+    border: 1px dotted gray;
+}
+p {
+    font-size: 0.9em;
+    line-height: 2.0;
+}
+.bluetext {
+    color: blue;
+}
+h2.accent {
+    background-color: #202020;
+    color: #ffffff;
+    padding: 5px;
+}
+.browntext {
+    color: brown;
+}
+.boldtext {
+    font-weight: bold;
+}

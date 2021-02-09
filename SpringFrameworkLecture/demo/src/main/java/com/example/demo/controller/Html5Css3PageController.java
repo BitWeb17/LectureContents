@@ -325,4 +325,67 @@ public class Html5Css3PageController {
 
         return "html_css/form/webFormOptGroup.html";
     }
+
+    @GetMapping("/webFormLegacy")
+    public String getWebFormLegacy() {
+        log.info("Enter getWebFormLegacy()");
+
+        return "html_css/form/webFormLegacy.html";
+    }
+
+    @GetMapping("/webProgressBarTest")
+    public String getWebProgressBarTest() {
+        log.info("Enter getWebProgressBarTest()");
+
+        return "html_css/progbar/webProgressBarTest.html";
+    }
+
+    @GetMapping("/webProgressBarTest2")
+    public String getWebProgressBarTest2() {
+        log.info("Enter getWebProgressBarTest2()");
+
+        return "html_css/progbar/webProgressBarTest2.html";
+    }
+
+    @GetMapping("/webCSS3Test")
+    public String getWebCSS3Test() {
+        log.info("Enter getWebCSS3Test()");
+
+        return "html_css/css3basic/webCSS3Test.html";
+    }
+
+    @GetMapping("/webCSS3SectionTest")
+    public String getWebCSS3SectionTest() {
+        log.info("Enter getWebCSS3SectionTest()");
+
+        return "html_css/css3basic/webCSS3SectionTest.html";
+    }
+
+    @GetMapping("/webCSS3StyleSheetTest")
+    public String getWebCSS3StyleSheetTest() {
+        log.info("Enter getWebCSS3StyleSheetTest()");
+
+        return "html_css/css3basic/webCSS3StyleSheetTest.html";
+    }
+
+    @GetMapping("/webBorderStyleTest")
+    public String getWebBorderStyleTest() {
+        log.info("Enter getWebBorderStyleTest()");
+
+        return "html_css/css3basic/webBorderStyleTest.html";
+    }
+
+    @GetMapping("/webHow2AvoidTest")
+    public String getWebHow2AvoidTest() {
+        log.info("Enter getWebHow2AvoidTest()");
+
+        return "html_css/css3basic/webHow2AvoidTest.html";
+    }
+
+    @GetMapping("/webRotationTransformTest")
+    public String getWebRotationTransformTest() {
+        log.info("Enter getWebRotationTransformTest()");
+
+        return "html_css/css3basic/webRotationTransformTest.html";
+    }
 }

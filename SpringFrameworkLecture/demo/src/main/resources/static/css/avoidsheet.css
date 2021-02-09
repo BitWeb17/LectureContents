@@ -1,0 +1,15 @@
+* {
+    /* 모든 요소를 화면 중앙에 배치 */
+    margin: 20px auto;
+}
+body {
+    color: blue;
+}
+#container {
+    width: 600px;
+    padding: 12px;
+    border: 1px dotted gray;
+}
+h2 {
+    color: brown !important;
+}
