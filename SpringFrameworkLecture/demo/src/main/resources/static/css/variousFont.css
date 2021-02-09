@@ -1,0 +1,56 @@
+/* 내가 필요한 폰트를 Google API를 통해서 찾고 사용이 가능하다.
+   영어: https://fonts.google.com/
+   한글: https://noonnu.cc/           */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+.ng-font {
+    /* 웹 폰트를 지정함 */
+    font-family: 'Nanum Gothic', 돋움;
+}
+p {
+    font-size: 20px;
+}
+.em1-test {
+    font-size: 1em;
+}
+.em3-test {
+    font-size: 3em;
+}
+.em2_5-test {
+    font-size: 2.5em;
+}
+.italic-txt {
+    font-style: italic;
+}
+.cancel-line {
+    text-decoration: line-through;
+}
+.upper-trans {
+    text-transform: uppercase;
+}
+.capital-trans {
+    text-transform: capitalize;
+}
+.lower-trans {
+    text-transform: lowercase;
+}
+.shadow-orange-txt {
+    color: orange;
+    /* 그림자의 수평 거리, 수직 거리 */
+    text-shadow: 1px 1px #000000;
+}
+.shadow-red-txt {
+    /* 가우시안 블러의 정도(흐리기), 색상 */
+    text-shadow: 5px 5px 3px #ff0000;
+}
+.shadow-white-txt {
+    color: #777777;
+    text-shadow: -5px 7px 5px #000000;
+}
+.shadow-cool-txt {
+    color: #000000;
+    text-shadow: 0 0 4px #08fd00,
+                0 -5px 4px #ffff33,
+                2px -10px 6px #0fdce8,
+                -2px -15px 11px #1afacf,
+                2px -19px 18px #7777ff;
+}

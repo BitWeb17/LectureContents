@@ -388,4 +388,11 @@ public class Html5Css3PageController {
 
         return "html_css/css3basic/webRotationTransformTest.html";
     }
+
+    @GetMapping("/webFontTest")
+    public String getWebFontTest() {
+        log.info("Enter getWebFontTest()");
+
+        return "html_css/css3basic/webFontTest.html";
+    }
 }
