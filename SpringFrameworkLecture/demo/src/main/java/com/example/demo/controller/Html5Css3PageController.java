@@ -416,4 +416,123 @@ public class Html5Css3PageController {
 
         return "html_css/custom/webCustomUlTest.html";
     }
+
+    @GetMapping("/webBoxTest")
+    public String getWebBoxTest() {
+        log.info("Enter getWebBoxTest()");
+
+        return "html_css/box/webBoxTest.html";
+    }
+
+    @GetMapping("/webBlockInlineTest")
+    public String getWebBlockInlineTest() {
+        log.info("Enter getWebBlockInlineTest()");
+
+        return "html_css/box/webBlockInlineTest.html";
+    }
+
+    @GetMapping("/webNavUlLiBoxTest")
+    public String getWebNavUlLiBoxTest() {
+        log.info("Enter getWebNavUlLiBoxTest()");
+
+        return "html_css/box/webNavUlLiBoxTest.html";
+    }
+
+    @GetMapping("/webNavUlLiBoxTest2")
+    public String getWebNavUlLiBoxTest2() {
+        log.info("Enter getWebNavUlLiBoxTest2()");
+
+        return "html_css/box/webNavUlLiBoxTest2.html";
+    }
+
+    @GetMapping("/webInlineBlockTest")
+    public String getWebInlineBlockTest() {
+        log.info("Enter getWebInlineBlockTest()");
+
+        return "html_css/box/webInlineBlockTest.html";
+    }
+
+    @GetMapping("/webBoxBorderStyleTest")
+    public String getWebBoxBorderStyleTest() {
+        log.info("Enter getWebBoxBorderStyleTest()");
+
+        return "html_css/box/webBoxBorderStyleTest.html";
+    }
+
+    @GetMapping("/webBoxBorderStyleTest2")
+    public String getWebBoxBorderStyleTest2() {
+        log.info("Enter getWebBoxBorderStyleTest2()");
+
+        return "html_css/box/webBoxBorderStyleTest2.html";
+    }
+
+    @GetMapping("/webBoxRoundTest")
+    public String getWebBoxRoundTest() {
+        log.info("Enter getWebBoxRoundTest()");
+
+        return "html_css/box/webBoxRoundTest.html";
+    }
+
+    @GetMapping("/webBoxEllipseTest")
+    public String getWebBoxEllipseTest() {
+        log.info("Enter getWebBoxEllipseTest()");
+
+        return "html_css/box/webBoxEllipseTest.html";
+    }
+
+    @GetMapping("/webBoxSubRoundTest2")
+    public String getWebBoxSubRoundTest2() {
+        log.info("Enter getWebBoxSubRoundTest2()");
+
+        return "html_css/box/webBoxSubRoundTest2.html";
+    }
+
+    @GetMapping("/webBoxMarginTest")
+    public String getWebBoxMarginTest() {
+        log.info("Enter getWebBoxMarginTest()");
+
+        return "html_css/box/webBoxMarginTest.html";
+    }
+
+    @GetMapping("/webBoxPaddingTest")
+    public String getWebBoxPaddingTest() {
+        log.info("Enter getWebBoxPaddingTest()");
+
+        return "html_css/box/webBoxPaddingTest.html";
+    }
+
+    @GetMapping("/webBoxSizingTest")
+    public String getWebBoxSizingTest() {
+        log.info("Enter getWebBoxSizingTest()");
+
+        return "html_css/box/webBoxSizingTest.html";
+    }
+
+    @GetMapping("/webBoxLayoutTest")
+    public String getWebBoxLayoutTest() {
+        log.info("Enter getWebBoxLayoutTest()");
+
+        return "html_css/box/webBoxLayoutTest.html";
+    }
+
+    @GetMapping("/webBoxLayoutTest2")
+    public String getWebBoxLayoutTest2() {
+        log.info("Enter getWebBoxLayoutTest2()");
+
+        return "html_css/box/webBoxLayoutTest2.html";
+    }
+
+    @GetMapping("/webBoxOutlineTest")
+    public String getWebBoxOutlineTest() {
+        log.info("Enter getWebBoxOutlineTest()");
+
+        return "html_css/box/webBoxOutlineTest.html";
+    }
+
+    @GetMapping("/webBoxPositionRelativeTest")
+    public String getWebBoxPositionRelativeTest() {
+        log.info("Enter getWebBoxPositionRelativeTest()");
+
+        return "html_css/box/webBoxPositionRelativeTest.html";
+    }
 }

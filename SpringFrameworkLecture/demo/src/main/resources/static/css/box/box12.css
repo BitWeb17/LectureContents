@@ -1,0 +1,29 @@
+div {
+    width: 200px;
+    height: auto;
+    background: #0094ff;
+    display: inline-block;
+    margin: 15px;
+    color: white;
+}
+.box1 {
+    padding: 10px 30px 10px 30px;
+}
+.box2 {
+    padding: 10px 30px;
+}
+.box3 {
+    padding: 10px;
+}
+.box4 {
+    padding: 10px 30px 10px;
+}
+.box5 {
+    padding: 10px 20px;
+}
+.box6 {
+    padding: 0px 10px;
+}
+.box7 {
+    padding: 0px 0px;
+}

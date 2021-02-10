@@ -1,0 +1,21 @@
+div {
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+    border-width: 4px;
+}
+.box1 {
+    border-style: solid;
+}
+.box2 {
+    border-style: dotted;
+}
+.box3 {
+    border-style: groove;
+    border-color: #0fdce8;
+}
+.box4 {
+    border-style: dashed;
+    border-color: #7777ff;
+}

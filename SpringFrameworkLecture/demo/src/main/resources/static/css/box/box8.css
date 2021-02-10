@@ -1,0 +1,16 @@
+div {
+    width: 250px;
+    height: 200px;
+    /* 영역간 마진 */
+    margin: 20px;
+    display: inline-block;
+}
+.round {
+    border: 2px solid red;
+    /* 라운딩 값 20 */
+    border-radius: 20px;
+}
+#bg {
+    background:url(../../img/cat.jpg) no-repeat;
+    background-size: cover;
+}

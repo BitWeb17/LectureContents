@@ -1,0 +1,30 @@
+#box-container > div, #box-container > span {
+    border: 2px solid #0099cc;
+    margin: 3px 0;
+    padding: 5px;
+}
+.none {
+    display: none;
+}
+.block1 {
+    display: block;
+}
+.block2 {
+    display: block;
+    width: 300px;
+    height: 60px;
+}
+.inline {
+    display: inline;
+    width: 200px;
+    height: 60px;
+}
+.inline-block {
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+}
+.default-inline, .default-block {
+    width: 200px;
+    height: 60px;
+}

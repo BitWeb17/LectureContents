@@ -1,0 +1,31 @@
+div {
+    border: 1px solid #cccccc;
+}
+#container {
+    /* 전체 너비 */
+    width: 600px;
+    padding: 20px;
+    /* 화면 중앙 배치 */
+    margin: 0 auto;
+}
+#header {
+    padding: 20px;
+    /* 아래 요소들과의 간격 */
+    margin-bottom: 20px;
+}
+#contents {
+    width: 380px;
+    padding: 20px;
+    float: left;
+    margin-bottom: 20px;
+}
+#sidebar {
+    width: 130px;
+    padding: 20px;
+    float: right;
+    margin-bottom: 20px;
+}
+#footer {
+    clear: both;
+    padding: 20px;
+}

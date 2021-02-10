@@ -1,0 +1,10 @@
+h1 {
+    padding-bottom: 5px;
+    /* 아래쪽 테두리 */
+    border-bottom: 3px solid #cccccc;
+}
+p {
+    padding: 10px;
+    /* 전 구간 */
+    border: 3px dotted black;
+}

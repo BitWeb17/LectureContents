@@ -1,0 +1,22 @@
+div {
+    float: left;
+    margin-right: 20px;
+}
+.box1 {
+    /* 내용물 영역 기준 */
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid red;
+}
+.box2 {
+    /* 테두리(박스 전체) 기준 */
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid blue;
+}

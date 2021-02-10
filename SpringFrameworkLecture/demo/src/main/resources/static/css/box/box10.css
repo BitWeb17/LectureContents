@@ -1,0 +1,17 @@
+div {
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid black;
+    background: #00d8d8;
+}
+.round1 {
+    border-top-left-radius: 100px 50px;
+}
+.round2 {
+    border-bottom-right-radius: 50% 30%;
+}
+.round3 {
+    border-top-right-radius: 50px;
+}

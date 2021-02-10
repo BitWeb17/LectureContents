@@ -1,0 +1,12 @@
+div {
+    width: 350px;
+    height: 300px;
+    margin: 20px;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 170px/130px;
+}
+.bgEllipse {
+    background: url(../../img/cat.jpg) no-repeat;
+    background-size: cover;
+}
