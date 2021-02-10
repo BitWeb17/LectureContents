@@ -1,0 +1,16 @@
+.content {
+    /* 테두리 속성 */
+    border: 1px solid #cccccc;
+    /* 너비 */
+    width: 300px;
+    /* 줄바꿈 없음 */
+    white-space: nowrap;
+    /* 넘치는 부분 감추기 */
+    overflow: hidden;
+    /* 밑줄임표 */
+    text-overflow: ellipsis;
+}
+.content:hover {
+    /* 넘치는 부분을 보여줌 */
+    overflow: visible;
+}

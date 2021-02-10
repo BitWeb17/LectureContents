@@ -395,4 +395,25 @@ public class Html5Css3PageController {
 
         return "html_css/css3basic/webFontTest.html";
     }
+
+    @GetMapping("/webOverflowTest")
+    public String getWebOverflowTest() {
+        log.info("Enter getWebOverflowTest()");
+
+        return "html_css/overflow/webOverflowTest.html";
+    }
+
+    @GetMapping("/webTextBorderTest")
+    public String getWebTextBorderTest() {
+        log.info("Enter getWebTextBorderTest()");
+
+        return "html_css/border/webTextBorderTest.html";
+    }
+
+    @GetMapping("/webCustomUlTest")
+    public String getWebCustomUlTest() {
+        log.info("Enter getWebCustomUlTest()");
+
+        return "html_css/custom/webCustomUlTest.html";
+    }
 }

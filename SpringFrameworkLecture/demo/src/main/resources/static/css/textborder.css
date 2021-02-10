@@ -1,0 +1,40 @@
+/* 메인 div */
+#container {
+    width: 600px;
+    /* 가로로 중앙에 배치 */
+    margin: 0 auto;
+    /* 테두리와 내용 사이의 여백 */
+    padding: 5px;
+}
+/* 텍스트를 감싸는 div */
+#check {
+    width: 590px;
+    border: 1px solid #cccccc;
+}
+h1 {
+    color: white;
+    font-size: 1em;
+    background: #222222;
+    margin: 0;
+    /* 테두리와 글자 사이의 여백 */
+    padding: 10px;
+}
+h2 {
+    color: #ff0000;
+    font-size: 1.2em;
+    /* 가운데 정렬 */
+    text-align: center;
+}
+p {
+    font-size: 1.5em;
+    line-height: 2em;
+    /* 굵게 칠하기 */
+    font-weight: bold;
+    text-align: center;
+}
+.accent {
+    color: blue;
+}
+.smalltext {
+    font-size: 0.7em;
+}
