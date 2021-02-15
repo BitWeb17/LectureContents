@@ -535,4 +535,11 @@ public class Html5Css3PageController {
 
         return "html_css/box/webBoxPositionRelativeTest.html";
     }
+
+    @GetMapping("/webMenuDropDownTest")
+    public String getWebMenuDropDownTest() {
+        log.info("Enter getWebMenuDropDownTest()");
+
+        return "html_css/menubar/webMenuDropDownTest.html";
+    }
 }
