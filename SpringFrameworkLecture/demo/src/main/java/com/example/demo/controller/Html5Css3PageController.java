@@ -570,4 +570,46 @@ public class Html5Css3PageController {
 
         return "html_css/border/webCustomTableBorderTest3.html";
     }
+
+    @GetMapping("/webCustomTableBorderTest4")
+    public String getWebCustomTableBorderTest4() {
+        log.info("Enter getWebCustomTableBorderTest4()");
+
+        return "html_css/border/webCustomTableBorderTest4.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest5")
+    public String getWebCustomTableBorderTest5() {
+        log.info("Enter getWebCustomTableBorderTest5()");
+
+        return "html_css/border/webCustomTableBorderTest5.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest6")
+    public String getWebCustomTableBorderTest6() {
+        log.info("Enter getWebCustomTableBorderTest6()");
+
+        return "html_css/border/webCustomTableBorderTest6.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest7")
+    public String getWebCustomTableBorderTest7() {
+        log.info("Enter getWebCustomTableBorderTest7()");
+
+        return "html_css/border/webCustomTableBorderTest7.html";
+    }
+
+    @GetMapping("/webPlayMP3Test")
+    public String getWebPlayMP3Test() {
+        log.info("Enter getWebPlayMP3Test()");
+
+        return "html_css/multimedia/webPlayMP3Test.html";
+    }
+
+    @GetMapping("/webPlayVideoTest")
+    public String getWebPlayVideoTest() {
+        log.info("Enter getWebPlayVideoTest()");
+
+        return "html_css/multimedia/webPlayVideoTest.html";
+    }
 }

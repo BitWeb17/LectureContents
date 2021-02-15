@@ -1,0 +1,10 @@
+table, td {
+    border: 1px solid #cccccc;
+}
+td {
+    height: 100px;
+    padding: 20px;
+}
+.va1 { vertical-align: top; }
+.va2 { vertical-align: bottom; }
+.va3 { vertical-align: middle; }

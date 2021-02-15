@@ -1,0 +1,16 @@
+table, td {
+    border: 1px solid #cccccc;
+}
+.table1 {
+    border-collapse: collapse;
+    width: 600px;
+    /* 내용물에 맞게 셀 너비 지정 */
+    table-layout: fixed;
+    /* 셀 너비보다 긴 내용을 셀 내부에 표시 */
+    word-break: break-all;
+    height: auto;
+}
+.table1 td {
+    border: 1px solid black;
+    padding: 5px;
+}
