@@ -612,4 +612,18 @@ public class Html5Css3PageController {
 
         return "html_css/multimedia/webPlayVideoTest.html";
     }
+
+    @GetMapping("/webSelectTest")
+    public String getWebSelectTest() {
+        log.info("Enter getWebSelectTest()");
+
+        return "html_css/selector/webSelectTest.html";
+    }
+
+    @GetMapping("/webSelectTest2")
+    public String getWebSelectTest2() {
+        log.info("Enter getWebSelectTest2()");
+
+        return "html_css/selector/webSelectTest2.html";
+    }
 }

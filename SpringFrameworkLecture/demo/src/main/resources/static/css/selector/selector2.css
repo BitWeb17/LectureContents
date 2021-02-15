@@ -1,0 +1,7 @@
+/* parent > child
+   section > p { color: blue; }
+   해당 사항이 child에만 적용되고 그 하위의 손자 등등에게 적용되지 않음 */
+#container > ul {
+    /* #container 요소의 모든 하위 ul 요소에 파란 1px 점선 */
+    border: 1px dotted blue;
+}

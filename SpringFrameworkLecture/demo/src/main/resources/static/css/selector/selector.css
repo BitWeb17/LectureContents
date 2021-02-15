@@ -1,0 +1,4 @@
+#container ul {
+    /* #container 요소의 모든 하위 ul 요소에 파란 1px 점선 */
+    border: 1px dotted blue;
+}
