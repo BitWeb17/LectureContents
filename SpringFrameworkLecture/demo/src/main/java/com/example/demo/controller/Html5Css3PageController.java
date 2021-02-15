@@ -542,4 +542,32 @@ public class Html5Css3PageController {
 
         return "html_css/menubar/webMenuDropDownTest.html";
     }
+
+    @GetMapping("/webColumnRuleTest")
+    public String getWebColumnRuleTest() {
+        log.info("Enter getWebColumnRuleTest()");
+
+        return "html_css/column-rule/webColumnRuleTest.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest")
+    public String getWebCustomTableBorderTest() {
+        log.info("Enter getWebCustomTableBorderTest()");
+
+        return "html_css/border/webCustomTableBorderTest.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest2")
+    public String getWebCustomTableBorderTest2() {
+        log.info("Enter getWebCustomTableBorderTest2()");
+
+        return "html_css/border/webCustomTableBorderTest2.html";
+    }
+
+    @GetMapping("/webCustomTableBorderTest3")
+    public String getWebCustomTableBorderTest3() {
+        log.info("Enter getWebCustomTableBorderTest3()");
+
+        return "html_css/border/webCustomTableBorderTest3.html";
+    }
 }

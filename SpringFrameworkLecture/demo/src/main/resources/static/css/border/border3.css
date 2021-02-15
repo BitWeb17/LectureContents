@@ -1,0 +1,17 @@
+table {
+    margin-bottom: 50px;
+}
+.table1 {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 20px 10px;
+}
+.table2 {
+    border-collapse: separate;
+    border-spacing: 20px 10px;
+}
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
