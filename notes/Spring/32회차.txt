@@ -4,4 +4,8 @@
 4) Native Interface를 연결하는 자바 클래스의 경로를 패키지 형식으로 적는다.
    ex) javah -jni com.example.demo.nativeinterface.HelloSpring
 5) 그러면 Java와 C 혹은 C++을 연결할 수 있는 헤더 파일이 하나 나타난다.
-
+6) Native(C or C++) 코드를 작성한다.
+7) 모든 준비가 완료되면 gradle을 수동으로 제어해줘야 한다.
+8) Shared Library(SO - Shared Object) 컴파일에 문제가 생기고
+   GCC가 없다는 메시지가 나타난다면 아래 명령을 입력한다.
+   sudo apt-get install build-essential
