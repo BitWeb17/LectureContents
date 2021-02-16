@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Read</title>
 </head>
 <body>
     <h2>Read</h2>
+
+    <form method="get" th:action="@{/param/board/get}">
+        <button type="submit" name="modify">Modify</button>
+        <button type="submit" name="remove">Remove</button>
+    </form>
+
+    <a th:href="@{/param/board/get?list}">
+        List
+    </a>
 </body>
 </html>
