@@ -52,4 +52,38 @@ public class ResponseTestController {
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
+
+    @GetMapping("/responseOneData")
+    public ResponseEntity<String> getOneData() {
+        log.info("getOneData()");
+
+        return new ResponseEntity<String>(
+                "Success", HttpStatus.OK);
+    }
+
+    @GetMapping("/responseEntityTestMember")
+    public ResponseEntity<TestMember> getTestMemberResponseEntity() {
+        log.info("getTestMemberResponseEntity()");
+
+        TestMember tm = new TestMember();
+
+        return new ResponseEntity<TestMember>(tm, HttpStatus.OK);
+    }
+
+    @GetMapping("/responseTestMemberList")
+    public ResponseEntity<List<TestMember>>
+    getTestMemberListResponseEntity() {
+        log.info("getTestMemberListResponseEntity()");
+
+        List<TestMember> list = new ArrayList<TestMember>();
+
+        TestMember tm1 = new TestMember();
+        list.add(tm1);
+
+        TestMember tm2 = new TestMember();
+        list.add(tm2);
+
+        return new ResponseEntity<List<TestMember>>(
+                list, HttpStatus.OK);
+    }
 }
