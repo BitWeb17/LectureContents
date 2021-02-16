@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.html_css;
 
 import com.example.demo.game.DiceGame;
 import org.slf4j.Logger;
@@ -625,5 +625,47 @@ public class Html5Css3PageController {
         log.info("Enter getWebSelectTest2()");
 
         return "html_css/selector/webSelectTest2.html";
+    }
+
+    @GetMapping("/webSelectTest3")
+    public String getWebSelectTest3() {
+        log.info("Enter getWebSelectTest3()");
+
+        return "html_css/selector/webSelectTest3.html";
+    }
+
+    @GetMapping("/webSelectTest4")
+    public String getWebSelectTest4() {
+        log.info("Enter getWebSelectTest4()");
+
+        return "html_css/selector/webSelectTest4.html";
+    }
+
+    @GetMapping("/webSelectTest5")
+    public String getWebSelectTest5() {
+        log.info("Enter getWebSelectTest5()");
+
+        return "html_css/selector/webSelectTest5.html";
+    }
+
+    @GetMapping("/webSelectTest6")
+    public String getWebSelectTest6() {
+        log.info("Enter getWebSelectTest6()");
+
+        return "html_css/selector/webSelectTest6.html";
+    }
+
+    @GetMapping("/webSelectTest7")
+    public String getWebSelectTest7() {
+        log.info("Enter getWebSelectTest7()");
+
+        return "html_css/selector/webSelectTest7.html";
+    }
+
+    @GetMapping("/webSelectTest8")
+    public String getWebSelectTest8() {
+        log.info("Enter getWebSelectTest8()");
+
+        return "html_css/selector/webSelectTest8.html";
     }
 }

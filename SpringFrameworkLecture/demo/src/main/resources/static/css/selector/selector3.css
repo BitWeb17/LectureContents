@@ -1,0 +1,5 @@
+/* h1 다음에 있는 p */
+h1 + p {
+    color: blue;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+ul {
+    list-style: none;
+}
+li {
+    width: 120px;
+    display: inline-block;
+    margin: 10px;
+}
+li a {
+    padding: 5px 20px;
+    font-size: 14px;
+    color: blue;
+    text-decoration: none;
+}
+/* a href만 찾아서 노란색을 적용하겠음을 의미함 */
+a[href] {
+    background: yellow;
+}

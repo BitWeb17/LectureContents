@@ -1,0 +1,22 @@
+#container {
+    text-align: center;
+    color: black;
+}
+table, tb, th {
+    border: 1px solid #cccccc;
+}
+table {
+    width: 200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td {
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+}
+/* 홀수 번째의 경우 */
+table tr:nth-child(2n + 1) {
+    background: #ddddff;
+    color: black;
+}

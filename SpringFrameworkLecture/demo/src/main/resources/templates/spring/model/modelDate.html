@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Test</title>
+</head>
+<body>
+    <h1>Hello Spring Model Test ~~!!~!</h1>
+    <!-- thymeleaf를 사용해서 Spring Controller가
+         Model을 통해 전달해준 servTime 정보를 활용한다. -->
+    <p th:text="${servTime}">Server Time: ${servTime}</p>
+</body>
+</html>
