@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>HTTP Method Main</h2>
+
+    <form th:action="@{httpMethod/board/register}">
+        <input type="submit" value="getBoardRegisterForm()">
+    </form>
+
+    <form th:action="@{httpMethod/board/register}" method="post">
+        <input type="submit" value="doRegister()">
+    </form>
+
+    <form th:action="@{httpMethod/board/modify}">
+        <input type="submit" value="getBoardModifyForm()">
+    </form>
+
+    <form th:action="@{httpMethod/board/modify}" method="POST">
+        <input type="submit" value="doModify()">
+    </form>
+
+    <form th:action="@{httpMethod/board/remove}" method="POST">
+        <input type="submit" value="doRemove()">
+    </form>
+</body>
+</html>
