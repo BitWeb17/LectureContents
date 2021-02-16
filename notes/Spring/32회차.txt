@@ -9,3 +9,8 @@
 8) Shared Library(SO - Shared Object) 컴파일에 문제가 생기고
    GCC가 없다는 메시지가 나타난다면 아래 명령을 입력한다.
    sudo apt-get install build-essential
+9) 모든 준비가 완료되면(libhello.so 파일 생성)
+   아래 명령을 통해 시스템 라이브러리 경로에 so 파일을 연결시켜준다.
+   sudo cp libhello.so /usr/lib/
+
+
