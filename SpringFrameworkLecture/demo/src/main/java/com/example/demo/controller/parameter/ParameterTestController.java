@@ -25,7 +25,7 @@ public class ParameterTestController {
     @RequestMapping(value = "/post",
             method = RequestMethod.POST, params = "register")
     public String doRegister() {
-        log.info("/post?register");
+        log.info("/post(register)");
 
         return "spring/parameter/list.html";
     }
@@ -41,7 +41,7 @@ public class ParameterTestController {
     @RequestMapping(value = "/post",
             method = RequestMethod.POST, params = "modify")
     public String doModify() {
-        log.info("/post?modify");
+        log.info("/post(modify)");
 
         return "spring/parameter/list.html";
     }
@@ -57,7 +57,7 @@ public class ParameterTestController {
     @RequestMapping(value = "/post",
             method = RequestMethod.POST, params = "remove")
     public String doRemove() {
-        log.info("/post?remove");
+        log.info("/post(remove)");
 
         return "spring/parameter/list.html";
     }
