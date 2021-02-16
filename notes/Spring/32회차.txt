@@ -1,0 +1,7 @@
+1) sudo apt install openjdk-8-jdk-headless
+2) 프로젝트 디렉토리로 이동한다.
+3) 프로젝트 디렉토리에서 package가 시작되는 부분까지 이동
+4) Native Interface를 연결하는 자바 클래스의 경로를 패키지 형식으로 적는다.
+   ex) javah -jni com.example.demo.nativeinterface.HelloSpring
+5) 그러면 Java와 C 혹은 C++을 연결할 수 있는 헤더 파일이 하나 나타난다.
+

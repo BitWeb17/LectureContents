@@ -1,0 +1,12 @@
+
+1) sudo apt-get update
+2) sudo apt-get install ffmpeg
+3) ffmpeg -version
+4) ffmpeg -encoders
+5) ffmpeg -decoders
+6) sudo snap install youtube-dl
+7) youtube-dl URL주소
+8) mv 파일명 단순한파일명
+9) ffmpeg -i 단순한파일명.mkv 단순한파일명.mp3
+
+sudo apt-get remove youtube-dl
