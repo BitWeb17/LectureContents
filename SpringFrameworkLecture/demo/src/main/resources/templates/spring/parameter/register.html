@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register Form</h2>
+
+    <form method="post" th:action="@{/param/board/post}">
+        <button type="submit" name="register">
+            Register
+        </button>
+    </form>
+
+    <a th:href="@{/param/board/get?list}">
+        List
+    </a>
+</body>
+</html>
