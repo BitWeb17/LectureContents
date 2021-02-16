@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+/* Get의 경우엔 URL 뒤쪽에 ?가 나타난다.
+   Post는 위와 같은 ?가 나타나지 않음 */
 @Controller
 @RequestMapping("httpMethod/board")
 public class HttpMethodTestController {
@@ -47,6 +49,7 @@ public class HttpMethodTestController {
         return "spring/board/list.html";
     }
 
+    /* PathVariable 통해 URL의 가변 값을 변수로 가져옴 */
     @GetMapping("/board/read/{boardNo}")
     public String getBoardReadBoardNoForm(
             @PathVariable("boardNo") int boardNo) {
