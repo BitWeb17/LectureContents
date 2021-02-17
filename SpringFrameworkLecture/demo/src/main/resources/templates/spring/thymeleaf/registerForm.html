@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>RegisterForm</title>
+</head>
+<body>
+    <h2>Spring Form with Thymeleaf</h2>
+
+    <form action="result.html" th:action="@{/register}"
+          th:object="${TestMember}" method="post">
+        <table>
+            <tr>
+                <td>아 이 디</td>
+                <td>
+                    <input type="text" name="text" th:field="*{userName}"/>
+                    <span style="color: red; ">
+                        <span th:if="${#fields.hasErrors('userName')}"
+                              th:errors="*{userName}">
+                            userId에 에러가 존재합니다.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit">등록!</button>
+    </form>
+</body>
+</html>
