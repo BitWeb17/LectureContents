@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
 public class ResponseTestController {
     private static final Logger log =
             LoggerFactory.getLogger(ResponseTestController.class);
