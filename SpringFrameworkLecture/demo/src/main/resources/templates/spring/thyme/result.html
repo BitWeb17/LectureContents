@@ -16,6 +16,18 @@
             <td>비밀번호</td>
             <td th:text="${testMember.password}">password</td>
         </tr>
+        <tr>
+            <td>자기소개</td>
+            <td th:text="${testMember.introduction}">introduction</td>
+        </tr>
+        <tr>
+            <td>취미</td>
+            <td>
+                <th:block th:each="hobby : ${hobbyList}">
+                    <span th:text="${hobby}">hobby</span></br>
+                </th:block>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

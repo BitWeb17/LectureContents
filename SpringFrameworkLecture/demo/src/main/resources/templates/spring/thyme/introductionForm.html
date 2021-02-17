@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>IntroductionForm</title>
+</head>
+<body>
+<h2>Spring Introduction Form with Thymeleaf</h2>
+
+<form action="result.html" th:action="@{/thymeleaf/register}"
+      th:object="${testMember}" method="post">
+    <table>
+        <tr>
+            <td>아 이 디</td>
+            <td>
+                <input type="text" name="text" th:field="*{userName}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td>
+                <input type="text" name="text" th:field="*{password}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>자기소개</td>
+            <td>
+                <textarea name="textarea" rows="6" cols="60"
+                          th:field="*{introduction}"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <button type="submit">등록!</button>
+</form>
+</body>
+</html>

@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @RequestMapping(value = "/thymeleaf")
 public class ThymeLeafTestController {
@@ -37,11 +41,52 @@ public class ThymeLeafTestController {
     }
 
     @PostMapping("/register")
-    public String doRegister(TestMember testMember) {
+    public String doRegister(TestMember testMember, Model model) {
         log.info("doRegister()");
         log.info("userId = " + testMember.getUserName());
         log.info("passwd = " + testMember.getPassword());
+        log.info("introduction = " + testMember.getIntroduction());
+
+        List<String> hobbyList = testMember.getHobbyList();
+
+        if(hobbyList != null) {
+            log.info("hobbyList != null = " + hobbyList.size());
+
+            for(int i = 0; i < hobbyList.size(); i++) {
+                log.info("hobbyList(" + i + ") = " + hobbyList.get(i));
+            }
+        } else {
+            log.info("hobbyList == null");
+        }
+
+        model.addAttribute("hobbyList", hobbyList);
 
         return "spring/thyme/result.html";
+    }
+
+    @GetMapping("/registerForm003")
+    public String registerForm003(Model model) {
+        log.info("registerForm003()");
+
+        model.addAttribute("testMember", new TestMember());
+
+        return "spring/thyme/introductionForm";
+    }
+
+    @GetMapping("/registerForm004")
+    public String registerForm004(Model model) {
+        log.info("registerForm004()");
+
+        Map<String, String> hobbyMap = new HashMap<String, String>();
+        hobbyMap.put("01", "Sports");
+        hobbyMap.put("02", "Programming");
+        hobbyMap.put("03", "Music");
+        hobbyMap.put("04", "Movie");
+        hobbyMap.put("05", "D.I.Y");
+
+        model.addAttribute("hobbyMap", hobbyMap);
+        model.addAttribute("testMember", new TestMember());
+
+        return "spring/thyme/hobbyForm";
     }
 }
