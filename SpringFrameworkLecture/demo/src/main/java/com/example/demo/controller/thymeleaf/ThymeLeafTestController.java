@@ -1,12 +1,12 @@
 package com.example.demo.controller.thymeleaf;
 
-import com.example.demo.controller.request.RequestTestController;
 import com.example.demo.entity.TestMember;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -31,8 +31,17 @@ public class ThymeLeafTestController {
         /* 모델은 데이터를 제어하는 객체라고 설명했었음
            스프링에서 활용할 수 있는 데이터 속성 이름으로 TestMember를 만들었음
            또한 이 TestMember 속성은 new TestMember()에 의해 생성된 객체를 가짐 */
-        model.addAttribute("TestMember", new TestMember());
+        model.addAttribute("testMember", new TestMember());
 
-        return "spring/thymeleaf/registerForm";
+        return "spring/thyme/registerForm";
+    }
+
+    @PostMapping("/register")
+    public String doRegister(TestMember testMember) {
+        log.info("doRegister()");
+        log.info("userId = " + testMember.getUserName());
+        log.info("passwd = " + testMember.getPassword());
+
+        return "spring/thyme/result.html";
     }
 }
