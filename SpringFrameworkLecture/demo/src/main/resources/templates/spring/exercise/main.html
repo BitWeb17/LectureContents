@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/menubar/menubar.css">
+</head>
+<body>
+<div class="navbar">
+    <a href="http://localhost:8080/exercise/home">홈</a>
+    <div class="dropdown">
+        <button class="dropbtn">
+            마이 페이지
+        </button>
+        <div class="dropdown-contents">
+            <a href="#">구매 내역</a>
+            <a href="#">배송 상태</a>
+            <a href="#">포인트</a>
+        </div>
+    </div>
+    <a href="#faq">FAQ(자주 묻는 질문)</a>
+    <a style="float: right" href="#logout">로그아웃</a>
+    <a style="float: right" href="#login">로그인</a>
+    <a style="float: right"
+       th:href="@{/exercise/home?register}">회원가입</a>
+</div>
+</body>
+</html>
