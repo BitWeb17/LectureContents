@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Board Register</title>
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
 </head>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board")
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "register")
+            formObj.attr("method", "post")
+            formObj.submit()
+        })
+
+        $("#btnList").on("click", function() {
+            self.location = "list"
+        })
+    })
+</script>
+
 <body>
     <h2>Board Register</h2>
 

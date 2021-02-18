@@ -1,6 +1,8 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.Board;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,10 +15,15 @@ import java.util.List;
 @Repository
 public class BoardRepository {
 
+    private static final Logger log =
+            LoggerFactory.getLogger(BoardRepository.class);
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public List<Board> list() throws Exception {
+        log.info("list()");
+
         List<Board> results = jdbcTemplate.query(
             "select board_no, title, content, writer, " +
                     "reg_date from board where board_no > 0 " +
@@ -40,5 +47,17 @@ public class BoardRepository {
         );
 
         return results;
+    }
+
+    public void create(Board board) throws Exception {
+        log.info("create()");
+
+        // alter table board convert to charset utf8;
+        // 한글 처리 안 될 경우
+        String query = "insert into board(title, content, writer) " +
+                "values(?, ?, ?)";
+
+        jdbcTemplate.update(query, board.getTitle(),
+                board.getContent(), board.getWriter());
     }
 }
