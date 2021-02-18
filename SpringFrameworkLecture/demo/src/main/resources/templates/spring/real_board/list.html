@@ -15,6 +15,28 @@
             <th align="center" width="100">글쓴이</th>
             <th align="center" width="180">등록일자</th>
         </tr>
+        <tr th:if="${#lists.isEmpty(list)}">
+            <td colspan="4">
+                List is Empty.
+            </td>
+        </tr>
+        <tr th:each="board : ${list}">
+            <td align="center" th:text="${board.boardNo}">
+                ${board.boardNo}
+            </td>
+            <td align="left">
+                <a href="read.html"
+                   th:href="@{|read?boardNo=${board.boardNo}|}"
+                   th:text="${board.title}">${board.title}</a>
+            </td>
+            <td align="right" th:text="${board.writer}">
+                ${board.writer}
+            </td>
+            <td align="center"
+                th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}">
+                ${board.regDate}
+            </td>
+        </tr>
     </table>
 </body>
 </html>

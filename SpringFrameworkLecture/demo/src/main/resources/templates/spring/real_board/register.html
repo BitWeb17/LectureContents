@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Register</title>
+</head>
+<body>
+    <h2>Board Register</h2>
+
+    <form id="board" action="success.html"
+          th:action="@{register}"
+          th:object="${board}" method="post">
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>
+                    <input type="text" name="title"
+                           th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Writer</td>
+                <td>
+                    <input type="text" name="writer"
+                           th:field="*{writer}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td>
+                    <textarea name="content"
+                              th:field="*{content}"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnRegister">작성완료!</button>
+        <button type="submit" id="btnList">목록보기</button>
+    </div>
+</body>
+</html>

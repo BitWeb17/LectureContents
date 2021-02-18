@@ -29,6 +29,14 @@ public class BoardController {
         return "spring/real_board/list";
     }
 
+    // HTML 처리시 board 정보를 가지고 처리하게됨(주의)
+    @GetMapping("/register")
+    public String getRegister(Board board) {
+        log.info("getRegister()");
+
+        return "spring/real_board/register";
+    }
+
     @PostMapping("/register")
     public String doRegister(Board board, Model model)
             throws Exception {
