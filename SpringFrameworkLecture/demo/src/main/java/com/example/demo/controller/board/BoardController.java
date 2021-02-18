@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/board")
+@RequestMapping(value = "/real_board")
 public class BoardController {
     private static final Logger log =
             LoggerFactory.getLogger(BoardController.class);
@@ -20,11 +20,13 @@ public class BoardController {
     @Autowired
     private BoardService service;
 
-    @GetMapping("list")
-    public void getList(Model model) throws Exception {
+    @GetMapping("/list")
+    public String getList(Model model) throws Exception {
         log.info("getList()");
 
         model.addAttribute("list", service.list());
+
+        return "spring/real_board/list";
     }
 
     @PostMapping("/register")
