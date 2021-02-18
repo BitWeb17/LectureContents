@@ -55,4 +55,18 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 맨 아래쪽에 내용 추가
 
 lower_case_table_names = 1
+
+재시작해서 변경을 확인한다.
+모든 설정이 준비가 되었다면 이제 실제 DB에 테이블을 생성해보도록 한다.
+
+create table board(
+    board_no int not null auto_increment,
+    title varchar(200) not null,
+    content text null,
+    writer varchar(50) not null,
+    reg_date timestamp not null default now(),
+    primary key(board_no)
+);
+
+
   
