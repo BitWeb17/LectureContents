@@ -1,0 +1,19 @@
+1) sudo apt-cache search mysql-server
+2) dpkg -l | grep mysql
+3) lsb_release -a
+4) sudo apt-get update
+5) sudo apt-get install mysql-server
+6) sudo mysql_secure_installation
+7) service mysql restart
+8) netstat -na | grep mysql
+9) sudo mysql -u root -p
+10) status
+11) SHOW VARIABLES LIKE 'validate_password%';
+12) SET GLOBAL validate_password_policy=0;
+13) create user 'bitweb'@localhost identified by 'dkdlxl123';
+14) grant all privileges on *.* to 'bitweb'@localhost;
+15) show databases;
+16) create database board_test;
+17) use board_test
+18) show tables;
+
