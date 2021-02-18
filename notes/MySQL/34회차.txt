@@ -1,0 +1,58 @@
+1) sudo apt-cache search mysql-server
+2) dpkg -l | grep mysql
+3) lsb_release -a
+4) sudo apt-get update
+5) sudo apt-get install mysql-server
+6) sudo mysql_secure_installation
+7) service mysql restart
+8) netstat -na | grep mysql
+9) sudo mysql -u root -p
+10) status
+11) SHOW VARIABLES LIKE 'validate_password%';
+12) SET GLOBAL validate_password_policy=0;
+13) create user 'bitweb'@localhost identified by 'dkdlxl123';
+14) grant all privileges on *.* to 'bitweb'@localhost;
+15) show databases;
+16) create database board_test;
+17) use board_test
+18) show tables;
+
+* mysql 현재 상태 확인하기
+
+/etc/init.d/mysql status
+
+* 터미널에서 mysql 내부 명령 실행하기
+
+sudo mysql -u root -p -e 'show databases'
+
+* mysql 콘솔창 정리하기
+
+system clear
+
+* MySQL 한글 설정하기
+
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+맨 아래쪽에 아래 3줄 추가(문자셋 맞추기)
+
+collation-server = utf8_general_ci
+character-set-server = utf8
+skip-character-set-client-handshake
+
+설정 완료후에 MySQL 서비스를 재시작
+
+service mysql restart
+
+MySQL에 접속후 문자셋이 일치하는지 확인한다.
+MYSQL 콘솔창에서 아래 작업을 추가로 진행
+
+show variables like 'lower%';
+
+lower case에 대한 허용이 없다면 추가 작업을 진행한다.
+
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+맨 아래쪽에 내용 추가
+
+lower_case_table_names = 1
+  
