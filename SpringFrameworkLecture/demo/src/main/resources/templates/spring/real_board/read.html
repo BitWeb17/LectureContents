@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Read</title>
+</head>
+<body>
+    <h2>내용 보기</h2>
+
+    <form id="board" th:object="${board}" method="post">
+        <input type="hidden" name="boardNo" th:field="*{boardNo}"/>
+
+        <table>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" name="title"
+                           th:field="*{title}"
+                           readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" name="writer"
+                           th:field="*{writer}"
+                           readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>본문</td>
+                <td>
+                    <textarea name="content"
+                           th:field="*{content}"
+                           readonly="readonly"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnModify">수정</button>
+        <button type="submit" id="btnRemove">삭제</button>
+        <button type="submit" id="btnList">목록</button>
+    </div>
+</body>
+</html>

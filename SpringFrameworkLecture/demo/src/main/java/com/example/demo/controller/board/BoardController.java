@@ -50,4 +50,14 @@ public class BoardController {
 
         return "spring/real_board/success";
     }
+
+    @GetMapping("/read")
+    public String read(int boardNo, Model model)
+            throws Exception {
+        log.info("read()");
+
+        model.addAttribute(service.read(boardNo));
+
+        return "spring/real_board/read";
+    }
 }
