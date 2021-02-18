@@ -17,3 +17,42 @@
 17) use board_test
 18) show tables;
 
+* mysql 현재 상태 확인하기
+
+/etc/init.d/mysql status
+
+* 터미널에서 mysql 내부 명령 실행하기
+
+sudo mysql -u root -p -e 'show databases'
+
+* mysql 콘솔창 정리하기
+
+system clear
+
+* MySQL 한글 설정하기
+
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+맨 아래쪽에 아래 3줄 추가(문자셋 맞추기)
+
+collation-server = utf8_general_ci
+character-set-server = utf8
+skip-character-set-client-handshake
+
+설정 완료후에 MySQL 서비스를 재시작
+
+service mysql restart
+
+MySQL에 접속후 문자셋이 일치하는지 확인한다.
+MYSQL 콘솔창에서 아래 작업을 추가로 진행
+
+show variables like 'lower%';
+
+lower case에 대한 허용이 없다면 추가 작업을 진행한다.
+
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+맨 아래쪽에 내용 추가
+
+lower_case_table_names = 1
+  
