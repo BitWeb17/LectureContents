@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="css/vue/trans.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <h1>{{vue_message}}</h1>
+        <ol>
+            <li v-for="list in lists">{{ list }}</li>
+        </ol>
+        <button v-on:click="handleClick">Click</button></br>
+        <input v-model="initMsg"> : {{ initMsg }}</br>
+        <button v-on:click="show = !show">Change</button></br>
+        <transition>
+            <p v-if="show">Show Time!</p>
+        </transition>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                show: true,
+                initMsg: 'Initial Test Message',
+                vue_message: 'Hello Vue.js on Linux Ubuntu',
+                lists: ['apple', 'banna', 'grape', 'watermelon']
+            },
+            methods: {
+                handleClick: function(event) {
+                    this.show = !this.show
+                    alert('버튼 누르기')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

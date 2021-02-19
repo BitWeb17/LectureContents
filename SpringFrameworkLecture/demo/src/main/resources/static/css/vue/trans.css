@@ -1,0 +1,7 @@
+.v-enter-active, .v-leave-active {
+    transition: opacity 2s;
+}
+/* 투명도를 2초가 걸려서 껏다 켰다 하며 페이드 인 & 페이드 아웃 */
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
