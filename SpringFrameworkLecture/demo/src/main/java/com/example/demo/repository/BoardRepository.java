@@ -85,4 +85,20 @@ public class BoardRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
+
+    public void remove(Integer boardNo) throws Exception {
+        String query = "delete from board where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+    }
+
+    public void modify(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? " +
+                "where board_no = ?";
+
+        jdbcTemplate.update(
+                query, board.getTitle(),
+                board.getContent(), board.getBoardNo()
+        );
+    }
 }

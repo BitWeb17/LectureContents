@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+</head>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board")
+
+        $("#btnModify").on("click", function() {
+            formObj.attr("action", "modify")
+            formObj.attr("method", "post")
+            formObj.submit()
+        })
+
+        $("#btnList").on("click", function() {
+            self.location = "list"
+        })
+    })
+</script>
+
+<body>
+    <h2>수정하기</h2>
+
+    <form id="board" action="success.html"
+          th:action="@{modify}"
+          th:object="${board}" method="post">
+        <input type="hidden" name="boardNo" th:field="*{boardNo}"/>
+        <table>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" name="title"
+                           th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" name="writer"
+                           th:field="*{writer}"
+                           readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>본문</td>
+                <td>
+                    <textarea name="content"
+                              th:field="*{content}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnModify">수정</button>
+        <button type="submit" id="btnList">목록</button>
+    </div>
+</body>
+</html>
