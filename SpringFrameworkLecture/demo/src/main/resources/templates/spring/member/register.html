@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Register</title>
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            var formObj = $("#member")
+
+            $("#btnRegister").on("click", function() {
+                formObj.attr("action", "/member/register")
+                formObj.attr("method", "post")
+                formObj.submit()
+            })
+
+            $("#btnHome").on("click", function() {
+                self.location = "/"
+            })
+        })
+    </script>
+</head>
+<body>
+<h2>Member Register</h2>
+
+<form id="board" action="success.html"
+      th:action="@{/member/register}"
+      th:object="${member}" method="post">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" name="userId"
+                       th:field="*{userId}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Writer</td>
+            <td>
+                <input type="text" name="pw"
+                       th:field="*{pw}"/>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <button type="submit" id="btnRegister">회원가입!</button>
+        <button type="button" id="btnHome">홈으로</button>
+    </div>
+</form>
+</body>
+</html>
