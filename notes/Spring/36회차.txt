@@ -15,3 +15,30 @@
 5) yarn --version
 6) node -v
 7) sudo npm install -g @vue/cli
+
+
+
+vue create frontend
+
+1) Manually select features
+2) Router, Vuex 추가
+
+ ◉ Choose Vue version
+ ◉ Babel
+ ◯ TypeScript
+ ◯ Progressive Web App (PWA) Support
+ ◉ Router
+❯◉ Vuex
+ ◯ CSS Pre-processors
+ ◉ Linter / Formatter
+ ◯ Unit Testing
+ ◯ E2E Testing
+ 
+3) 2.x
+4) 앤터
+5) ESLint with error prevention only
+6) Lint on save
+7) In package.json
+8) 앤터
+
+
