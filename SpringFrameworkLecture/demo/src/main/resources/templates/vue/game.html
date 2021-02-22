@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="css/vue/trans.css" rel="stylesheet">
 </head>
 <body>
@@ -22,6 +24,25 @@
             <button v-on:click="doAttack(index)">공격</button>
         </li>
     </ul>
+
+    <p>Half of {{ width }} is {{ halfWidth }}</p>
+
+    <input v-model.number="budget">원 이하 필터링
+    <input v-model.number="limit">개의 결과 출력
+    <button v-on:click="order = !order">변경하기</button>
+    <p>{{ matched.length }}개 중 {{ limited.length }}개</p>
+    <ul>
+        <li v-for="item in limited" v-bind:key="item.id">
+            {{ item in limited }} {{ item.price }}원
+        </li>
+    </ul>
+
+    <select v-model="current">
+        <option v-for="topic in topics" v-bind:value="topic.value">
+            {{ topic.name }}
+        </option>
+    </select>
+    <div v-for="topicList in topicLists">{{ item.full_names }}</div>
 </div>
 
 <script>
@@ -37,7 +58,36 @@
                     morbidity: 5000 * 0.2 },
             ],
             name: '',
-            hp: ''
+            hp: '',
+            width: 800,
+            lists: [
+                { id: 1, name: ' 사과', price: 1000 },
+                { id: 2, name: ' 바나나', price: 2000 },
+                { id: 3, name: ' 딸기', price: 4000 },
+                { id: 4, name: ' 오렌지', price: 3000 },
+                { id: 5, name: ' 메론', price: 5000 },
+            ],
+            order: false,
+            budget: 3000,
+            limit: 2,
+            topicLists: [],
+            current: '',
+            topics: [
+                { value: 'vue', name: 'Vue.js' },
+                { value: 'JPA', name: 'JPA' }
+            ]
+        },
+        watch: {
+            current: function(val) {
+                axios.get('https://api.github.com/search/repositories', {
+                    params: {
+                        q: 'topic:' + val
+                    }
+                }).then(function (response) {
+                    console.log(response)
+                    this.topicLists = response.data.items
+                }).bind(this)
+            }
         },
         methods: {
             addMonster: function() {
@@ -55,6 +105,23 @@
             },
             doAttack: function(index) {
                 this.monsters[index].hp -= 9
+            }
+        },
+        computed: {
+            halfWidth: function() {
+                return this.width / 2
+            },
+            matched: function () {
+                return this.lists.filter(function(el) {
+                    return el.price <= this.budget;
+                }, this)
+            },
+            sorted: function () {
+                return _.orderBy(this.matched, 'price',
+                    this.order ? 'desc' : 'asc')
+            },
+            limited: function () {
+                return this.sorted.slice(0, this.limit)
             }
         }
     })
