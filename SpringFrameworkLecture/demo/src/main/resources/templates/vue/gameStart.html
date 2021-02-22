@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="css/vue/trans.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        캐릭터명: <input v-model="characterName"></br>
+        레벨: <input v-model="characterLv"></br>
+        상태: <input v-model="characterStatus"></br>
+        HP: <input v-model="characterHp"></br>
+        ATK: <input v-model="characterAtk"></br>
+        DEF: <input v-model="characterDef"></br>
+
+        <p>캐릭터명: {{ characterName }}&nbsp;&nbsp;&nbsp;
+            경험치: {{ curExp }} / {{ needExp }}</p>
+        <p>레벨: {{ characterLv }}</p>
+        <p>상태: {{ characterStatus }}</p>
+        <p>HP: {{ characterHp }}</p>
+        <p>ATK: {{ characterAtk }}</p>
+        <p>DEF: {{ characterDef }}</p>
+        <p>돈: {{ money }}</p>
+
+        <button v-on:click="addMonster">몬스터 추가</button></br>
+        <ul>
+            <li v-for="(monster, index) in monsters"
+                v-bind:key="monster.id"
+                v-bind:class="{ strong: monster.hp > 300 }">
+                ID.{{ monster.id }} {{ monster.monsterName }}
+                HP.{{ monster.hp }} STATUS.{{ monster.status }}
+                <button v-on:click="doRemove(index)">몬스터 삭제</button>
+                <span v-if="monster.hp > 300">강함</span>
+                <span v-if="monster.hp <= monster.morbidity">빈사상태</span>
+                <button v-on:click="doAttack(index)">공격</button>
+            </li>
+        </ul>
+    </div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            monsters: [
+                { id: 1, monsterName: '슬라임', hp: 10, status: 'Default' },
+                { id: 2, monsterName: '고블린', hp: 30, status: 'Default' },
+                { id: 3, monsterName: '드래곤', hp: 5000, status: 'Default' }
+            ],
+            monBooks: [
+                { monsterName: '슬라임', exp: 1, hp: 10, sprMoney: 10 },
+                { monsterName: '고블린', exp: 2, hp: 20, sprMoney: 20 },
+                { monsterName: '빨간 슬라임', exp: 5, hp: 10, sprMoney: 40 },
+                { monsterName: '구울', exp: 10, hp: 50, sprMoney: 100},
+                { monsterName: '해골 병사', exp: 20, hp: 100, sprMoney: 200 },
+                { monsterName: '해골 궁수', exp: 20, hp: 70, sprMoney: 200 },
+                { monsterName: '해골 기사', exp: 50, hp: 400, sprMoney: 500 },
+                { monsterName: '고스트', exp: 100, hp: 1000, sprMoney: 700 },
+                { monsterName: '듀라한', exp: 200, hp: 4000, sprMoney: 1000 },
+                { monsterName: '리치', exp: 500, hp: 10000, sprMoney: 2000 },
+                { monsterName: '리치킹', exp: 3000, hp: 100000, sprMoney: 10000 },
+                { monsterName: '베히모스', exp: 2000, hp: 80000, sprMoney: 5000 },
+                { monsterName: '베히모스킹', exp: 25000, hp: 800000, sprMoney: 50000 },
+                { monsterName: '드래곤', exp: 100000, hp: 10000000, sprMoney: 100000 },
+            ],
+            characterName: '',
+            characterLv: 1,
+            characterStatus: '',
+            characterHp: 100,
+            characterAtk: 9,
+            characterDef: 1,
+            curExp: 0,
+            needExp: 10,
+            monsterName: '',
+            money: 0
+        },
+        methods: {
+            addMonster: function() {
+                var max = this.monsters.reduce(function(a, b) {
+                    return a > b.id ? a : b.id
+                }, 0)
+
+                var lenMax = this.monBooks.length
+                var idx = Math.floor(Math.random() * lenMax)
+
+                this.monsters.push({
+                    id: max + 1,
+                    monsterName: this.monBooks[idx].monsterName,
+                    hp: this.monBooks[idx].hp,
+                    status: 'Default'
+                })
+            },
+            doRemove: function(index) {
+                this.monsters.splice(index, 1)
+            },
+            doAttack: function(index) {
+                this.monsters[index].hp -= 9
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -23,4 +23,11 @@ public class VueTestController {
 
         return "vue/game";
     }
+
+    @GetMapping("/vueGameStart")
+    public String getVueGameStart() {
+        log.info("getVueGameStart()");
+
+        return "vue/gameStart";
+    }
 }
