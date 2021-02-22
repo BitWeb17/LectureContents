@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="css/vue/trans.css" rel="stylesheet">
+    <style>
+        .item {
+            padding: 4px 8px;
+            transition: background-color 0.5s;
+        }
+        .is-active {
+            background: #1afacf;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -18,13 +27,55 @@
         <transition>
             <p v-if="show">Show Time!</p>
         </transition>
+
+        <p>vue_message의 길이: {{vue_message.length}}</p>
+        <p>lists[2]: {{ lists[2] }}</p>
+        <p>lists[num]: {{ lists[num] }}</p>
+
+        <p>{{ count }}번 클릭했다.</p>
+        <button v-on:click="increment">숫자를 올려라 ~</button></br>
+
+        <button v-on:click="isActive = !isActive">변경하기</button>
+        <p v-bind:class="{ child: isChild, 'is-active': isActive }"
+           class="item">동적 클래스</p></br>
+
+        <button v-on:click="chgBackground">변경하기</button>
+        <p v-bind:style="{ color: textColor, backgroundColor: bgColor }"
+           class="item">동적 스타일</p>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="75" v-bind:r="radius" fill="lightblue"/>
+        </svg>
+        <input type="range" min="0" max="100" v-model="radius">
+
+        <ul>
+            <li v-for="monster in monsters"
+                v-bind:key="monster.id"
+                v-bind:class="{ strong: monster.hp > 300 }">
+                ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+                <span v-if="monster.hp > 300">Strong</span>
+            </li>
+        </ul>
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
+                monsters: [
+                    { id: 1, name: '슬라임', hp: 10 },
+                    { id: 2, name: '고블린', hp: 30 },
+                    { id: 444, name: '드래곤', hp: 5000 },
+                ],
+                num: 1,
+                count: 0,
+                radius: 50,
                 show: true,
+                isChild: true,
+                isActive: true,
+                textColor: 'red',
+                bgColor: 'lightgray',
+                bgColorBackup: 'yellow',
                 initMsg: 'Initial Test Message',
                 vue_message: 'Hello Vue.js on Linux Ubuntu',
                 lists: ['apple', 'banna', 'grape', 'watermelon']
@@ -33,6 +84,16 @@
                 handleClick: function(event) {
                     this.show = !this.show
                     alert('버튼 누르기')
+                },
+                increment: function() {
+                    this.count += 1
+                },
+                chgBackground: function() {
+                    if(this.bgColor === 'lightgray') {
+                        this.bgColor = 'yellow'
+                    } else if(this.bgColor === 'yellow') {
+                        this.bgColor = 'lightgray'
+                    }
                 }
             }
         })
