@@ -100,6 +100,30 @@
             doAttack: function(index) {
                 this.monsters[index].hp -= 9
             }
+        },
+        beforeCreate: function () {
+            console.log("Before Create: " + this.monsters)
+        },
+        created: function () {
+            console.log("Created: " + this.monsters)
+        },
+        beforeMount: function () {
+            console.log("Before Mount: " + this.monsters)
+        },
+        mounted: function () {
+            console.log("Mounted: " + this.monsters)
+        },
+        beforeUpdate: function() {
+            console.log("Before Update: " + this.monsters)
+        },
+        updated: function () {
+            console.log("Updated: " + this.monsters)
+        },
+        beforeDestroy: function () {
+            console.log("Before Destroy: " + this.monsters)
+        },
+        destroyed: function () {
+            console.log("Destroyed: " + this.monsters)
         }
     })
 </script>
