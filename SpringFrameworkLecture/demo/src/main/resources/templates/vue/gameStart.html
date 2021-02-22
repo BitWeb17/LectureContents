@@ -110,9 +110,9 @@
                         { desc: "800hp recover", amount: 200 } },
                 { itemName: 'HP Potion V', price: 2000, effect:
                         { desc: "1200hp recover", amount: 200 } },
-                { itemName: 'Sword', price: 3000000, effect:
+                { itemName: 'Sword', price: 300000, effect:
                         { desc: "weapon", atk: 100 } },
-                { itemName: 'Iron Sword', price: 20000000, effect:
+                { itemName: 'Iron Sword', price: 1000000, effect:
                         { desc: "weapon", atk: 200 } }
             ],
             characterName: '',
@@ -128,7 +128,8 @@
             money: 0,
             shopList: [],
             shopListValue: [],
-            shopView: false
+            shopView: false,
+            myInventory: []
         },
         methods: {
             addMonster: function() {
@@ -188,6 +189,39 @@
                 for(var i = 0; i < 10; i++) {
                     var randIdx = Math.floor(Math.random() * this.itemBooks.length)
                     this.shopList[i] = this.itemBooks[randIdx]
+                }
+            },
+            calcBuy: function () {
+                var tmpSum = 0
+
+                console.log('calcbuy(): ' + this.shopListValue.length)
+                console.log('shopList len: ' + this.shopList.length)
+
+                for(var i = 0; i < this.shopListValue.length; i++) {
+                    console.log(this.shopListValue[i])
+
+                    for(var j = 0; j < this.shopList.length; j++) {
+                        console.log('inner loop')
+
+                        if(this.shopListValue[i] == j) {
+                            console.log('match!')
+                            tmpSum += this.shopList[j].price
+                            break
+                        }
+                    }
+                }
+
+                if(this.money - tmpSum >= 0) {
+                    this.money -= tmpSum
+
+                    for(var i = 0; i < this.shopListValue.length; i++) {
+                        this.myInventory.push({
+                            itemName: this.shopList[this.shopListValue[i]].itemName,
+                            effect: this.shopList[this.shopListValue[i]].effect
+                        })
+                    }
+                } else {
+                    alert('Give me Money')
                 }
             }
         },
