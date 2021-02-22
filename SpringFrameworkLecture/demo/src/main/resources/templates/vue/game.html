@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="css/vue/trans.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="monster in monsters"
+            v-bind:key="monster.id"
+            v-bind:class="{ strong: monster.hp > 300 }">
+            ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+            <span v-if="monster.hp > 300">Strong</span>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            monsters: [
+                { id: 1, name: '슬라임', hp: 10 },
+                { id: 2, name: '고블린', hp: 30 },
+                { id: 444, name: '드래곤', hp: 5000 },
+            ]
+        },
+        methods: {
+            handleClick: function(event) {
+                this.show = !this.show
+                alert('버튼 누르기')
+            }
+        }
+    })
+</script>
+</body>
+</html>
