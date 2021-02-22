@@ -43,6 +43,35 @@
                 <button v-on:click="doAttack(index)">공격</button>
             </li>
         </ul>
+
+        <h3>상점</h3>
+        <label>
+            <input type="checkbox" v-model="shopView"
+                   v-on:click="shuffleShopList()">상점
+        </label>
+        <button v-on:click="calcBuy()">구매</button>
+        <table border="1">
+            <tr v-if="shopView">
+                <th align="center" width="20">번호</th>
+                <th align="center" width="80">이름</th>
+                <th align="center" width="80">가격</th>
+                <th align="center" width="320">효과</th>
+                <th align="center" width="40">구매</th>
+            </tr>
+            <tr v-if="shopView" v-for="(list, idx) in shopList"
+                v-bind:key="list.itemName">
+                <th align="center" width="20">{{ idx + 1 }}</th>
+                <th align="center" width="80">{{ list.itemName }}</th>
+                <th align="center" width="80">{{ list.price }}</th>
+                <th align="center" width="320">{{ list.effect.desc }}</th>
+                <th align="center" width="40">
+                    <label>
+                        <input type="checkbox"
+                               v-model="shopListValue" v-bind:value="idx">
+                    </label>
+                </th>
+            </tr>
+        </table>
     </div>
 
 <script>
@@ -70,6 +99,22 @@
                 { monsterName: '베히모스킹', exp: 25000, hp: 800000, sprMoney: 50000 },
                 { monsterName: '드래곤', exp: 100000, hp: 10000000, sprMoney: 100000 },
             ],
+            itemBooks: [
+                { itemName: 'HP Potion I', price: 50, effect:
+                        { desc: "20 hp recover", amount: 200 } },
+                { itemName: 'HP Potion II', price: 200, effect:
+                        { desc: "100 hp recover", amount: 200 } },
+                { itemName: 'HP Potion III', price: 600, effect:
+                        { desc: "400 hp recover", amount: 200 } },
+                { itemName: 'HP Potion IV', price: 1200, effect:
+                        { desc: "800hp recover", amount: 200 } },
+                { itemName: 'HP Potion V', price: 2000, effect:
+                        { desc: "1200hp recover", amount: 200 } },
+                { itemName: 'Sword', price: 3000000, effect:
+                        { desc: "weapon", atk: 100 } },
+                { itemName: 'Iron Sword', price: 20000000, effect:
+                        { desc: "weapon", atk: 200 } }
+            ],
             characterName: '',
             characterLv: 1,
             characterStatus: '',
@@ -80,7 +125,10 @@
             curExp: 0,
             needExp: 10,
             monsterName: '',
-            money: 0
+            money: 0,
+            shopList: [],
+            shopListValue: [],
+            shopView: false
         },
         methods: {
             addMonster: function() {
@@ -130,6 +178,16 @@
                     if(this.monsters[i].hp > 0) {
                         this.monsters[i].status = 'Stun'
                     }
+                }
+            },
+            shuffleShopList: function() {
+                if(!this.shopView) {
+                    this.shopListValue = []
+                }
+
+                for(var i = 0; i < 10; i++) {
+                    var randIdx = Math.floor(Math.random() * this.itemBooks.length)
+                    this.shopList[i] = this.itemBooks[randIdx]
                 }
             }
         },
