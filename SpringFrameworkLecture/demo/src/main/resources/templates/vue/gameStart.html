@@ -29,6 +29,7 @@
 
         <button v-on:click="addMonster">몬스터 추가</button></br>
         <button v-on:click="addManyMonster">100마리씩 몬스터 추가</button>
+        <button v-on:click="amaterasu">아마테라스</button>
 
         <ul>
             <li v-for="(monster, index) in monsters"
@@ -117,6 +118,19 @@
             },
             doAttack: function(index) {
                 this.monsters[index].hp -= this.characterAtk
+            },
+            amaterasu: function() {
+                var i
+
+                for(i = 0; i < this.monsters.length; i++) {
+                    this.monsters[i].hp =
+                        parseInt(this.monsters[i].hp -
+                            this.characterAtk * 1.5)
+
+                    if(this.monsters[i].hp > 0) {
+                        this.monsters[i].status = 'Stun'
+                    }
+                }
             }
         },
         beforeCreate: function () {
