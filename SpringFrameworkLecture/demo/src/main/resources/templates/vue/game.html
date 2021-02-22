@@ -8,12 +8,18 @@
 </head>
 <body>
 <div id="app">
+    이름 <input v-model="name"></br>
+    HP <input v-model="hp"></br>
+    <button v-on:click="addMonster">몬스터 추가</button></br>
     <ul>
-        <li v-for="monster in monsters"
+        <li v-for="(monster, index) in monsters"
             v-bind:key="monster.id"
             v-bind:class="{ strong: monster.hp > 300 }">
             ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
-            <span v-if="monster.hp > 300">Strong</span>
+            <button v-on:click="doRemove(index)">몬스터 삭제</button>
+            <span v-if="monster.hp > 300">강함</span>
+            <span v-if="monster.hp <= monster.morbidity">빈사상태</span>
+            <button v-on:click="doAttack(index)">공격</button>
         </li>
     </ul>
 </div>
@@ -23,15 +29,32 @@
         el: '#app',
         data: {
             monsters: [
-                { id: 1, name: '슬라임', hp: 10 },
-                { id: 2, name: '고블린', hp: 30 },
-                { id: 444, name: '드래곤', hp: 5000 },
-            ]
+                { id: 1, name: '슬라임', hp: 10,
+                    morbidity: 10 * 0.2 },
+                { id: 2, name: '고블린', hp: 30,
+                    morbidity: 30 * 0.2 },
+                { id: 444, name: '드래곤', hp: 5000,
+                    morbidity: 5000 * 0.2 },
+            ],
+            name: '',
+            hp: ''
         },
         methods: {
-            handleClick: function(event) {
-                this.show = !this.show
-                alert('버튼 누르기')
+            addMonster: function() {
+                var max = this.monsters.reduce(function(a, b) {
+                    return a > b.id ? a : b.id
+                }, 0)
+                this.monsters.push({
+                    id: max + 1,
+                    name: this.name,
+                    hp: this.hp
+                })
+            },
+            doRemove: function(index) {
+                this.monsters.splice(index, 1)
+            },
+            doAttack: function(index) {
+                this.monsters[index].hp -= 9
             }
         }
     })
