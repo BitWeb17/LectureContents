@@ -18,7 +18,7 @@ public class DBConfig {
         );
 
         dataSource.setUsername("bitweb");
-        dataSource.setUsername("dkdlxl123");
+        dataSource.setPassword("dkdlxl123");
 
         return dataSource;
     }
