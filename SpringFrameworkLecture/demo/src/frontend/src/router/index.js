@@ -21,12 +21,16 @@ const routes = [
   {
     path: '/board',
     name: 'BoardListPage',
-    component: BoardListPage
+    components: {
+      default: BoardListPage
+    }
   },
   {
     path: '/board/create',
     name: 'BoardRegisterPage',
-    component: BoardRegisterPage
+    components: {
+      default: BoardRegisterPage
+    }
   }
 ]
 

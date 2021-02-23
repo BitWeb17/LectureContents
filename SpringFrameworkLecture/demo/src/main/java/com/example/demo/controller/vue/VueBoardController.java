@@ -1,5 +1,6 @@
 package com.example.demo.controller.vue;
 
+import com.example.demo.entity.vue.VueBoard;
 import com.example.demo.service.vue.VueBoardService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @Log
 @RestController
