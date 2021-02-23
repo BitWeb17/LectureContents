@@ -32,6 +32,13 @@
         <!-- <my-component></my-component> -->
         <test-component></test-component>
         <comp-child v-on:childs-event="parentsMethod"></comp-child>
+
+
+
+        <test-comp-child v-for="list in lists"
+                         v-bind:key="list.id"
+                         v-bind="list"
+                         v-on:attack="handleAttack"></test-comp-child>
     </div>
     <script>
         Vue.component('comp-child', {
@@ -39,6 +46,23 @@
             methods: {
                 handleClick: function () {
                     this.$emit('childs-event')
+                }
+            }
+        })
+
+
+
+        Vue.component('test-comp-child', {
+            template: '<li>{{ name }} HP.{{ hp }}\
+                <button v-on:click="doAttack">공격</button></li>',
+            props: {
+                id: Number,
+                name: String,
+                hp: Number
+            },
+            methods: {
+                doAttack: function() {
+                    this.$emit('attack', this.id)
                 }
             }
         })
@@ -54,11 +78,24 @@
             },
             data: {
                 val: [],
-                rVal: ''
+                rVal: '',
+                lists: [
+                    { id: 1, name: '슬라임', hp: 10 },
+                    { id: 2, name: '고블린', hp: 30 },
+                    { id: 3, name: '드래곤', hp: 5000 }
+                ],
             },
             methods: {
                 parentsMethod: function () {
                     alert('자식에서 전달받은 이벤트다!')
+                },
+                handleAttack: function (id) {
+                    var list = this.lists.find(function (el) {
+                        return el.id === id
+                    })
+                    if (list !== undefined && list.hp > 0) {
+                        list.hp -= 10
+                    }
                 }
             }
         })
