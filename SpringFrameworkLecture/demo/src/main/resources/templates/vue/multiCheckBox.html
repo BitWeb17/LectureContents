@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <label>
+            <input type="checkbox" v-model="val" value="A">A
+        </label>
+        <label>
+            <input type="checkbox" v-model="val" value="B">B
+        </label>
+        <label>
+            <input type="checkbox" v-model="val" value="C">C
+        </label>
+        <p>{{ val }}</p></br>
+        <label>
+            <input type="radio" v-model="rVal" value="Ar">Rust
+        </label>
+        <label>
+            <input type="radio" v-model="rVal" value="Br">Golang
+        </label>
+        <label>
+            <input type="radio" v-model="rVal" value="Cr">C++
+        </label>
+        <p>{{ rVal }}</p>
+
+        <!-- <my-component></my-component> -->
+        <test-component></test-component>
+        <comp-child v-on:childs-event="parentsMethod"></comp-child>
+    </div>
+    <script>
+        Vue.component('comp-child', {
+            template: '<button v-on:click="handleClick">이벤트 실행</button>',
+            methods: {
+                handleClick: function () {
+                    this.$emit('childs-event')
+                }
+            }
+        })
+
+        var testComponent = {
+            template: '<p>Test Component Template</p>'
+        }
+
+        new Vue({
+            el: '#app',
+            components: {
+                'test-component': testComponent
+            },
+            data: {
+                val: [],
+                rVal: ''
+            },
+            methods: {
+                parentsMethod: function () {
+                    alert('자식에서 전달받은 이벤트다!')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
