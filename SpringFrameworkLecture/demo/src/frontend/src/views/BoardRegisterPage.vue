@@ -29,6 +29,30 @@ export default {
         })
       })
     }
+  },
+  beforeCreate: function () {
+    console.log("BoardRegisterPage Before Create: ")
+  },
+  created: function () {
+    console.log("BoardRegisterPage Created: ")
+  },
+  beforeMount: function () {
+    console.log("BoardRegisterPage Before Mount: ")
+  },
+  mounted: function () {
+    console.log("BoardRegisterPage Mounted: ")
+  },
+  beforeUpdate: function() {
+    console.log("BoardRegisterPage Before Update: ")
+  },
+  updated: function () {
+    console.log("BoardRegisterPage Updated: ")
+  },
+  beforeDestroy: function () {
+    console.log("BoardRegisterPage Before Destroy: ")
+  },
+  destroyed: function () {
+    console.log("BoardRegisterPage Destroyed: ")
   }
 }
 </script>

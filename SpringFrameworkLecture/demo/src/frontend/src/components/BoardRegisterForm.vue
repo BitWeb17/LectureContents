@@ -46,6 +46,30 @@ export default {
       const { title, writer, content } = this
       this.$emit('submit', { title, writer, content })
     }
+  },
+  beforeCreate: function () {
+    console.log("BoardRegisterForm Before Create: ")
+  },
+  created: function () {
+    console.log("BoardRegisterForm Created: ")
+  },
+  beforeMount: function () {
+    console.log("BoardRegisterForm Before Mount: ")
+  },
+  mounted: function () {
+    console.log("BoardRegisterForm Mounted: ")
+  },
+  beforeUpdate: function() {
+    console.log("BoardRegisterForm Before Update: ")
+  },
+  updated: function () {
+    console.log("BoardRegisterForm Updated: ")
+  },
+  beforeDestroy: function () {
+    console.log("BoardRegisterForm Before Destroy: ")
+  },
+  destroyed: function () {
+    console.log("BoardRegisterForm Destroyed: ")
   }
 }
 </script>

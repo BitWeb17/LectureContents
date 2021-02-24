@@ -37,6 +37,30 @@ export default {
     boards: {
       type: Array
     }
+  },
+  beforeCreate: function () {
+    console.log("BoardList Before Create: ")
+  },
+  created: function () {
+    console.log("BoardList Created: ")
+  },
+  beforeMount: function () {
+    console.log("BoardList Before Mount: ")
+  },
+  mounted: function () {
+    console.log("BoardList Mounted: " + this.boards)
+  },
+  beforeUpdate: function() {
+    console.log("BoardList Before Update: ")
+  },
+  updated: function () {
+    console.log("BoardList Updated: ")
+  },
+  beforeDestroy: function () {
+    console.log("BoardList Before Destroy: ")
+  },
+  destroyed: function () {
+    console.log("BoardList Destroyed: ")
   }
 }
 </script>

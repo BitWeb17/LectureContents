@@ -36,6 +36,30 @@ export default {
     return {
       message: 'test'
     }
+  },
+  beforeCreate: function () {
+    console.log("Home Before Create: ")
+  },
+  created: function () {
+    console.log("Home Created: ")
+  },
+  beforeMount: function () {
+    console.log("Home Before Mount: ")
+  },
+  mounted: function () {
+    console.log("Home Mounted: ")
+  },
+  beforeUpdate: function() {
+    console.log("Home Before Update: ")
+  },
+  updated: function () {
+    console.log("Home Updated: ")
+  },
+  beforeDestroy: function () {
+    console.log("Home Before Destroy: ")
+  },
+  destroyed: function () {
+    console.log("Home Destroyed: ")
   }
 }
 </script>
