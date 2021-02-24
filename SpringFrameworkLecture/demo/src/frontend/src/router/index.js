@@ -5,6 +5,7 @@ import About from '../views/About'
 import BoardListPage from "@/views/BoardListPage";
 import BoardRegisterPage from "@/views/BoardRegisterPage";
 import BoardReadPage from "@/views/BoardReadPage";
+import BoardModifyPage from "@/views/BoardModifyPage";
 
 Vue.use(VueRouter)
 

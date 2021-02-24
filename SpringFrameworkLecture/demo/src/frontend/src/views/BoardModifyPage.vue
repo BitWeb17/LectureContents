@@ -7,8 +7,49 @@
 </template>
 
 <script>
+import BoardModifyForm from "@/components/BoardModifyForm";
+import { mapState, mapActions } from 'vuex'
+import axios from "axios";
+
 export default {
-  name: "BoardModifyPage"
+  name: "BoardModifyPage",
+  components: {
+    BoardModifyForm
+  },
+  props: {
+    boardNo: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    ...mapState(['board'])
+  },
+  created () {
+    this.fetchBoard(this.boardNo)
+    .catch(err => {
+      alert(err.response.data.message)
+      this.$router.back()
+    })
+  },
+  methods: {
+    onSubmit (payload) {
+      const { title, content } = payload
+      axios.put(`http://localhost:7777/boards/${this.boardNo}`,
+          { title, content })
+        .then(res => {
+          alert('수정 성공')
+          this.$router.push({
+            name: 'BoardReadPage',
+            params: { boardNo: res.data.boardNo.toString() }
+          })
+        })
+        .catch(err => {
+          alert(err.response.data.message)
+        })
+    },
+    ...mapActions(['fetchBoard'])
+  }
 }
 </script>
 
