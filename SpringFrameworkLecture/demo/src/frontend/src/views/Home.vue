@@ -9,9 +9,9 @@
                    class="nav-link" active-class="active">
         About Us
       </router-link>
-      <router-link :to="{ name: 'Test' }"
+      <router-link :to="{ name: 'BoardListPage' }"
                    class="nav-link" active-class="active">
-        Test
+        Board
       </router-link>
     </div>
     <h1>페이지 홈(Home)</h1>
