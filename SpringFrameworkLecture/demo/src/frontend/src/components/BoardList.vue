@@ -31,12 +31,17 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "BoardList",
   props: {
     boards: {
       type: Array
     }
+  },
+  methods: {
+    ...mapActions(['fetchBoardList'])
   },
   beforeCreate: function () {
     console.log("BoardList Before Create: ")

@@ -30,16 +30,19 @@ export default {
     ...mapState(['board'])
   },
   created() {
+    console.log('BoardReadPage boardNo: ' + this.boardNo)
     this.fetchBoard(this.boardNo)
     .catch(err => {
       alert(err.response.data.message)
       this.$router.push()
     })
+    console.log('BoardReadPage board: ' + this.board)
   },
   methods: {
     ...mapActions(['fetchBoard']),
     onDelete () {
       const { boardNo } = this.board
+      console.log('BoardReadPage boardNo: ' + boardNo)
       axios.delete(`http://localhost:7777/boards/${boardNo}`)
       .then(() => {
         alert('삭제 성공')

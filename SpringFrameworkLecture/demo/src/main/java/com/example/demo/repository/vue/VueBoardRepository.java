@@ -56,7 +56,7 @@ public class VueBoardRepository {
     }
 
     public VueBoard read(Long boardNo) throws Exception {
-        log.info("VueBoardRepo read()");
+        log.info("VueBoardRepo read(): " + boardNo);
 
         List<VueBoard> results = jdbcTemplate.query(
                 "select board_no, title, content, " +
