@@ -42,8 +42,7 @@ const routes = [
     props: {
       default: true
     }
-  }
-  /*
+  },
   {
     path: '/board/:boardNo/edit',
     name: 'BoardModifyPage',
@@ -54,7 +53,6 @@ const routes = [
       default: true
     }
   }
-   */
 ]
 
 const router = new VueRouter({
