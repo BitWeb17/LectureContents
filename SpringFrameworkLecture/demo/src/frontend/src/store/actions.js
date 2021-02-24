@@ -15,7 +15,7 @@ export default {
     fetchBoard ({ commit }, boardNo) {
         console.log('fetchBoard ' + commit + ', boardNo = ' + boardNo)
 
-        return axios.get('http://localhost:7777/boards/${boardNo}')
+        return axios.get(`http://localhost:7777/boards/${boardNo}`)
             .then(res => {
                 commit(FETCH_BOARD, res.data)
             })

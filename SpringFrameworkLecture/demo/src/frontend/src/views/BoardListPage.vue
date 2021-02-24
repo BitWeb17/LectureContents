@@ -24,34 +24,34 @@ export default {
     ...mapActions(['fetchBoardList'])
   },
   beforeCreate: function () {
-    console.log("BoardListPage Before Create: ")
+    console.log("BoardListPage Before Create: " + this.boards)
   },
   // 실제로 async와 await를 사용했지만 병렬로 돌아가는 루틴이 완화되지 않았음
   // 왜 ? 이미 나누어져 있는 루틴이기 때문에 그러함
-  created: async function () {
-    console.log("BoardListPage Created: ")
+  created: function () {
+    console.log("BoardListPage Created: " + this.boards)
 
-    await this.fetchBoardList()
+    let $vm = this;
+
+    $vm.fetchBoardList()
   },
   beforeMount: function () {
-    console.log("BoardListPage Before Mount: ")
+    console.log("BoardListPage Before Mount: " + this.boards)
   },
   mounted() {
-    console.log("BoardListPage Mounted: ")
-
-    //this.fetchBoardList()
+    console.log("BoardListPage Mounted: " + this.boards)
   },
   beforeUpdate: function() {
-    console.log("BoardListPage Before Update: ")
+    console.log("BoardListPage Before Update: " + this.boards)
   },
   updated: function () {
-    console.log("BoardListPage Updated: ")
+    console.log("BoardListPage Updated: " + this.boards)
   },
   beforeDestroy: function () {
-    console.log("BoardListPage Before Destroy: ")
+    console.log("BoardListPage Before Destroy:" + this.boards)
   },
   destroyed: function () {
-    console.log("BoardListPage Destroyed: ")
+    console.log("BoardListPage Destroyed: " + this.boards)
   }
 }
 </script>
