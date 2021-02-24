@@ -1,7 +1,7 @@
 <template>
   <div align="center">
     <h2>게시판 수정</h2>
-    <board-modify-form v-if="board" :board="board" @submit="onsubmit"/>
+    <board-modify-form v-if="board" :board="board" @submit="onSubmit"/>
     <p v-else>로딩중 ... </p>
   </div>
 </template>
