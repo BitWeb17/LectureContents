@@ -4,5 +4,6 @@ export default {
   board: null,
 
   // For Test
-  count: 0
+  count: 0,
+  weight: 3
 }

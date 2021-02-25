@@ -1,6 +1,6 @@
-package com.example.board.service;
+package com.example.board.service.board;
 
-import com.example.board.entity.VueBoard;
+import com.example.board.entity.board.VueBoard;
 
 import java.util.List;
 

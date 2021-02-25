@@ -1,7 +1,7 @@
-package com.example.board.controller;
+package com.example.board.controller.board;
 
-import com.example.board.entity.VueBoard;
-import com.example.board.service.VueBoardService;
+import com.example.board.entity.board.VueBoard;
+import com.example.board.service.board.VueBoardService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

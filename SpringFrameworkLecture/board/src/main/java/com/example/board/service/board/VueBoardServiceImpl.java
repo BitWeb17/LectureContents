@@ -1,7 +1,7 @@
-package com.example.board.service;
+package com.example.board.service.board;
 
-import com.example.board.entity.VueBoard;
-import com.example.board.repository.VueBoardRepository;
+import com.example.board.entity.board.VueBoard;
+import com.example.board.repository.board.VueBoardRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

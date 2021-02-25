@@ -14,5 +14,11 @@ export default {
   // for Test
   increment (state) {
     state.count++
+  },
+  decrement (state) {
+    state.count--
+  },
+  successGenerateRandomNumber (state, payload) {
+    state.random = payload
   }
 }

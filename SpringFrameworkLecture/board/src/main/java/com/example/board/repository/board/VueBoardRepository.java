@@ -1,6 +1,6 @@
-package com.example.board.repository;
+package com.example.board.repository.board;
 
-import com.example.board.entity.VueBoard;
+import com.example.board.entity.board.VueBoard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;

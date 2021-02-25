@@ -5,7 +5,11 @@
     <p>{{ message }}</p>
     <b>count: {{ this.$store.state.count }}</b><br>
     <b>count^2: {{ this.$store.getters.countSquare }}</b><br>
-    <input type="button" @click="increment()" value="increment"/>
+    <b>weight: {{ this.$store.getters.getWeight }}</b><br>
+    <b>count^weight: {{ this.$store.getters.countWeightSquare }}</b><br>
+    <input type="button" @click="increment()" value="increment"/><br>
+    <input type="button" @click="decrement()" value="decrement"/><br>
+    <input type="button" @click="randomNumber()" value="random"/><br>
   </div>
 </template>
 
@@ -29,7 +33,15 @@ export default {
     increment: function () {
       this.$store.commit('increment')
       this.$cookies.set('value',
-          this.$store.state.count, '5s')
+          this.$store.state.count, '1m')
+    },
+    decrement: function () {
+      this.$store.commit('decrement')
+      this.$cookies.set('value',
+          this.$store.state.count, '1m')
+    },
+    randomNumber () {
+      this.$store.dispatch('generateRandomNumber')
     }
   },
   created() {
