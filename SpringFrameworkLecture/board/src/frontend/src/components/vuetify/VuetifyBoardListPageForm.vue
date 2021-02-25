@@ -14,11 +14,12 @@
         <td>{{ page.address }}</td>
       </tr>
     </table>
-    <div>
+    <div style="margin-top: 1.5rem; text-align: center;
+                width: 15rem; height: 2rem; letter-spacing: 2px;">
       <button :disabled="pageNum === 0" @click="prevPage">
         이전
       </button>
-      <span>{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
+      <span style="padding: 0 10px;">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
       <button :disabled="pageNum >= pageCount - 1" @click="nextPage">
         다음
       </button>
@@ -75,5 +76,12 @@ export default {
 </script>
 
 <style scoped>
+table {
+  width: 70%;
+  border-collapse: collapse;
+}
 
+table tr {
+  border-bottom: 1px solid #333333;
+}
 </style>
