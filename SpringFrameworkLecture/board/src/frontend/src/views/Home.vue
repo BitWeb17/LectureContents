@@ -22,6 +22,16 @@
                    active-class="active">
         게시판
       </router-link>
+      <router-link :to="{ name: 'VuetifyBoardListPage' }"
+                   class="nav-link"
+                   active-class="active">
+        뷰티파이
+      </router-link>
+      <router-link :to="{ name: 'VuetifyBoardListPaginationPage' }"
+                   class="nav-link"
+                   active-class="active">
+        페이지네이션
+      </router-link>
       <h2>This is an Home Page</h2>
     </div>
   </div>

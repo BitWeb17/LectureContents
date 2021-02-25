@@ -10,6 +10,9 @@ import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 import BoardModifyPage from '../views/BoardModifyPage.vue'
 import BoardReadPage from '../views/BoardReadPage.vue'
 
+import VuetifyBoardListPage from "@/views/vuetifyPage/VuetifyBoardListPage";
+import VuetifyBoardListPaginationPage from "@/views/vuetifyPage/VuetifyBoardListPaginationPage";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -62,6 +65,20 @@ const routes = [
       default: true
     }
   },
+  {
+    path: '/vuetifyBoard',
+    name: 'VuetifyBoardListPage',
+    components: {
+      default: VuetifyBoardListPage
+    }
+  },
+  {
+    path: '/vuetifyPagination',
+    name: 'VuetifyBoardListPaginationPage',
+    components: {
+      default: VuetifyBoardListPaginationPage
+    }
+  }
 ]
 
 const router = new VueRouter({
