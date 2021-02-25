@@ -1,0 +1,6 @@
+npm install --save-dev axios
+npm install --save-dev vue-cookies
+npm install --save-dev vue-router
+npm install --save-dev vuex
+vue add vuetify
+
