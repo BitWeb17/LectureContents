@@ -7,6 +7,7 @@
     <b>count^2: {{ this.$store.getters.countSquare }}</b><br>
     <b>weight: {{ this.$store.getters.getWeight }}</b><br>
     <b>count^weight: {{ this.$store.getters.countWeightSquare }}</b><br>
+    <b>random: {{ this.$store.getters.getRandom }}</b><br>
     <input type="button" @click="increment()" value="increment"/><br>
     <input type="button" @click="decrement()" value="decrement"/><br>
     <input type="button" @click="randomNumber()" value="random"/><br>

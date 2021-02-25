@@ -7,5 +7,8 @@ export default {
     },
     getWeight (state) {
         return state.weight;
+    },
+    getRandom (state) {
+        return state.random;
     }
 }

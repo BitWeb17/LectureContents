@@ -5,5 +5,6 @@ export default {
 
   // For Test
   count: 0,
-  weight: 3
+  weight: 3,
+  random: 0
 }
