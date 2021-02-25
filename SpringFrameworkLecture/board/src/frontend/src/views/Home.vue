@@ -5,17 +5,22 @@
       <router-link :to="{ name: 'Home' }"
                    class="nav-link"
                    active-class="active">
-        Home
+        홈
       </router-link>
       <router-link :to="{ name: 'About' }"
                    class="nav-link"
                    active-class="active">
-        About Us
+        소개
+      </router-link>
+      <router-link :to="{ name: 'Test' }"
+                   class="nav-link"
+                   active-class="active">
+        테스트
       </router-link>
       <router-link :to="{ name: 'BoardListPage' }"
                    class="nav-link"
                    active-class="active">
-        Board
+        게시판
       </router-link>
       <h2>This is an Home Page</h2>
     </div>
@@ -56,22 +61,4 @@ div {
   margin-bottom: 15px;
   margin: 5px 5px;
 }
-
-img {
-  width: auto;
-  height: auto;
-  max-width: 1000px;
-  max-height: 350px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#login {
-  background-color: #77aadd;
-  color: #ffffff;
-  font-weight: bold;
-  float: right;
-}
-
 </style>

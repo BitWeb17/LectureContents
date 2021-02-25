@@ -7,7 +7,7 @@
     <board-list :boards="boards"/>
   </div>
 </template>
-기
+
 <script>
 import BoardList from '@/components/BoardList'
 import { mapState, mapActions } from 'vuex'
