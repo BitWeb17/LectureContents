@@ -1,6 +1,8 @@
 import {
   FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_BOARD,
+  CRAWL_START,
+  FIND_ONE
 } from './mutation-types'
 
 export default {
@@ -20,5 +22,12 @@ export default {
   },
   successGenerateRandomNumber (state, payload) {
     state.random = payload
+  },
+  // for Crawling
+  [CRAWL_START] (state, payload) {
+    state.lists = payload
+  },
+  [FIND_ONE] (state, payload) {
+    state.news = payload
   }
 }

@@ -11,7 +11,7 @@
              style="padding: 10px; width: 90px">국제</v-btn>
       <v-btn @click="start('culture')" text color="black"
              style="padding: 10px; width: 90px">문화</v-btn>
-      <v-btn @click="start('inforTech')" text color="black"
+      <v-btn @click="start('digital')" text color="black"
              style="padding: 10px; width: 90px">아이티</v-btn>
     </template>
     <template #content>
