@@ -25,12 +25,12 @@
       <router-link :to="{ name: 'VuetifyBoardListPage' }"
                    class="nav-link"
                    active-class="active">
-        뷰티파이
+        페이지네이션
       </router-link>
-      <router-link :to="{ name: 'VuetifyBoardListPaginationPage' }"
+      <router-link :to="{ name: 'CrawlCategoryPage' }"
                    class="nav-link"
                    active-class="active">
-        페이지네이션
+        크롤링
       </router-link>
       <h2>This is an Home Page</h2>
     </div>
